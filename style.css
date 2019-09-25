@@ -1,0 +1,22 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+div.myblock {
+ border: 2px solid #990066;
+ padding: 10px;
+ border-radius: 25px;
+ color: #2e4259;
+ width:80%;
+ text-align: justify;
+}

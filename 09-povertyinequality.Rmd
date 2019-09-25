@@ -1,0 +1,325 @@
+# Poverty and inequality
+
+## What this chapter is about
+
+In this chapter we look beyond the mean and investigate differences within the population.
+
+## Working with income and wealth data
+
+### Net and gross values
+
+We've already used the term "net" and "gross" on several occasions. When discussing net-migration or Gross Domestic Product. But what do these terms mean?. In general we can think of the terms net and gross as follows:
+
+
+* Gross: The value without deductions, contributions etc.
+* Net: The value after deductions, contributions etc.
+  
+We use the terms net and gross in many situations. If you buy packaged food the label might display the gross and net weight. The gross weight will then be the total weight before deductions, the net weight will be the weight of the product after we deducted the weight of the packaging etc. 
+
+The most common use of the terms net and gross is probably in income, where gross refers to the income before taxes, and net to the income after taxes. Statistical offices and economists in general agree on excluding taxes from gross terms and including taxes in net terms, but there is less agreement on whether transfers such as housing benefits and unemployment benefits in net terms should be included. When working with income data, the concept of disposable income is therefore also often used instead. The idea is that we want to consider the income that the household can spend, which will be the income after all taxes, transfers, and deductions.
+
+### Equivalenced income
+
+In working with income data we are often interested in comparing households instead of individuals. However, households are not all of the same size, and we will therefore have to adjust monetary measures to the size of the households, we call income that is adjusted to household equivalenced income. We will here briefly discuss the three most common approaches to equivalise income. 
+    
+* The Oxford scale or OECD equivalence scale.
+    
+    * The first person in the household: Weight 1
+    * Each additional adult household member: Weight 0.7  (person aged 14 and over)
+    * Each child household member: Weight 0.5
+    
+* The OECD modified scale.
+  
+  * The first person in the household: Weight 1
+  * Each additional adult household member: Weight 0.5 (person aged 14 and over)
+  * Each child household member: Weight 0.3 
+    
+* The Square root scale.
+  
+  * Total weight: square root of the number of household members.
+    
+While the square root method is probably the most popular approach, the choice of approach is non-trivial as Table   \@ref(tab:povt0) shows. The table shows four different households that all have the same income, but the composition of households vary. The Oxford scale does for example but quite high weight on children compared to the modified OECD scale. The square root scale on the other hand puts the same weight on adults and children, but each additional member gets a lower weight. 
+
+
+```{r , echo=FALSE, results='asis'}
+cat('Table: (\\#tab:povt0) Equivalencing income
+
+|Adults | 1  | 2 | 1 | 2 |
+|:--|:--:|:--:|:--:|:--:|
+|Children | 0  | 0 |1|2|
+|Household income| 100|100|100|100|
+Equivalised income | | | | |
+Oxford scale| 100| 58.824|66.667| 37.037|
+OECD modified|100|66.667|76.923|47.619|
+Square root|100|70.711|70.711|50.000
+')
+```
+
+When working with household income data you should adjust income measures and be aware of the differences between the approaches.
+
+## Inequality
+
+
+### The Lorenz curve
+One of the most common approaches to show income distributions is the Lorenz-curve, developed by the American economist, Max Lorenz. The curve plots the share of total income relative to the position in the income distribution. So on the x-axis we rank the population by their income and on the y-axis we show the cumulative income share. Here is cookbook for creating a Lorenz curve:
+
+1. Sort all households (individuals) by their income, from lowest to highest and give them a relative income rank. 
+2. Compute the total income in the population.
+3. For each individual in the household calculate their share of total income. 
+4. Calculate the cumulative income share by adding the individual shares. So for the household with the lowest income, the cumulative share is just their income share. For the second lowest income household, the cumulative income share is their share plus the share of the lowest income household.
+    
+5. Create a line chart of the cumulative income shares against the household (individual) income rank.
+
+Now what do we expect? How does this chart look? Let's consider a very simple example of an economy with 10 households as shown in Table   \@ref(tab:price1). In scenario 1 all households have the same income.  In  scenario 2, one household has all income of the economy. In scenario 3 the income   is gradually increasing. 
+
+
+```{r , echo=FALSE, results='asis'}
+cat('Table: (\\#tab:povt1) 3 examples of distributiosns
+
+|Household | Scenario 1 |Scenario 2 |Scenario 3|
+|:--:|:--:|:--:|:--:|
+|1   |10 | 0  | 3|
+|2   |10 | 0  | 5|
+|3   |10 | 0  | 6|
+|4   |10 | 0  | 8|
+|5   |10 | 0  | 9|
+|6   |10 | 0  | 10|
+|7   |10 | 0  | 12|
+|8   |10 | 0  | 13|
+|9   |10 | 0  | 14|
+|10  |10 | 100| 30|
+')
+```
+
+
+
+In situation 1, where every individual has the same share of the total income the Lorenz curve will be a straight line, the 45 degree line, as shown by the black line in Figure   \@ref(fig:poverty0). While this  situation is never seen in practice, this situation is important because it serves as a reference point for a completely equal income distribution. 
+
+
+```{r poverty0, echo=FALSE, out.width = '75%',fig.show='hold',fig.align='center',fig.cap="Lorenz curves for 3 different income distributions."}
+knitr::include_graphics(c("_resources/chapter_inequality/ex6_1.png"))
+```
+
+
+Situation 2 is the other extreme, where one household has 100 percent of the income, as shown by the in Figure \ref{fig:11}. Finally, the green line in   \@ref(fig:poverty0) shows situation 3, where every household has some income, but the income share is slowly increasing. Note from Table   \@ref(tab:povt1) that in Situation 3, the sixth household has the same income as in the perfectly equal situation. All households below (1-5) have a lower share than in the equal situation and all households above have a higher share. 
+
+Based on the Lorenz curve we can make statements on the income distribution, such as "the bottom 30 percent has 14 percent of the total income"  or   "the bottom 50 percent has 31 percent of the income" (Situation 3).
+
+While the Lorenz curve provides a graphical representation of the income distribution, we are often interested in quantifying the income distribution in one number. This can be done by means of the Gini coefficient. We use the Lorenz-curve and situation 1 above as a point of departure to calculate the Gini coefficient. 
+
+### The Gini coefficient
+
+Note from the discussion above, that the 45 degree line represents a perfectly equal distribution. To quantify the degree of inequality we are interested in quantifying how far we are from that situation. One way to quantify this is by means of the area between the actual income distribution and the 45 degree line, corresponding to area A in Figure   \@ref(fig:poverty1). The smaller this area is, the closer we are to the perfect equal distribution. We can then scale this area to the total area below the 45 degree line, which is area A and area B in Figure  \@ref(fig:poverty1), and that is the Gini coefficient.  The Gini coefficient will always be between 0 (perfectly equal) and 1 (perfectly unequal).
+
+
+```{r poverty1, echo=FALSE, out.width = '65%',fig.show='hold',fig.align='center',fig.cap="The Lorenz curve and the Gini coefficient. The Gini coefficient is $A/(A+B)$."}
+knitr::include_graphics(c("_resources/chapter_inequality/tikz.png"))
+```
+
+Returning  to the example above, how can we calculate the Gini coefficient? First note, that the curves in Figure  \@ref(fig:poverty1) are not smooth as in Figure   \@ref(fig:povertY1). In practice, is discrete and not continuous.  We can therefore obtain approximate the areas by considering the difference between the 45 degree line and the actual income share for each household, as shown by the grey bars in Figure \@ref(fig:poverty2). We can then relate the sum of the area of these bars to the sum of the area of these bars and the orange bars in Figure \@ref(fig:poverty2) (corresponding to area B).
+
+
+```{r poverty2, echo=FALSE, out.width = '48%',fig.show='hold',fig.align='center',fig.cap="Approximating the Gini coefficient using the Lorenz curve Left: approximation of area A. Right: approximation of are B."}
+knitr::include_graphics(c("_resources/chapter_inequality/ex6_4.png","_resources/chapter_inequality/ex6_5.png"))
+```
+
+
+
+Table \@ref(tab:povt2) shows how we can approximate the areas A and B in the simple examples above to calculate the Gini coefficient. We simply use the approach illustrated in Figure \@ref(fig:poverty3). Each bar has a width of 0.1 which we multiply by the height of the bar.
+
+
+```{r , echo=FALSE, results='asis'}
+cat('Table: (\\#tab:povt2) Calculation of the Gini coefficients for scenario 2 and 3. 
+
+|Rel. rank|Scenario 2|Scenario 3 |Scenario 2 |Scenario 3|
+|:--:|:--:|:--:|:--:|:---:|
+|0.1|0.010|    0.007 |   0.000  |  0.003|
+|0.2|0.020|    0.012 |   0.000  |  0.008|
+|0.3|0.030|    0.016 |   0.000  |  0.014|
+|0.4|0.040|    0.018 |   0.000  |  0.022|
+|0.5|0.050|    0.019 |   0.000  |  0.031|
+|0.6|0.060|    0.019 |   0.000  |  0.041|
+|0.7|0.070|    0.017 |   0.000  |  0.053|
+|0.8|0.080|    0.014 |   0.000  |  0.066|
+|0.9|0.090|    0.010 |   0.000  |  0.080|
+|1|0.00|    0.00 |   1.00  |  1.00|
+|Total area|0.450|    0.132 |   0.100  |  0.418|
+||Situation 2||Situation 3|
+|Gini coefficient|$\\frac{0.450}{0.450+0.100}=0.818|| $\\frac{0.132}{0.132+0.418}=0.240$|
+')
+```
+
+In the case of the very unequal distribution of resources, we get a Gini coefficient of 0.82 (situation 2) and in the (more realistic) situation 3, we get a Gini coefficient of 0.24. So how do these Gini coefficients correspond to real world Gini coefficients?  Figure \@ref(fig:povertY3) shows a bar chart of Gini coefficients for European countries in 2016. According to Eurostat, the UK had  a Gini coefficient of 0.315 in 2016. Serbia had a Gini coefficient of 0.386 and Slovakia a coefficient of 0.243. The simple "realistic" example (situation 3) is therefore not far from what we observe in the real world. 
+
+
+```{r poverty3, echo=FALSE, out.width = '90%',fig.show='hold',fig.align='center',fig.cap="Gini coefficients in 2016 for European countries. Source: Eurostat."}
+knitr::include_graphics(c("_resources/chapter_inequality/ex7.png"))
+```
+
+
+
+Can we generalize our "Gini" approximation above to obtain a formula? First, note that both the x and y axis go from 0 to 1, the area of A+B will therefore always be 0.5 ($1\times 1\times 0.5=0.5$), we can therefore write:
+
+\begin{align}
+    Gini&=A/(A+B)\nonumber\\
+    &=A/0.5\nonumber\\
+    &=1-2B
+\end{align}
+
+where we simply used that since $A+B=0.5$ we have that $A=0.5-B$. Now we just need to find the area $B$. First, let us define household $i's$ income (or wealth) be $y_i$, where we have sorted all households according to their income (or wealth) rank. The first household (the one with the lowest income or wealth) will have the following contribution to the area B:
+
+\begin{align}
+  b_1=\frac{y_1}{\sum_i^ny_i}
+\end{align}
+
+the second household will contribute with the following value:
+
+\begin{align}
+  b_2=\frac{y_1+y_2}{\sum_i^ny_i}
+\end{align}
+
+finally, we sum over all these households to get:
+
+\begin{align}
+  B=&\frac{1}{n}\frac{y_1}{\sum_i^ny_i}+\frac{1}{n}\frac{y_1+y_2}{\sum_i^ny_i}+\dots+\frac{1}{n}\frac{y_1+y_2+\dots+y_n}{\sum_i^ny_i}\nonumber\\
+  B=&\frac{1}{n}\frac{y_1+y_1+y_2+\dots y_1+y_2+\dots+y_n}{\sum_i^ny_i}\nonumber\\
+  B=&\frac{1}{n}\frac{ny_1+(n-1)y_2+\dots+y_n}{\sum_i^ny_i}\nonumber\\
+  B=&\frac{1}{n}\frac{\sum_i^n(n-i+1)y_i}{\sum_i^ny_i}\nonumber\\
+\end{align}
+
+which we can insert in the expression for $Gini$ above to get an expression for the approximate Gini coefficient:
+
+\begin{align}
+    Gini&=1-\frac{2}{n}\frac{\sum_i^n(n-i+1)y_i}{\sum_i^ny_i}\nonumber
+\end{align}
+
+ It is important to remember that the formula is an approximation based on the bar chart approach. It will work well as long as the number of bars is sufficiently large. There are many formulas for the Gini coefficient. The above is simple and straightforward, but there are other formulas that give more precise estimates. The formula  tend to overestimate area B, because we are approximating the area using the height at right end of the bars (a small improvement is simply to use the average of the height of the bar and the height of the lagged bar).
+
+What is good about the Gini coefficient? First of all, the Gini coefficient is just one number, and it is thus easy to compare across countries and time. Secondly, it satisfies a number of key principles: (A) it is independent of a countries size and the currency used, (B) if a rich a household transfers money to a poor household the Gini will be reduced and (C) it is anonymous (it does not say anything about who the poorest and richest households are). 
+
+Is the Gini coefficient a perfect measure of inequality? No! Institutional settings differ considerably. How health care in a country is financed will affect the inequality. Is all health care is privately funded, it will take out a large share of low income households, and a relatively low share of high income households. On the other hand, if health care is financed by a progressive income tax this will not be the case.
+
+Another issue with the Gini coefficient is that it depends on the quality of the data. If it is only calculated based on 10 deciles (as above) it will be considerably less precise than if it is calculated based on thousands of observations. 
+
+### {Other measures of inequality
+
+Recently the debate of especially wealth inequality has focused on a different measure of inequality, simply the share of total wealth that the top 1 percent owns. This debate is very much driven by the work of Thomas Piketty [unit 19 in @core].
+
+When focusing on the top 1 percent we ignore differences in the rest of the income distribution, for example questions about of the income share at the median compared to the bottom. However, the wealth share of the top 1 percent has increased in many countries across the world in the last three to four decades, making this focus area of special interest. 
+
+
+## Poverty 
+
+### Measuring global development
+
+Quantifying global development is a challenging task. First, it challenging to obtain data covering the globe. Administrative data is only 
+available for a small number of selected countries, global censuses would be very expensive, and it is challenging to create representative surveys across the world (but it is done). Second, as we already discussed, even within one single country, there is a lot of work involved in measuring and standardizing concepts such as unemployment and GDP. Third, countries differ substantially in their institutional setting.
+
+Despite these challenges, we have quite good indicators of the direction of global development.  Let us consider the graphs from Our World In Data  shown Figure \@ref(fig:poverty4) (again). What data is required to create these charts? Poverty measures, education measures, literacy rates, democracy, vaccination data, and child mortality rates. None of these variables are easy to collect, and behind these simple illustrations of global development there is an enormous amount of work. To get an idea of the amount of work, you can go to the website of the source  [ourworldindata.org](https://www.ourworldindata.org), and search for one of these indicators. You will find that all these Figures are based on an extensive set of sources. 
+
+
+```{r poverty4, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="The world as 100 people. Source: Our World in Data. "}
+knitr::include_graphics(c("_resources/chapter_inequality/fig1.png"))
+```
+
+
+But measuring global development is not only challenging because it is difficult to obtain the important variables. It is also challenging, because is difficult to decide *which* variables we should focus on. Figure \@ref(fig:poverty4) does, for example, not include any measures on crime, environment or corruption. 
+
+One approach to decide which measures to include is to focus on variables that capture stated policy targets. At the United Nations Millennium Summit in 2000, all member states committed to the eight Millennium Development Goals (MDG). These eight goals were all linked to specific target dates. Should we just measure progress on these stated goals and follow global development? This is not ideal, as these goals are not linked to any analytical framework or economic principles. And even given these goals, it is unclear how measure each goal. How would you for example measure "Global Partnership for Development"? The MDG were replaced by the 17 Sustainable Development Goals (SDQ) in 2015 with a target of achieving these goals by 
+
+Compared to the MDG, the SDQ headlines are somewhat more  general, but SDGs are linked to 169 specific targets with concrete indicators. For example behind the first goal, "No Poverty", there are four targets. You can read about all 169 indicators on the following website:  [globalgoals.org](https://www.globalgoals.org).
+
+### Measuring poverty
+
+Eradicating poverty was the first goal both in the MDG and SDG list. Global development on poverty is also the first statistic shown in Figure \@ref(fig:poverty4). This is no surprise: Poverty is a core measure of global development. And even though numbers have improved substantially, we still observe that 1 out of 10 people live in extreme poverty. This is much better than when I was born, where  4 out of 10 people lived in extreme poverty, or in the 1960ies where more than 6 out of 10 people lived in extreme poverty. But how do we define poverty?
+
+
+The *poverty line* is the core in defining poverty. People below this line are defined as being poor, people above this line are defined as non-poor. The line thereby represents a threshold, below which an "acceptable" life is not possible. One way to define this level is to quantify the food intake required for an adequate diet (say 2000-2500 calories per day for an adult), and calculate the costs of this intake. To this we would add the costs of shelter and clothing. People with a consumption below this level or an income below this level are then defined as being poor. The level will differ substantially from country to country. Moreover country differences in institutional setting also affect which other factors we would consider important. For example, is health care publicly provided or should that be included in minimum cost calculation?
+
+Basing poverty levels on the minimum costs for an adequate food intake is actually not uncommon. The official  poverty measure in the US is for example based on estimates from the 1960ies, based on the cost of a minimum food diet.^[See also https://poverty.ucdavis.edu/faq/what-current-poverty-rate-united-states .]
+
+An alternative to minimum costs of diet based measures is a relative poverty line, where we specify the poverty line relative to the income distribution in the country, for example by defining households with an income less than 60 percent of the median income as in poverty. Below we'll discuss some of the key issues in measuring poverty.
+
+#### Income or consumption?
+
+We could define poverty both by what individuals and households consume and by their consumption possibilities, i.e. their income. Observing actual consumption is much harder than observing income, which makes the latter approach much more attractive simply based on a practical point of view. Moreover, if  an individual had the option to consume a sufficiently healthy diet, but for some reasons decided not to, should this person be defined as poor? Moreover, actual nutritional intake might not be monotonically increasing in expenditure. Some more expensive and enjoyable food might have a lower nutritive values. So in practice, poverty measures based on income are much more common than poverty measures based on consumption. 
+
+#### Relative or absolute measures?
+Given the introduction above, an absolute level of income seems like a natural threshold for poverty. Below this line, a household cannot afford sufficient nutrients, cannot afford clothing and cannot afford shelter. Such an absolute poverty line is based on what is "required to survive". 
+
+An alternative approach is to think of a poverty line reflecting the ability to participate in the society. What is required to participate in the society will vary from country to country. In some countries owning a means of transportation might be crucial, in other countries access to the internet might be more important. Identifying the exact level of income necessary for participating in the society is very difficult. Instead, we can define the poverty threshold *relative* to the median income in the economy.
+
+It is important not to define poverty by the *mean* of the income distribution, because this would imply that if an extremely rich person moves out of the country, the poverty rates would be reduced considerably.  Finally, it is important to stress that relative poverty measures never can replace absolute measures completely. At some low level of median income the relative poverty line might below the absolute poverty line and thereby not allow people to survive. 
+
+
+#### Poverty measures
+
+
+**The OECD Definition**
+
+* The OECD  defines people as being in  poverty if their income is less than  50 percent of the median income.
+
+**The EU Definition**
+* The EU  defines people as being in  poverty if their income is less than  60 percent of the median income. The group of people below this threshold are defined as being "at-risk-of-poverty".
+
+**Extreme Poverty**
+* The concept of "Extreme Poverty" was introduced by the United Nations in mid 1990ies. This definition is an absolute measure of poverty, and refers to the minimum level of income that a person needs to survive. This poverty measure is known as the "1 dollar a day" measure. The 1 (US) dollar a day refers to the 1996 price level in the US. In terms of 2005 price levels the threshold is 1.25 USD a day.  This is the measure used in the Figure 
+
+**UK poverty measures**
+Various poverty measures are in use and have been used in the UK. In the Child Poverty Act of 2010, an income of 60 percent of the median income is used.  The Joseph Rowntree Foundation has defined a minimum income standard, which is "based on what people think is required for an acceptable living". In 2016 the minimum income standard threshold for a single person was 17,100 GBP (before taxes). For two adults with two children, the threshold was 37,600 GBP (total across the two parents).
+
+* Other indicators
+  * There are a wide range of poverty definitions and indicators in addition to those discussed above. Some of these indicators have very different     approaches to measuring poverty. One alternative is the Multidimensional Poverty Index, which is based on ten indicators covering schooling   (years of schooling and school attendance), child mortality, nutrition, electricity, sanitation, drinking water, the condition of the floor, cooking fuel, and assets. 
+
+  * For each person, a weighted average  (measured in terms of percentages) across these indicators is constructed and added. The total index is then the product of the number of people who are poor and the intensity. 
+
+
+
+#### Challenges with poverty line
+
+Poverty lines are very useful because they allow us to track progress, however, poverty lines can also be "dangerous", as they might lead policy makers to focus on people close to the line, while ignoring people far away from the line, because they will have a lower impact on the numbers. However, people further below the poverty line might need the support more than those just below the poverty line. 
+
+
+
+## Summary
+
+**Measuring Inequality**
+
+*Objective*
+    
+* Characterize the distribution of resources (income or wealth).
+
+    
+*Methods*
+    
+* Describe income shares by income ranks: What share of total income in the economy goes to the top 1 percent?"
+* Lorenz curve: Plot income shares against income rank
+* Gini coefficient: Actual Lorenz curve compared to a Lorenz curve with perfect equality.
+
+    
+*Issues*
+    
+* Taxes and transfers (disposable income).
+* Variation in household size (equalization of household income).
+* Variation in institutional setting. 
+    
+(See also unit 19 in [@core].)
+
+*Measuring Global Development*
+
+* Obtaining consistent data is challenging
+* Many outcomes and many objectives: Difficult to quantify.
+* Policy targets (Sustainable Development Goals) are often linked to specific empirical goals.
+
+    
+*Poverty*
+
+* Core indicator of global development.
+* Above or below poverty line.
+* Poverty line defined based on minimum requirement in terms of food, clothing and housing (and health etc): absolute poverty line.
+* Poverty line defined to participate in the society, typically measured relative to the median income: relative poverty line.
+* Distinction between relative and absolute measure.
+* Extreme poverty: absolute poverty line (one dollar a day) (World Bank and United Nations).
+* OECD and EU poverty definitions: relative to median income.
+* Poverty lines and policy markers: Poverty lines might lead policy makers to focus on people close to the poverty line. 
+    
