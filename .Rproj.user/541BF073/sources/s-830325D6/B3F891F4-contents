@@ -1,0 +1,14 @@
+# Introduction {-}
+
+This online resource is for the unit Economic Data at the University of Bristol. After teaching the unit for two years based on technical manuals, lecture notes and extracts from several text books, I decided to combine all material in one "resource", which is this "online book".  The goal is that this will make it simpler and easier for both students and teachers, as all material is collected at one place. 
+
+The book is divided into two parts. The first part contains nine chapters on economic concepts. In going through these concepts I also discuss visualization principles and describe how the charts and tables can be created using R or MS Excel. The second part contists of seven chapters with more details on the tools and principles behind the data visualization. 
+
+This book builds on a long list of books, articles and external references. These resources are referenced throughout, but it is worth mentioning a few of the most important resources:
+
+* "The Economy" [@core]: mainly for descriptions on economic concepts. 
+* "Show me the numbers" [@few2012show]: for detailed descriptions on chart and table design.
+* "Fundamentals of Data Visualization" [@wilke2019fundamentals] and "Data visualization: a practical introduction" [@healy2018data]: for detailed descriptions on how to create charts using R.
+
+This project is work-in-progress and it will be updated continuously. I am grateful for all comments and suggestions. Please notify me of any errors you find in the book. You can either send me an email: h.h.sievertsen@bristol.ac.uk or use the github repository.
+

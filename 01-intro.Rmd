@@ -1,4 +1,4 @@
-# Introduction
+# Introduction {-}
 
 This online resource is for the unit Economic Data at the University of Bristol. After teaching the unit for two years based on technical manuals, lecture notes and extracts from several text books, I decided to combine all material in one "resource", which is this "online book".  The goal is that this will make it simpler and easier for both students and teachers, as all material is collected at one place. 
 

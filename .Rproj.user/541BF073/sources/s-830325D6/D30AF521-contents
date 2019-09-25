@@ -1,0 +1,26 @@
+--- 
+title: "Economic Data"
+author: "Hans Henrik Sievertsen"
+date: "Version 0.1"
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook:
+    split_by: none
+    config:
+      toc:
+        collapse: section
+        scroll_highlight: yes
+        before: null
+        after: null
+      sharing:
+        facebook: false
+        twitter: false
+description: Economic Data for EFIM 10016 - University of Bristol
+documentclass: book
+link-citations: yes
+bibliography:
+- lib.bib
+biblio-style: apalike
+
+---
+
