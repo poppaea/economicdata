@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 How data is stored | Economic Data</title>
+  <meta name="description" content="Chapter 10 How data is stored | Economic Data for EFIM 10016 - University of Bristol" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 How data is stored | Economic Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Chapter 10 How data is stored | Economic Data for EFIM 10016 - University of Bristol" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 How data is stored | Economic Data" />
+  
+  <meta name="twitter:description" content="Chapter 10 How data is stored | Economic Data for EFIM 10016 - University of Bristol" />
+  
+
+<meta name="author" content="Hans Henrik Sievertsen" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="where-data-comes-from.html">
+<link rel="next" href="basics-of-good-data-visualization.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Economic Data</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="part-i-econ-concepts-and-definitions.html"><a href="part-i-econ-concepts-and-definitions.html"><i class="fa fa-check"></i>Part I: Econ Concepts and Definitions</a></li>
+<li class="chapter" data-level="1" data-path="people.html"><a href="people.html"><i class="fa fa-check"></i><b>1</b> Data about people</a><ul>
+<li class="chapter" data-level="1.1" data-path="people.html"><a href="people.html#what-this-chapter-is-about"><i class="fa fa-check"></i><b>1.1</b> What this chapter is about</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="people.html"><a href="people.html#intended-learning-outcomes"><i class="fa fa-check"></i><b>1.1.1</b> Intended learning outcomes</a></li>
+<li class="chapter" data-level="1.1.2" data-path="people.html"><a href="people.html#population-data-visualization-examples"><i class="fa fa-check"></i><b>1.1.2</b> Population data visualization examples</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="people.html"><a href="people.html#definitions-on-people"><i class="fa fa-check"></i><b>1.2</b> Definitions on people</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="people.html"><a href="people.html#flow-and-stock-variables"><i class="fa fa-check"></i><b>1.2.1</b> Flow and stock variables</a></li>
+<li class="chapter" data-level="1.2.2" data-path="people.html"><a href="people.html#the-population-level"><i class="fa fa-check"></i><b>1.2.2</b> The population level</a></li>
+<li class="chapter" data-level="1.2.3" data-path="people.html"><a href="people.html#the-population-flows"><i class="fa fa-check"></i><b>1.2.3</b> The population flows</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="people.html"><a href="people.html#people:vis"><i class="fa fa-check"></i><b>1.3</b> Visualizing population data</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="people.html"><a href="people.html#exploring-data-on-population-levels"><i class="fa fa-check"></i><b>1.3.1</b> Exploring data on population levels</a></li>
+<li class="chapter" data-level="1.3.2" data-path="people.html"><a href="people.html#showing-relative-changes"><i class="fa fa-check"></i><b>1.3.2</b> Showing relative changes</a></li>
+<li class="chapter" data-level="1.3.3" data-path="people.html"><a href="people.html#creating-a-table-on-population-changes"><i class="fa fa-check"></i><b>1.3.3</b> Creating a table on population changes</a></li>
+<li class="chapter" data-level="1.3.4" data-path="people.html"><a href="people.html#describing-the-change-in-levels-by-the-underlying-flow-variables"><i class="fa fa-check"></i><b>1.3.4</b> Describing the change in levels by the underlying flow variables</a></li>
+<li class="chapter" data-level="1.3.5" data-path="people.html"><a href="people.html#creating-a-pyramid-chart-using-excel"><i class="fa fa-check"></i><b>1.3.5</b> Creating a pyramid chart using Excel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="people.html"><a href="people.html#people:sum"><i class="fa fa-check"></i><b>1.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>2</b> Data about economic activity</a><ul>
+<li class="chapter" data-level="2.1" data-path="activity.html"><a href="activity.html#what-this-chapter-is-about-1"><i class="fa fa-check"></i><b>2.1</b> What this chapter is about</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="activity.html"><a href="activity.html#intended-learning-outcomes-1"><i class="fa fa-check"></i><b>2.1.1</b> Intended learning outcomes</a></li>
+<li class="chapter" data-level="2.1.2" data-path="activity.html"><a href="activity.html#a-brief-history-of-gdp"><i class="fa fa-check"></i><b>2.1.2</b> A brief history of GDP</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="activity.html"><a href="activity.html#the-economy-of-microcountry"><i class="fa fa-check"></i><b>2.2</b> The Economy of Microcountry</a></li>
+<li class="chapter" data-level="2.3" data-path="activity.html"><a href="activity.html#what-is-gdp-and-how-do-we-measure-it"><i class="fa fa-check"></i><b>2.3</b> What is GDP and how do we measure it?</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="activity.html"><a href="activity.html#the-expenditure-approach"><i class="fa fa-check"></i><b>2.3.1</b> The Expenditure Approach</a></li>
+<li class="chapter" data-level="2.3.2" data-path="activity.html"><a href="activity.html#what-is-included-in-the-gdp-measure"><i class="fa fa-check"></i><b>2.3.2</b> What is included in the GDP measure?</a></li>
+<li class="chapter" data-level="2.3.3" data-path="activity.html"><a href="activity.html#gdp---why-3-approaches"><i class="fa fa-check"></i><b>2.3.3</b> GDP - Why 3 approaches?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="activity.html"><a href="activity.html#gross-national-income-gni"><i class="fa fa-check"></i><b>2.4</b> Gross National Income (GNI)</a></li>
+<li class="chapter" data-level="2.5" data-path="activity.html"><a href="activity.html#what-we-use-gdp-for."><i class="fa fa-check"></i><b>2.5</b> What we use GDP for.</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="activity.html"><a href="activity.html#growth-rates"><i class="fa fa-check"></i><b>2.5.1</b> Growth rates</a></li>
+<li class="chapter" data-level="2.5.2" data-path="activity.html"><a href="activity.html#business-cycles"><i class="fa fa-check"></i><b>2.5.2</b> Business cycles</a></li>
+<li class="chapter" data-level="2.5.3" data-path="activity.html"><a href="activity.html#gdp-per-capita"><i class="fa fa-check"></i><b>2.5.3</b> GDP per capita</a></li>
+<li class="chapter" data-level="2.5.4" data-path="activity.html"><a href="activity.html#productivity"><i class="fa fa-check"></i><b>2.5.4</b> Productivity</a></li>
+<li class="chapter" data-level="2.5.5" data-path="activity.html"><a href="activity.html#the-balance-of-trade"><i class="fa fa-check"></i><b>2.5.5</b> The balance of trade</a></li>
+<li class="chapter" data-level="2.5.6" data-path="activity.html"><a href="activity.html#balance-of-payments"><i class="fa fa-check"></i><b>2.5.6</b> Balance of payments</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="activity.html"><a href="activity.html#summary"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measuring-well-being.html"><a href="measuring-well-being.html"><i class="fa fa-check"></i><b>3</b> Measuring Well-Being</a><ul>
+<li class="chapter" data-level="3.1" data-path="measuring-well-being.html"><a href="measuring-well-being.html#what-this-chapter-is-about-2"><i class="fa fa-check"></i><b>3.1</b> What this chapter is about</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="measuring-well-being.html"><a href="measuring-well-being.html#intended-learning-outcomes-2"><i class="fa fa-check"></i><b>3.1.1</b> Intended learning outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="measuring-well-being.html"><a href="measuring-well-being.html#what-is-well-being"><i class="fa fa-check"></i><b>3.2</b> What is well-being?</a></li>
+<li class="chapter" data-level="3.3" data-path="measuring-well-being.html"><a href="measuring-well-being.html#gdp-and-well-being"><i class="fa fa-check"></i><b>3.3</b> GDP and well-being</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="measuring-well-being.html"><a href="measuring-well-being.html#the-stiglitz-report"><i class="fa fa-check"></i><b>3.3.1</b> The Stiglitz Report</a></li>
+<li class="chapter" data-level="3.3.2" data-path="measuring-well-being.html"><a href="measuring-well-being.html#criticism-of-gdp-as-a-well-being-measure"><i class="fa fa-check"></i><b>3.3.2</b> Criticism of GDP as a well-being measure</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="measuring-well-being.html"><a href="measuring-well-being.html#how-to-measure-well-being-quality-of-life"><i class="fa fa-check"></i><b>3.4</b> How to measure well-being &amp; quality of life</a></li>
+<li class="chapter" data-level="3.5" data-path="measuring-well-being.html"><a href="measuring-well-being.html#measuring-well-being-in-practice"><i class="fa fa-check"></i><b>3.5</b> Measuring well-being in practice</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="measuring-well-being.html"><a href="measuring-well-being.html#quick-guide-combining-several-variables"><i class="fa fa-check"></i><b>3.5.1</b> Quick guide: Combining several variables</a></li>
+<li class="chapter" data-level="3.5.2" data-path="measuring-well-being.html"><a href="measuring-well-being.html#the-human-development-index-un"><i class="fa fa-check"></i><b>3.5.2</b> The Human Development Index (UN)</a></li>
+<li class="chapter" data-level="3.5.3" data-path="measuring-well-being.html"><a href="measuring-well-being.html#world-happiness-report"><i class="fa fa-check"></i><b>3.5.3</b> World Happiness Report</a></li>
+<li class="chapter" data-level="3.5.4" data-path="measuring-well-being.html"><a href="measuring-well-being.html#oecd-better-life-index"><i class="fa fa-check"></i><b>3.5.4</b> OECD Better Life Index</a></li>
+<li class="chapter" data-level="3.5.5" data-path="measuring-well-being.html"><a href="measuring-well-being.html#ons-measuring-national-well-being"><i class="fa fa-check"></i><b>3.5.5</b> ONS Measuring National Well-being</a></li>
+<li class="chapter" data-level="3.5.6" data-path="measuring-well-being.html"><a href="measuring-well-being.html#quality-of-life-indicators"><i class="fa fa-check"></i><b>3.5.6</b> Quality of life indicators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="measuring-well-being.html"><a href="measuring-well-being.html#why-is-the-gdp-used-anyway"><i class="fa fa-check"></i><b>3.6</b> Why is the GDP used anyway?</a></li>
+<li class="chapter" data-level="3.7" data-path="measuring-well-being.html"><a href="measuring-well-being.html#summary-1"><i class="fa fa-check"></i><b>3.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="life-and-death.html"><a href="life-and-death.html"><i class="fa fa-check"></i><b>4</b> Life and Death</a><ul>
+<li class="chapter" data-level="4.1" data-path="life-and-death.html"><a href="life-and-death.html#what-this-chapter-is-about-3"><i class="fa fa-check"></i><b>4.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="4.2" data-path="life-and-death.html"><a href="life-and-death.html#describing-fertility-trends"><i class="fa fa-check"></i><b>4.2</b> Describing fertility trends</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="life-and-death.html"><a href="life-and-death.html#data-requirements"><i class="fa fa-check"></i><b>4.2.1</b> Data requirements</a></li>
+<li class="chapter" data-level="4.2.2" data-path="life-and-death.html"><a href="life-and-death.html#relating-the-fertility-measures-to-each-other"><i class="fa fa-check"></i><b>4.2.2</b> Relating the fertility measures to each other</a></li>
+<li class="chapter" data-level="4.2.3" data-path="life-and-death.html"><a href="life-and-death.html#decomposing-the-development-in-life-births"><i class="fa fa-check"></i><b>4.2.3</b> Decomposing the development in life births</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="life-and-death.html"><a href="life-and-death.html#life-expectancy"><i class="fa fa-check"></i><b>4.3</b> Life expectancy</a></li>
+<li class="chapter" data-level="4.4" data-path="life-and-death.html"><a href="life-and-death.html#summary-2"><i class="fa fa-check"></i><b>4.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prices.html"><a href="prices.html"><i class="fa fa-check"></i><b>5</b> Prices</a><ul>
+<li class="chapter" data-level="5.1" data-path="prices.html"><a href="prices.html#what-this-chapter-is-about-4"><i class="fa fa-check"></i><b>5.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="5.2" data-path="prices.html"><a href="prices.html#price-indexes---in-theory"><i class="fa fa-check"></i><b>5.2</b> Price indexes - in theory</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="prices.html"><a href="prices.html#the-objective"><i class="fa fa-check"></i><b>5.2.1</b> The objective</a></li>
+<li class="chapter" data-level="5.2.2" data-path="prices.html"><a href="prices.html#a-simple-index"><i class="fa fa-check"></i><b>5.2.2</b> A simple index</a></li>
+<li class="chapter" data-level="5.2.3" data-path="prices.html"><a href="prices.html#the-laspeyre-index"><i class="fa fa-check"></i><b>5.2.3</b> The Laspeyre Index</a></li>
+<li class="chapter" data-level="5.2.4" data-path="prices.html"><a href="prices.html#the-paasche-price-index"><i class="fa fa-check"></i><b>5.2.4</b> The Paasche Price Index</a></li>
+<li class="chapter" data-level="5.2.5" data-path="prices.html"><a href="prices.html#the-fisher-price-index"><i class="fa fa-check"></i><b>5.2.5</b> The Fisher Price Index</a></li>
+<li class="chapter" data-level="5.2.6" data-path="prices.html"><a href="prices.html#the-lowe-price-index"><i class="fa fa-check"></i><b>5.2.6</b> The Lowe Price Index</a></li>
+<li class="chapter" data-level="5.2.7" data-path="prices.html"><a href="prices.html#other-indexes"><i class="fa fa-check"></i><b>5.2.7</b> Other indexes</a></li>
+<li class="chapter" data-level="5.2.8" data-path="prices.html"><a href="prices.html#chain-linked-vs.-unchained-indexes"><i class="fa fa-check"></i><b>5.2.8</b> Chain-linked vs. unchained indexes</a></li>
+<li class="chapter" data-level="5.2.9" data-path="prices.html"><a href="prices.html#summary-on-price-indexes"><i class="fa fa-check"></i><b>5.2.9</b> Summary on price indexes</a></li>
+<li class="chapter" data-level="5.2.10" data-path="prices.html"><a href="prices.html#weigths"><i class="fa fa-check"></i><b>5.2.10</b> Weigths</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="prices.html"><a href="prices.html#price-indexes---in-practice"><i class="fa fa-check"></i><b>5.3</b> Price indexes - in practice</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="prices.html"><a href="prices.html#consumer-price-indexes"><i class="fa fa-check"></i><b>5.3.1</b> Consumer Price Indexes</a></li>
+<li class="chapter" data-level="5.3.2" data-path="prices.html"><a href="prices.html#producer-price-index-import-price-index-and-export-price-index"><i class="fa fa-check"></i><b>5.3.2</b> Producer Price Index, Import Price Index and Export Price Index</a></li>
+<li class="chapter" data-level="5.3.3" data-path="prices.html"><a href="prices.html#other-indexes-1"><i class="fa fa-check"></i><b>5.3.3</b> Other indexes</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="prices.html"><a href="prices.html#comparing-monetary-values-across-time"><i class="fa fa-check"></i><b>5.4</b> Comparing monetary values across time</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="prices.html"><a href="prices.html#inflation"><i class="fa fa-check"></i><b>5.4.1</b> Inflation</a></li>
+<li class="chapter" data-level="5.4.2" data-path="prices.html"><a href="prices.html#real-vs.-nominal-values"><i class="fa fa-check"></i><b>5.4.2</b> Real vs. nominal values</a></li>
+<li class="chapter" data-level="5.4.3" data-path="prices.html"><a href="prices.html#the-real-interest-rate"><i class="fa fa-check"></i><b>5.4.3</b> The real interest rate</a></li>
+<li class="chapter" data-level="5.4.4" data-path="prices.html"><a href="prices.html#the-phillips-curve"><i class="fa fa-check"></i><b>5.4.4</b> The Phillips Curve</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="prices.html"><a href="prices.html#comparing-monetary-values-across-regions"><i class="fa fa-check"></i><b>5.5</b> Comparing monetary values across regions</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="prices.html"><a href="prices.html#the-big-mac-index"><i class="fa fa-check"></i><b>5.5.1</b> The Big Mac index</a></li>
+<li class="chapter" data-level="5.5.2" data-path="prices.html"><a href="prices.html#purchasing-power-parity"><i class="fa fa-check"></i><b>5.5.2</b> Purchasing Power Parity</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="prices.html"><a href="prices.html#summary-3"><i class="fa fa-check"></i><b>5.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="money.html"><a href="money.html"><i class="fa fa-check"></i><b>6</b> Money</a><ul>
+<li class="chapter" data-level="6.1" data-path="money.html"><a href="money.html#what-this-chapter-is-about-5"><i class="fa fa-check"></i><b>6.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="6.2" data-path="money.html"><a href="money.html#interest-rates"><i class="fa fa-check"></i><b>6.2</b> Interest rates</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="money.html"><a href="money.html#the-basics-what-is-the-interest-rate"><i class="fa fa-check"></i><b>6.2.1</b> The basics: What is the interest rate?</a></li>
+<li class="chapter" data-level="6.2.2" data-path="money.html"><a href="money.html#three-interest-rates"><i class="fa fa-check"></i><b>6.2.2</b> Three interest rates</a></li>
+<li class="chapter" data-level="6.2.3" data-path="money.html"><a href="money.html#getting-data-on-interest-rates"><i class="fa fa-check"></i><b>6.2.3</b> Getting data on interest rates</a></li>
+<li class="chapter" data-level="6.2.4" data-path="money.html"><a href="money.html#summary-interest-rates"><i class="fa fa-check"></i><b>6.2.4</b> Summary: Interest rates</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="money.html"><a href="money.html#exchange-rates"><i class="fa fa-check"></i><b>6.3</b> Exchange rates</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="money.html"><a href="money.html#definition-of-exchange-rates"><i class="fa fa-check"></i><b>6.3.1</b> Definition of exchange rates</a></li>
+<li class="chapter" data-level="6.3.2" data-path="money.html"><a href="money.html#ups-and-downs-appreciation-and-depreciation"><i class="fa fa-check"></i><b>6.3.2</b> Ups and downs: appreciation and depreciation</a></li>
+<li class="chapter" data-level="6.3.3" data-path="money.html"><a href="money.html#summary-exchange-rates"><i class="fa fa-check"></i><b>6.3.3</b> Summary: Exchange rates</a></li>
+<li class="chapter" data-level="6.3.4" data-path="money.html"><a href="money.html#getting-data-on-exchange-rates"><i class="fa fa-check"></i><b>6.3.4</b> Getting data on exchange rates</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="money.html"><a href="money.html#linking-interest-rates-and-exchange-rates"><i class="fa fa-check"></i><b>6.4</b> Linking interest rates and exchange rates</a></li>
+<li class="chapter" data-level="6.5" data-path="money.html"><a href="money.html#summary-4"><i class="fa fa-check"></i><b>6.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="the-labor-market.html"><a href="the-labor-market.html"><i class="fa fa-check"></i><b>7</b> The labor market</a><ul>
+<li class="chapter" data-level="7.1" data-path="the-labor-market.html"><a href="the-labor-market.html#what-this-chapter-is-about-6"><i class="fa fa-check"></i><b>7.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="7.2" data-path="the-labor-market.html"><a href="the-labor-market.html#from-population-data-to-the-labor-market"><i class="fa fa-check"></i><b>7.2</b> From population data to the labor market</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="the-labor-market.html"><a href="the-labor-market.html#grouping-the-population-according-to-economic-activity"><i class="fa fa-check"></i><b>7.2.1</b> Grouping the population according to economic activity:</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="the-labor-market.html"><a href="the-labor-market.html#unemployment"><i class="fa fa-check"></i><b>7.3</b> Unemployment</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="the-labor-market.html"><a href="the-labor-market.html#what-is-unemployment"><i class="fa fa-check"></i><b>7.3.1</b> What is unemployment?</a></li>
+<li class="chapter" data-level="7.3.2" data-path="the-labor-market.html"><a href="the-labor-market.html#employment"><i class="fa fa-check"></i><b>7.3.2</b> Employment</a></li>
+<li class="chapter" data-level="7.3.3" data-path="the-labor-market.html"><a href="the-labor-market.html#the-unemployment-rate"><i class="fa fa-check"></i><b>7.3.3</b> The unemployment rate</a></li>
+<li class="chapter" data-level="7.3.4" data-path="the-labor-market.html"><a href="the-labor-market.html#out-of-the-labor-force"><i class="fa fa-check"></i><b>7.3.4</b> Out of the labor force</a></li>
+<li class="chapter" data-level="7.3.5" data-path="the-labor-market.html"><a href="the-labor-market.html#labor-supply-extensive-vs.-intensive-margin"><i class="fa fa-check"></i><b>7.3.5</b> Labor supply: Extensive vs. intensive margin</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="the-labor-market.html"><a href="the-labor-market.html#the-demand-side-vacancies"><i class="fa fa-check"></i><b>7.4</b> The demand side: Vacancies</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="the-labor-market.html"><a href="the-labor-market.html#measuring-labor-demand"><i class="fa fa-check"></i><b>7.4.1</b> Measuring labor demand</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="the-labor-market.html"><a href="the-labor-market.html#supply-meets-demand"><i class="fa fa-check"></i><b>7.5</b> Supply meets demand</a></li>
+<li class="chapter" data-level="7.6" data-path="the-labor-market.html"><a href="the-labor-market.html#summary-5"><i class="fa fa-check"></i><b>7.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html"><i class="fa fa-check"></i><b>8</b> Poverty and inequality</a><ul>
+<li class="chapter" data-level="8.1" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#what-this-chapter-is-about-7"><i class="fa fa-check"></i><b>8.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="8.2" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#working-with-income-and-wealth-data"><i class="fa fa-check"></i><b>8.2</b> Working with income and wealth data</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#net-and-gross-values"><i class="fa fa-check"></i><b>8.2.1</b> Net and gross values</a></li>
+<li class="chapter" data-level="8.2.2" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#equivalenced-income"><i class="fa fa-check"></i><b>8.2.2</b> Equivalenced income</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#inequality"><i class="fa fa-check"></i><b>8.3</b> Inequality</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#the-lorenz-curve"><i class="fa fa-check"></i><b>8.3.1</b> The Lorenz curve</a></li>
+<li class="chapter" data-level="8.3.2" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#the-gini-coefficient"><i class="fa fa-check"></i><b>8.3.2</b> The Gini coefficient</a></li>
+<li class="chapter" data-level="8.3.3" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#other-measures-of-inequality"><i class="fa fa-check"></i><b>8.3.3</b> {Other measures of inequality</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#poverty"><i class="fa fa-check"></i><b>8.4</b> Poverty</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#measuring-global-development"><i class="fa fa-check"></i><b>8.4.1</b> Measuring global development</a></li>
+<li class="chapter" data-level="8.4.2" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#measuring-poverty"><i class="fa fa-check"></i><b>8.4.2</b> Measuring poverty</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#summary-6"><i class="fa fa-check"></i><b>8.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="part-ii-data-sources-and-tools.html"><a href="part-ii-data-sources-and-tools.html"><i class="fa fa-check"></i>Part II: Data sources and tools</a></li>
+<li class="chapter" data-level="9" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html"><i class="fa fa-check"></i><b>9</b> Where data comes from</a><ul>
+<li class="chapter" data-level="9.1" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#what-this-chapter-is-about."><i class="fa fa-check"></i><b>9.1</b> What this chapter is about.</a></li>
+<li class="chapter" data-level="9.2" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#data-source-types"><i class="fa fa-check"></i><b>9.2</b> Data source types</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#overview"><i class="fa fa-check"></i><b>9.2.1</b> Overview</a></li>
+<li class="chapter" data-level="9.2.2" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#simulated-data"><i class="fa fa-check"></i><b>9.2.2</b> Simulated data</a></li>
+<li class="chapter" data-level="9.2.3" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#sample-surveys"><i class="fa fa-check"></i><b>9.2.3</b> Sample surveys</a></li>
+<li class="chapter" data-level="9.2.4" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#census-survey"><i class="fa fa-check"></i><b>9.2.4</b> Census survey</a></li>
+<li class="chapter" data-level="9.2.5" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#administrative-data"><i class="fa fa-check"></i><b>9.2.5</b> Administrative data</a></li>
+<li class="chapter" data-level="9.2.6" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#comparison-of-data-sources"><i class="fa fa-check"></i><b>9.2.6</b> Comparison of data sources</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#economic-data-sources"><i class="fa fa-check"></i><b>9.3</b> Economic data sources</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#data-from-statistical-offices"><i class="fa fa-check"></i><b>9.3.1</b> Data from Statistical Offices</a></li>
+<li class="chapter" data-level="9.3.2" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#downloading-data-from-statistical-offices"><i class="fa fa-check"></i><b>9.3.2</b> Downloading data from Statistical Offices</a></li>
+<li class="chapter" data-level="9.3.3" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#central-banks"><i class="fa fa-check"></i><b>9.3.3</b> Central banks</a></li>
+<li class="chapter" data-level="9.3.4" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#international-organizations"><i class="fa fa-check"></i><b>9.3.4</b> International organizations</a></li>
+<li class="chapter" data-level="9.3.5" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#topic-specific-databases"><i class="fa fa-check"></i><b>9.3.5</b> Topic specific databases</a></li>
+<li class="chapter" data-level="9.3.6" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#publicly-available-data-an-overview"><i class="fa fa-check"></i><b>9.3.6</b> Publicly available data: An overview</a></li>
+<li class="chapter" data-level="9.3.7" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#using-apis"><i class="fa fa-check"></i><b>9.3.7</b> Using APIs</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#summary-7"><i class="fa fa-check"></i><b>9.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html"><i class="fa fa-check"></i><b>10</b> How data is stored</a><ul>
+<li class="chapter" data-level="10.1" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#what-this-lecture-is-about"><i class="fa fa-check"></i><b>10.1</b> What this lecture is about</a></li>
+<li class="chapter" data-level="10.2" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#how-computers-work"><i class="fa fa-check"></i><b>10.2</b> How computers work</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#or-0"><i class="fa fa-check"></i><b>10.2.1</b> 1 or 0</a></li>
+<li class="chapter" data-level="10.2.2" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#from-0-and-1-to-interpretable-content."><i class="fa fa-check"></i><b>10.2.2</b> From 0 and 1 to interpretable content.</a></li>
+<li class="chapter" data-level="10.2.3" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#from-signals-to-bits-and-bytes."><i class="fa fa-check"></i><b>10.2.3</b> From signals to bits and bytes.</a></li>
+<li class="chapter" data-level="10.2.4" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#a-never-ending-confusion-1000-or-1024"><i class="fa fa-check"></i><b>10.2.4</b> A never ending confusion 1000 or 1024?</a></li>
+<li class="chapter" data-level="10.2.5" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#how-fast-is-your-internet-connection"><i class="fa fa-check"></i><b>10.2.5</b> How fast is your Internet connection?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#encoding"><i class="fa fa-check"></i><b>10.3</b> Encoding</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#how-encoding-and-decoding-works"><i class="fa fa-check"></i><b>10.3.1</b> How encoding and decoding works</a></li>
+<li class="chapter" data-level="10.3.2" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#where-does-the-big-table-come-from"><i class="fa fa-check"></i><b>10.3.2</b> Where does the big table come from?</a></li>
+<li class="chapter" data-level="10.3.3" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#there-are-many-codebooks.-what-a-mess"><i class="fa fa-check"></i><b>10.3.3</b> There are many codebooks. What a mess!</a></li>
+<li class="chapter" data-level="10.3.4" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#encoding-and-decoding-what-you-should-know-and-do"><i class="fa fa-check"></i><b>10.3.4</b> Encoding and decoding: What you should know and do?</a></li>
+<li class="chapter" data-level="10.3.5" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#the-unicode-encoding-scheme"><i class="fa fa-check"></i><b>10.3.5</b> The unicode encoding scheme</a></li>
+<li class="chapter" data-level="10.3.6" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#encoding-and-decoding-goes-wrong-what-can-you-do"><i class="fa fa-check"></i><b>10.3.6</b> Encoding and decoding goes wrong, what can you do?</a></li>
+<li class="chapter" data-level="10.3.7" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#encoding-what-you-shouldnt-do"><i class="fa fa-check"></i><b>10.3.7</b> Encoding: What you shouldn’t do!</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#estimating-file-size-and-memory-use"><i class="fa fa-check"></i><b>10.4</b> Estimating file size and memory use</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#variable-types"><i class="fa fa-check"></i><b>10.4.1</b> Variable types</a></li>
+<li class="chapter" data-level="10.4.2" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#file-size"><i class="fa fa-check"></i><b>10.4.2</b> File size</a></li>
+<li class="chapter" data-level="10.4.3" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#what-happens-if-we-use-the-wrong-variable-format"><i class="fa fa-check"></i><b>10.4.3</b> What happens if we use the wrong variable format?</a></li>
+<li class="chapter" data-level="10.4.4" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#estimates-are-estimates"><i class="fa fa-check"></i><b>10.4.4</b> Estimates are estimates</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#summary-8"><i class="fa fa-check"></i><b>10.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html"><i class="fa fa-check"></i><b>11</b> Basics of good data visualization</a><ul>
+<li class="chapter" data-level="11.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#what-this-chapter-is-about-8"><i class="fa fa-check"></i><b>11.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="11.2" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#how-we-show-data-matters"><i class="fa fa-check"></i><b>11.2</b> How we show data matters</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#illustration-the-anscombe-quartet"><i class="fa fa-check"></i><b>11.2.1</b> Illustration: The Anscombe quartet</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#tables-vs-charts"><i class="fa fa-check"></i><b>11.3</b> Tables vs charts</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#the-goal-of-the-visualization"><i class="fa fa-check"></i><b>11.3.1</b> The goal of the visualization</a></li>
+<li class="chapter" data-level="11.3.2" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#the-quantity-of-data"><i class="fa fa-check"></i><b>11.3.2</b> The quantity of data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#table-design"><i class="fa fa-check"></i><b>11.4</b> Table design</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#table-structure"><i class="fa fa-check"></i><b>11.4.1</b> Table structure</a></li>
+<li class="chapter" data-level="11.4.2" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#table-layout-and-design"><i class="fa fa-check"></i><b>11.4.2</b> Table layout and design</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#chart-design"><i class="fa fa-check"></i><b>11.5</b> Chart design</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#basic-chart-structure"><i class="fa fa-check"></i><b>11.5.1</b> Basic chart structure</a></li>
+<li class="chapter" data-level="11.5.2" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#how-charts-work"><i class="fa fa-check"></i><b>11.5.2</b> How charts work</a></li>
+<li class="chapter" data-level="11.5.3" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#common-chart-types"><i class="fa fa-check"></i><b>11.5.3</b> Common chart types</a></li>
+<li class="chapter" data-level="11.5.4" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#charts-to-avoid"><i class="fa fa-check"></i><b>11.5.4</b> Charts to avoid</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#lies-junk-and-non-data-ink."><i class="fa fa-check"></i><b>11.6</b> Lies, junk and non-data ink.</a><ul>
+<li class="chapter" data-level="11.6.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#tuftes-concepts-for-good-data-visualizations."><i class="fa fa-check"></i><b>11.6.1</b> Tufte’s concepts for good data visualizations.</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#the-self-explanatory-data-visualization"><i class="fa fa-check"></i><b>11.7</b> The self-explanatory data visualization</a></li>
+<li class="chapter" data-level="11.8" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#a-cook-book-for-good-data-visualizations"><i class="fa fa-check"></i><b>11.8</b> A cook-book for good data visualizations</a></li>
+<li class="chapter" data-level="11.9" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#summary-9"><i class="fa fa-check"></i><b>11.9</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>12</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Economic Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="how-data-is-stored" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> How data is stored</h1>
+<div id="what-this-lecture-is-about" class="section level2">
+<h2><span class="header-section-number">10.1</span> What this lecture is about</h2>
+<p>This lecture is about how data gets into the computer. Once we have collected our dataset how do we store it? Why should you care about how a computer counts and store data as an economist? Knowing how a computer counts allows you to estimate the size of datasets and how to optimally store data.</p>
+<p>Economists often work with datasets with millions (or billions) of observations and thousands of variables. Such a dataset can take hours or even days to open. Moreover, understanding how data is saved is important when the data looks different to what you expected. For example when the sentence “Thomas Müller plays for Bayern München” looks like “Thomas MÃ¼ller plays for Bayern MÃ¼nchen”, what went wrong?</p>
+</div>
+<div id="how-computers-work" class="section level2">
+<h2><span class="header-section-number">10.2</span> How computers work</h2>
+<div id="or-0" class="section level3">
+<h3><span class="header-section-number">10.2.1</span> 1 or 0</h3>
+<p>More or less everything you do on a computer is based on binary numbers. Binary numbers are numbers that only can take two values. We often think of them as 0 or 1. But it could also be true or false, low or high and so on. When you a are reading these lecture notes, reading a news story, playing a computer game or watching a movie, you are essentially looking at a very long list of zeros and ones, just like the list below. Your computer or mobile device is just transforming these values to interpretable content.</p>
+<p>A very simplified description on how computers work is that they receive an electronic signal or they do not receive a signal. These two states correspond to the binary states, which we often call zero and one. Students at the Massachusetts Institute of Technology (MIT) created the video below to illustrate how computers work, where the binary signal is set by manual switches. You can watch it here:</p>
+<div class="figure" style="text-align: center"><span id="fig:store1"></span>
+<iframe src="https://www.youtube.com/embed/8cVsgFN3hSM" width="70%" height="400px">
+</iframe>
+<p class="caption">
+Figure 10.1: How Computers Compute (Science Out Loud S2 Ep5). Source: MITK12Videos
+</p>
+</div>
+</div>
+<div id="from-0-and-1-to-interpretable-content." class="section level3">
+<h3><span class="header-section-number">10.2.2</span> From 0 and 1 to interpretable content.</h3>
+<p>How do we get from zeros and ones to letters, colors and movies? To understand how this works, we have to understand binary counting. You probably learned binary counting at some point, but we are all more used to decimal (or “base ten”) counting, where we use ten different symbols to count. The numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. Binary counting is not very complicated. In fact, the key difference is that we only use two symbols, 0 and 1, and it is thus a “base two” system. To understand how it works, let us briefly recap how the decimal counting you use every day works.
+Consider the number 123:</p>
+<ul>
+<li>The 1. number from the right denotes how many “<span class="math inline">\(10^0=1\)</span>”s: 3</li>
+<li>The 2. number from the right denotes how many “<span class="math inline">\(10^1=10\)</span>”s: 2</li>
+<li>The 3. number from the right denotes how many “<span class="math inline">\(10^2=100\)</span>”s: 1</li>
+<li>The sum of the above is thus: <span class="math inline">\(3 \times 1+2\times 10+1\times 100\)</span></li>
+</ul>
+<p>So when we say 123 we are essentially saying 1 times one hundred, two times ten, and three times one.</p>
+<p>Note that every time we moved to the left we multiply the value of the number by ten. The rightmost number represents ones, moving one step to the left we get the tens, one more gives the hundreds. If we had an even larger number, we could continue to thousands, ten-thousands etc. This is because it is a base 10 system. If we instead of multiplying by ten multiply by two, we have the base 2 system. The rightmost number again denotes the number of ones, the second number from the left now denotes the number of twos (<span class="math inline">\(2\times 1\)</span>), the third number the number of fours (<span class="math inline">\(2\times 2\)</span>), the third number the number eights (<span class="math inline">\(2\times 4\)</span>), and so on. Let us try to write the same number as above (123 in base 10) using base two:</p>
+<ul>
+<li>The 1. number from the right denotes how many “<span class="math inline">\(2^0=1\)</span>”s=1</li>
+<li>The 2. number from the right denotes how many “<span class="math inline">\(2^1=2\)</span>”s=1</li>
+<li>The 3. number from the right denotes how many “<span class="math inline">\(2^2=4\)</span>”s=0</li>
+<li>The 4. number from the right denotes how many “<span class="math inline">\(2^3=8\)</span>”s=1</li>
+<li>The 5. number from the right denotes how many “<span class="math inline">\(2^4=16\)</span>”s=1</li>
+<li>The 6. number from the right denotes how many “<span class="math inline">\(2^5=32\)</span>”s=1</li>
+<li>The 7. number from the right denotes how many “<span class="math inline">\(2^6=64\)</span>”s=1</li>
+<li>The 8. number from the right denotes how many “<span class="math inline">\(2^7=128\)</span>”s=0</li>
+<li>The sum of the above is thus: <span class="math inline">\(1 \times 1+1\times 2+0\times 4 +1\times 8 +1\times 16 +1\times 32 +1\times 64 +0\times 128.\)</span></li>
+</ul>
+<p>Which is equivalent to the decimal above. So 123 in decimal numbers, expressed in terms of binary numbers is: 01111011. How did we figure out the combination that lead to 123? we started backwards and asked: How many 128s can be included? Zero. How many 64s can be included? And so on.</p>
+</div>
+<div id="from-signals-to-bits-and-bytes." class="section level3">
+<h3><span class="header-section-number">10.2.3</span> From signals to bits and bytes.</h3>
+<p>We can thus count to any number using just a binary signal, as long as we have enough signals. But why did I include eight signals above, when only seven were needed? Recall from above, that a computer counts by receiving signals. The signal is that either there is a signal or there is no signal. Such a signal is called a “bit”. We typically measure data sizes in terms of “bytes”. A byte simply corresponds to eight bits. The string of eight values above therefore easily converts into the language you are used to when talking about file sizes on a computer.</p>
+<p>If you have a (very small) file that is “1kb”" big it means that it contains 1024 bytes or <span class="math inline">\(1024\times 8= 8192 bits\)</span>". Such a file therefore contains 8192 zeros or ones and in principle we would be able to continue the list above to have 8192 rows and write a very large number:</p>
+<ul>
+<li>The 1. number from the right denotes how many “<span class="math inline">\(2^0=1\)</span>” we have.</li>
+<li>The 2. number from the right denotes how many “<span class="math inline">\(2^1=2\)</span>” we have.</li>
+<li>The 3. number from the right denotes how many “<span class="math inline">\(2^2=4\)</span>” we have.</li>
+<li><span class="math inline">\(\vdots\)</span></li>
+<li>The 8192. number from the right denotes how many “<span class="math inline">\(2^{8191}=..?\)</span> (a very large number!) we have”</li>
+</ul>
+<p>We wrote in “principle”, because this is not how the computer would save such a number. Take for example the number 128. Using just 1 byte, the computer could save this number as “01000000”. However, if you create a new empty file on your computer, you will discover, that this is not what happens. Instead it is likely to that the file content will contain three bytes and look like the following:</p>
+<center>
+00110001 00110010 00111000
+</center>
+<p>Let us try to translate this.</p>
+<ul>
+<li>The first byte is <span class="math inline">\(1 \times 1+0\times 2+0\times 4 +0\times 8 +1\times 16 +1\times 32 +0\times 64 +0\times 128=49\)</span></li>
+<li>The second byte is: <span class="math inline">\(0 \times 1+1\times 2+0\times 4 +0\times 8 +1\times 16 +1\times 32 +0\times 64 +0\times 128=50\)</span> * The third and last byte is: <span class="math inline">\(0 \times 1+0\times 2+0\times 4 +1\times 8 +1\times 16 +1\times 32 +0\times 64 +0\times 128=56\)</span></li>
+</ul>
+<p>So somehow 49, 50 and 56 translate into 128. Computers use a set of rules to translate the signals into letters, numbers or pictures. The set of rules are defined by the “encoding scheme”. The document created above was saved using the 128 encoding scheme. According to this scheme a 49 is translated to a 1, 50 to 2 and 56 to 8. We will return to to the encoding schemes below, but let us first try to shed some more light on bits and bytes.</p>
+</div>
+<div id="a-never-ending-confusion-1000-or-1024" class="section level3">
+<h3><span class="header-section-number">10.2.4</span> A never ending confusion 1000 or 1024?</h3>
+<p>If you ever bought a 1GB memory stick and checked the capacity on a computer, you might have discovered that the computers says the capacity is less than 1 GB. Why is that? Basically it is a confusion between decimal and binary counting. <span class="math inline">\(2^{10}=1024\)</span> is very close to the number 1000, which we call “kilo”, <span class="math inline">\(2^{20}=1,048,576\)</span> is close to 1,000,000 which we call “mega” and <span class="math inline">\(2^{30}=1,073,741,824\)</span> is close to 1,000,000,000 which we call “giga”. If you say 1GB (1 gigabyte) you might therefore refer to 1,073,741,824 bytes or 1,000,000,000 bytes.  Not all systems use the same aggregation (Linux/Unix systems may for example differ from Windows systems).</p>
+</div>
+<div id="how-fast-is-your-internet-connection" class="section level3">
+<h3><span class="header-section-number">10.2.5</span> How fast is your Internet connection?</h3>
+<p>Another source of confusion when talking about bytes and bits is the “B”" vs “b”. The former relates to bytes, the latter to bits. If we are talking about 1GB we mean 1 gigabyte. If we are talking 1Gb we are talking about 1“gigabit”. If you have an Internet connection with an advertised speed up to “50 Mbps” it means that it is able to receive up to 50 megabits per second. So remember that 1 byte is 8 bits, and 50Mbps therefore means that you should be able to download <span class="math inline">\(50/8=6.25\)</span> megabytes per second.</p>
+<p>To recap, after reading this section you should be able to:
+* Distinguish between decimal and binary counting.
+* Explain how a computer saves information in terms of sequences if binary signals.</p>
+</div>
+</div>
+<div id="encoding" class="section level2">
+<h2><span class="header-section-number">10.3</span> Encoding</h2>
+<div id="how-encoding-and-decoding-works" class="section level3">
+<h3><span class="header-section-number">10.3.1</span> How encoding and decoding works</h3>
+<p>We now know that a computer stores information by means of binary signals. We can translate these signals into numbers, but it is not yet clear how to translate these signals into letters and symbols. To achieve this, computers use rules where a number is translated into a numerical value, a letter or a symbol. So the computer has a set of bytes: <em>00110001 00110010 00111000</em>, in decimal terms this corresponds to 49, 50 and 56. The computer then looks up in a large table which says that: 49=1, 50=2, 56=126. So the the list of bytes represents the number 128. going from 49, 50 and 56 to 128 is called decoding, which is what the computer does when you open a document. When you save a document the computer encodes the content from letters and symbols to first a decimal number (using the big table) and then to sequence of bytes.</p>
+<p>To get terms straight: We say that we encode something when we convert something into a coded form, so if you take something in readable form and convert it into code, you are encoding it. You are decoding a piece of code if you are converting the code into readable form. }</p>
+</div>
+<div id="where-does-the-big-table-come-from" class="section level3">
+<h3><span class="header-section-number">10.3.2</span> Where does the big table come from?</h3>
+<p>So where is the big table that the computer uses to look up numbers? One of the most famous tables, i.e. set of rules to translate the number derived from a sequence of bits is the “American Standard Code for Information Interchange” also known as ASCII. ASCII contains a list of 128 numbers and the corresponding symbol. The full list is available <a href="https://ascii.cl/">here</a>, but a small excerpt of the full list is reported here:</p>
+<table>
+<caption><span id="tab:storet1">Table 10.1: </span> The ASCII code table</caption>
+<thead>
+<tr class="header">
+<th align="left">Decimal number</th>
+<th align="left">Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">48</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">49</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">50</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="left">51</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">$dots$</td>
+<td align="left">$dots$</td>
+</tr>
+<tr class="even">
+<td align="left">65</td>
+<td align="left">A</td>
+</tr>
+<tr class="odd">
+<td align="left">66</td>
+<td align="left">B</td>
+</tr>
+<tr class="even">
+<td align="left">67</td>
+<td align="left">C</td>
+</tr>
+</tbody>
+</table>
+<p>So a file with the binary code “01000001” would show an “A” if the ASCII encoding scheme was applied. This happens as follows:</p>
+<ul>
+<li>Step 1: The computer receives eight signals, corresponding to byte .</li>
+<li>Step 2: This translates into the decimal number <span class="math inline">\(1 \times 1+0\times 2+0\times 4 +0\times 8 +0\times 16 +0\times 32 +1\times 64 +0\times 128=65\)</span>.</li>
+<li>Step 3: The computer looks in the ASCII codebook (Table ) and realizes that if it sees a number binary number that corresponds to the decimal number 65 it should print the symbol A.</li>
+</ul>
+<p>When you are writing a text document the reverse happens. You enter an A, the computer looks up the table, notes that this corresponds to the decimal number 65 and converts it into binary number and saves it as a string of signals.</p>
+<p>The basic ASCII codebook contains 95 symbols that we can read and 28 instructions that we cannot directly read, such like whitespace, tab, backspace and so on. But because it only contains 128 symbols, which can be saved using seven bits, the first bit in a byte will always be zero using the ASCII encoding. This is basically a waste of resources.</p>
+</div>
+<div id="there-are-many-codebooks.-what-a-mess" class="section level3">
+<h3><span class="header-section-number">10.3.3</span> There are many codebooks. What a mess!</h3>
+<p>This all sounds straightforward. Unfortunately 128 symbols aren’t sufficient to show all symbols of all languages in the world. This creates the issue where “Thomas Müller plays for Bayern München” looks like “Thomas MÃ¼ller plays for Bayern MÃ¼nchen”. There are many encoding schemes, and if a file on the computer is encoded using one scheme, but the computer decodes the binary codes using a different scheme, the symbols will look odd.</p>
+</div>
+<div id="encoding-and-decoding-what-you-should-know-and-do" class="section level3">
+<h3><span class="header-section-number">10.3.4</span> Encoding and decoding: What you should know and do?</h3>
+<p>Should you know the code tables? Certainly not. You should know that they exist and that there many different versions. It is also worth knowing that the most popular encoding schemes are ASCII and UTF-8. We we will return to that.</p>
+<p>If things look fine: do not worry. Luckily, in most cases you do not need to worry about the encoding and decoding schemes. Most files contain some instructions to the computer on what scheme to use.</p>
+<p>When you navigate on websites, they will typically report the coding scheme to the browser (i.e. Google chrome, Firefox, Safari, Internet Explorer), and the browser makes the correct interpretation. Even if websites do not include information about which scheme to use to translate information, browsers are typically able to guess the encoding scheme quite well.</p>
+<p>What you need to know is that if something looks wrong, it is most likely do to the encoding and decoding gone wrong. You should also know that the encoding can affect the file size, we will return to that later.</p>
+<p>Let us consider an example where things have gone wrong: The pictures below show screenshots from the online version of the New York Times. It is the same frontpage, but in the first version, some text is garbled. For example the headline “Trump Offers a â€˜Steel Barrier,â€™ but Democrats Are Unmoved” should be “Trump Offers a ‘Steel Barrier,’ but Democrats Are Unmoved”, as illustrated by the lower picture. What happened?</p>
+<div class="figure" style="text-align: center"><span id="fig:store3"></span>
+<img src="_resources/chapter_storing/nytimes_western_encoding.png" alt="Screenshot from the New York Times website on January 7 2019.Left: Western (Windows 1252) encoding. Right: Unicode UTF-8 encoding." width="50%" /><img src="_resources/chapter_storing/nytimes_utf8_encoding.png" alt="Screenshot from the New York Times website on January 7 2019.Left: Western (Windows 1252) encoding. Right: Unicode UTF-8 encoding." width="50%" />
+<p class="caption">
+Figure 10.2: Screenshot from the New York Times website on January 7 2019.Left: Western (Windows 1252) encoding. Right: Unicode UTF-8 encoding.
+</p>
+</div>
+<p>What went wrong? I instructed the browser that the document it was showing was encoded using the “Western (Windows1252)” encoding scheme scheme, but if you look at the source code of the website, you will find the element:</p>
+<center>
+"
+<meta charset="utf-8" />
+"
+</center>
+<p>which instructs to the browser to use the UTF-8 encoding scheme, which is scheme used in the lower picture. So what went wrong is simply that we decoded using the wrong “coding scheme”.</p>
+<p>Garbled websites are rarely a real issue, but here are some examples where encoding errors are problematic</p>
+<ul>
+<li><p><strong>Encoding issues in data</strong></p>
+<p>Imagine that you would like to investigate the average income across German cities. You have a large dataset, with a variable stating individual income and another variable stating “city”. You realize that the variable city has several values representing the same city. For the city München, you observe the values “München” and “Munich”, so to get the average for München you compute the average across all individuals with city being either “München” or “Munich”. This is all fine and good. But if there is an encoding error, some observations might have the value “MÃ¼nchen”, which you do not include in your average. Your average is therefore wrong.</p></li>
+<li><p><strong>Encoding issues in scripts and codes.</strong>
+In a recent update of the popular statistical software Stata, the encoding support was changed. Version 14 of Stata of the software was the first version to fully support unicode UTF-8 encoding. This means that if you open Stata files created in version 12 or 13 in version 14, they will look garbled and instructions might not work.</p></li>
+</ul>
+</div>
+<div id="the-unicode-encoding-scheme" class="section level3">
+<h3><span class="header-section-number">10.3.5</span> The unicode encoding scheme</h3>
+<p>While ASCII used to be the most popular scheme, the unicode schemes are by far the most popular schemes today. The full unicode scheme consists of a table of 1,114,112 code points (or symbols). We call them code points, because the table is somewhat more complex than for the ASCII. Instead of providing a mapping between a binary code and a symbol, there is a mapping between a binary code and a code point, and a mapping between the code point and the symbol. These details are not important, and in fact the unicode code point 65 corresponds to the symbol “A”. Does that sound familiar? It should, because there is a 1:1 mapping from ASCII to UTF-8 unicode encoding, and 65 is the decimal number for the binary sequence representing A. So if a document was saved using ASCII encoding, but you instruct the computer to use UTF-8 encoding, you should not worry. You can think of ASCII as a subset of UTF-8</p>
+<div id="utf-8-utf-16-utf-32" class="section level4">
+<h4><span class="header-section-number">10.3.5.1</span> UTF-8, UTF-16, UTF-32</h4>
+<p>But how does UTF-8 relate to unicode? Unicode is the full set of code-points, while UTF-8 is a specific encoding scheme. There is also UTF-32 which uses 32 bits. 32 bits per symbol gives a lot of flexibility, but it will often take up a lot of space. UTF-8 is a flexible encoding scheme, because it uses the number bytes necessary to show the information. Another encoding format is UTF-16, which is also flexible in length, but in contrast to UTF-8 it uses two bytes as minimum (UTF-8 uses one byte). Documents saved using UTF-16 encoding will therefore typically be larger than documents saved with UTF-8 encoding. As the example shows, these differences can be substantial (almost twice the size), without being visible to the reader. So the encoding scheme is important because it determines whether the information is read correctly, and because affects the file size. In the next subsection, we will talk more about file sizes.</p>
+</div>
+</div>
+<div id="encoding-and-decoding-goes-wrong-what-can-you-do" class="section level3">
+<h3><span class="header-section-number">10.3.6</span> Encoding and decoding goes wrong, what can you do?</h3>
+<p>If you discover an encoding and decoding scheme, there are a number of options to sort out the issue.</p>
+<ol style="list-style-type: decimal">
+<li>Instruct the software you are using to save the content to use a different encoding scheme.</li>
+<li>Instruct the software you are using to read the content to use a different decoding scheme.</li>
+<li>Manually correct the decoding errors in the software that you are using to read the data.</li>
+</ol>
+</div>
+<div id="encoding-what-you-shouldnt-do" class="section level3">
+<h3><span class="header-section-number">10.3.7</span> Encoding: What you shouldn’t do!</h3>
+<p>Let’s end this discussion on encoding with a small warning. If you open a document that is decoded using a different codebook than was used for encoding, there is usually no problem. You discover the error, you ignore it or you solve the problem as above.</p>
+<p>However, what you should avoid doing is to overwrite the encoding scheme. Consider the following example:</p>
+<ol style="list-style-type: decimal">
+<li>Your friend writes a document and saves it using encoding scheme X.</li>
+<li>You open the document and your software assume it is encoded using encoding scheme Y. You ignore that some symbols clearly are garbled, make some changes and save the document using encoding scheme Z.</li>
+<li>Another friend opens the dataset and everything looks a mess.</li>
+</ol>
+<p>In the example above, it would require a lot of work to sort out the mess. To see why, let’s consider what happened.</p>
+<ul>
+<li>In encoding scheme X an “ü” is saved as the decimal number 5: Binary code <em>00000101</em>.</li>
+<li>You use scheme Y to decode <em>00000101</em>, which gives an “Ã¼”.</li>
+<li>You now decode the symbols using scheme Z, where the “Ã¼” has decimal number 7. So the binary code now becomes <em>00000111</em></li>
+<li>To get back to the original “ü” we would need to know that some symbols should first be decoded using scheme Z, then encoded using scheme X.</li>
+</ul>
+</div>
+</div>
+<div id="estimating-file-size-and-memory-use" class="section level2">
+<h2><span class="header-section-number">10.4</span> Estimating file size and memory use</h2>
+<div id="variable-types" class="section level3">
+<h3><span class="header-section-number">10.4.1</span> Variable types</h3>
+<p>When we store data on the computer we often ignore how the computer stores the variable. However, when you store large datasets, this can become very important, as a dataset might take up more space than necessary, because the type of the format of the variable is not aligned to the content.
+The specific list of potential variable formats varies depending on how you save the data (i.e. what software you use to save the data), but as a minimum, you should know the following types:</p>
+<ul>
+<li><p><strong>Boolean</strong>
+A boolean variable can only contain two possible values. True or false (0 or 1). You could for example have save a variable with the content “female” as a boolean variable, where “true” would correspond to the case where the observation represents a female individual, and false otherwise.
+- Minimum size requirement: 1 bit.</p></li>
+<li><p><strong>Integer</strong>
+Integer variables contain only whole numbers in a pre-specified range. The range depends on the size of the variable, if the variable is a byte, it will typically allow you to save values in the range from -128 to +127.
+- Typical size requirement: 1 byte (8 bits) (for values -128 to 127).</p></li>
+<li><p><strong>Floating point numbers</strong>
+Floating point variables can take almost any numerical value. However, in practice the range and the precision is limited. The limit depends on the space allocated to the variable, but unless you work with very large or small values or very precise values, you do not need to worry about this.
+- Typical size requirement: 8 bytes (64 bits).</p></li>
+<li><p><strong>Characters</strong>
+Character values contain text, and can include all symbols that are defined in the applied encoding scheme.
+- Size requirement depends on encoding, 1 byte per character at least for UTF-8 encoded strings.</p></li>
+</ul>
+<p>Note that I ranked the variable types above according to their approximate size rank. Boolean variables can be saved using only very little space, while characters and floating point variables require much more computer memory. The specific ranking depends on how the variables are saved. We will return to this issue in the next chapter.</p>
+<p>What is important for now is that the variable format type is important. Imagine that you save the foot size as a boolean variable. In that case you will throw away a lot of information, because the foot size can then only take 2 values. On the other hand, if you save the variable “female” as a floating point variable you will waste a lot of resources, because it uses more space than actually required.</p>
+</div>
+<div id="file-size" class="section level3">
+<h3><span class="header-section-number">10.4.2</span> File size</h3>
+<p>We now know what we need to approximate the file size.
+Let us now try to estimate the size of a dataset. Our dataset contains 10 variables and 20 observations. If all these observations are stored as floating-point numbers, the approximate file size is:</p>
+<p><span class="math display">\[\begin{align}
+10\times20\times8&amp;=1600\text{ bytes} \nonumber\\
+&amp;=1600/2^{10}=1.56 \text{KB}\nonumber
+\end{align}\]</span></p>
+<p>In most programs the data will be stored the in the RAM of the computer you are working on. 1.56 KB is not an issue in terms of RAM capacity for any modern computer.</p>
+<p>But let’s consider another dataset, a dataset covering 6 million individuals over 30 years and 250 variables:</p>
+<p><span class="math display">\[\begin{align}
+6,000,000\times 30 \times250 \times8&amp;=360,000,000,000\text{ bytes} \nonumber\\
+&amp;=360,000,000,000/2^{20}= 343,323 \text{MB}\nonumber\\
+&amp;=360,000,000,000/2^{30}= 335 \text{GB}\nonumber
+\end{align}\]</span></p>
+<p>Our normal computers will not be able to handle this dataset in the RAM and loading this data will cause problems. Such datasets are not uncommon. If you are working with administrative data on an individual level, you often have sample sizes like that.</p>
+<p>So what could we do? First, we should try to split the dataset up in smaller elements: fewer years and/or fewer variables. Second, we should try to save variables more efficiently. Do all 250 variables need floating point precision? How big would this dataset be, if all variables were saved as integers? Recall that an integer usually takes up one byte. The floating point precision number is thus eight times larger, and the same observations and variables saved as integers would then take up <span class="math inline">\(335/8\approx 42\)</span>GB.</p>
+</div>
+<div id="what-happens-if-we-use-the-wrong-variable-format" class="section level3">
+<h3><span class="header-section-number">10.4.3</span> What happens if we use the wrong variable format?</h3>
+<p>So what if we converted our large dataset from floating point variables to integers and some of the variables actually included values that were floating points? Well it depends on the software you use to convert the variables, but the most likely outcome is that the value will be saved as “missing” if it is not covered by the used format.</p>
+</div>
+<div id="estimates-are-estimates" class="section level3">
+<h3><span class="header-section-number">10.4.4</span> Estimates are estimates</h3>
+<p>You will probably discover, that the file size estimates using the approach presented here tends to underestimate the actual file size. The main reason for this is that files include some “overhead”. The overhead might include information on the encoding type, but also information on the file format, which the software that reads the file uses.</p>
+</div>
+</div>
+<div id="summary-8" class="section level2">
+<h2><span class="header-section-number">10.5</span> Summary</h2>
+<p>In this chapter we covered the following topics</p>
+<ul>
+<li>Binary counting (base 2 counting)</li>
+<li>How computers store information (What is a bit?)</li>
+<li>Bits, bytes, kilobytes, megabytes and gigabytes.</li>
+<li>Encoding (ASCII and Unicode UTF-8)</li>
+<li>Estimating dataset size.</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="where-data-comes-from.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basics-of-good-data-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["book.pdf", "book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

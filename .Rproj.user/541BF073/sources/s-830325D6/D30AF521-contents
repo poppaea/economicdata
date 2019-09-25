@@ -1,17 +1,13 @@
 --- 
 title: "Economic Data"
 author: "Hans Henrik Sievertsen"
-date: "Version 0.1"
+date: "Version 0.2"
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
-    split_by: none
     config:
       toc:
-        collapse: section
-        scroll_highlight: yes
-        before: null
-        after: null
+        collapse: subsection
       sharing:
         facebook: false
         twitter: false

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Data about economic activity | Economic Data</title>
+  <meta name="description" content="Chapter 2 Data about economic activity | Economic Data for EFIM 10016 - University of Bristol" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Data about economic activity | Economic Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Chapter 2 Data about economic activity | Economic Data for EFIM 10016 - University of Bristol" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Data about economic activity | Economic Data" />
+  
+  <meta name="twitter:description" content="Chapter 2 Data about economic activity | Economic Data for EFIM 10016 - University of Bristol" />
+  
+
+<meta name="author" content="Hans Henrik Sievertsen" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="people.html">
+<link rel="next" href="measuring-well-being.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Economic Data</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="part-i-econ-concepts-and-definitions.html"><a href="part-i-econ-concepts-and-definitions.html"><i class="fa fa-check"></i>Part I: Econ Concepts and Definitions</a></li>
+<li class="chapter" data-level="1" data-path="people.html"><a href="people.html"><i class="fa fa-check"></i><b>1</b> Data about people</a><ul>
+<li class="chapter" data-level="1.1" data-path="people.html"><a href="people.html#what-this-chapter-is-about"><i class="fa fa-check"></i><b>1.1</b> What this chapter is about</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="people.html"><a href="people.html#intended-learning-outcomes"><i class="fa fa-check"></i><b>1.1.1</b> Intended learning outcomes</a></li>
+<li class="chapter" data-level="1.1.2" data-path="people.html"><a href="people.html#population-data-visualization-examples"><i class="fa fa-check"></i><b>1.1.2</b> Population data visualization examples</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="people.html"><a href="people.html#definitions-on-people"><i class="fa fa-check"></i><b>1.2</b> Definitions on people</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="people.html"><a href="people.html#flow-and-stock-variables"><i class="fa fa-check"></i><b>1.2.1</b> Flow and stock variables</a></li>
+<li class="chapter" data-level="1.2.2" data-path="people.html"><a href="people.html#the-population-level"><i class="fa fa-check"></i><b>1.2.2</b> The population level</a></li>
+<li class="chapter" data-level="1.2.3" data-path="people.html"><a href="people.html#the-population-flows"><i class="fa fa-check"></i><b>1.2.3</b> The population flows</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="people.html"><a href="people.html#people:vis"><i class="fa fa-check"></i><b>1.3</b> Visualizing population data</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="people.html"><a href="people.html#exploring-data-on-population-levels"><i class="fa fa-check"></i><b>1.3.1</b> Exploring data on population levels</a></li>
+<li class="chapter" data-level="1.3.2" data-path="people.html"><a href="people.html#showing-relative-changes"><i class="fa fa-check"></i><b>1.3.2</b> Showing relative changes</a></li>
+<li class="chapter" data-level="1.3.3" data-path="people.html"><a href="people.html#creating-a-table-on-population-changes"><i class="fa fa-check"></i><b>1.3.3</b> Creating a table on population changes</a></li>
+<li class="chapter" data-level="1.3.4" data-path="people.html"><a href="people.html#describing-the-change-in-levels-by-the-underlying-flow-variables"><i class="fa fa-check"></i><b>1.3.4</b> Describing the change in levels by the underlying flow variables</a></li>
+<li class="chapter" data-level="1.3.5" data-path="people.html"><a href="people.html#creating-a-pyramid-chart-using-excel"><i class="fa fa-check"></i><b>1.3.5</b> Creating a pyramid chart using Excel</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="people.html"><a href="people.html#people:sum"><i class="fa fa-check"></i><b>1.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>2</b> Data about economic activity</a><ul>
+<li class="chapter" data-level="2.1" data-path="activity.html"><a href="activity.html#what-this-chapter-is-about-1"><i class="fa fa-check"></i><b>2.1</b> What this chapter is about</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="activity.html"><a href="activity.html#intended-learning-outcomes-1"><i class="fa fa-check"></i><b>2.1.1</b> Intended learning outcomes</a></li>
+<li class="chapter" data-level="2.1.2" data-path="activity.html"><a href="activity.html#a-brief-history-of-gdp"><i class="fa fa-check"></i><b>2.1.2</b> A brief history of GDP</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="activity.html"><a href="activity.html#the-economy-of-microcountry"><i class="fa fa-check"></i><b>2.2</b> The Economy of Microcountry</a></li>
+<li class="chapter" data-level="2.3" data-path="activity.html"><a href="activity.html#what-is-gdp-and-how-do-we-measure-it"><i class="fa fa-check"></i><b>2.3</b> What is GDP and how do we measure it?</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="activity.html"><a href="activity.html#the-expenditure-approach"><i class="fa fa-check"></i><b>2.3.1</b> The Expenditure Approach</a></li>
+<li class="chapter" data-level="2.3.2" data-path="activity.html"><a href="activity.html#what-is-included-in-the-gdp-measure"><i class="fa fa-check"></i><b>2.3.2</b> What is included in the GDP measure?</a></li>
+<li class="chapter" data-level="2.3.3" data-path="activity.html"><a href="activity.html#gdp---why-3-approaches"><i class="fa fa-check"></i><b>2.3.3</b> GDP - Why 3 approaches?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="activity.html"><a href="activity.html#gross-national-income-gni"><i class="fa fa-check"></i><b>2.4</b> Gross National Income (GNI)</a></li>
+<li class="chapter" data-level="2.5" data-path="activity.html"><a href="activity.html#what-we-use-gdp-for."><i class="fa fa-check"></i><b>2.5</b> What we use GDP for.</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="activity.html"><a href="activity.html#growth-rates"><i class="fa fa-check"></i><b>2.5.1</b> Growth rates</a></li>
+<li class="chapter" data-level="2.5.2" data-path="activity.html"><a href="activity.html#business-cycles"><i class="fa fa-check"></i><b>2.5.2</b> Business cycles</a></li>
+<li class="chapter" data-level="2.5.3" data-path="activity.html"><a href="activity.html#gdp-per-capita"><i class="fa fa-check"></i><b>2.5.3</b> GDP per capita</a></li>
+<li class="chapter" data-level="2.5.4" data-path="activity.html"><a href="activity.html#productivity"><i class="fa fa-check"></i><b>2.5.4</b> Productivity</a></li>
+<li class="chapter" data-level="2.5.5" data-path="activity.html"><a href="activity.html#the-balance-of-trade"><i class="fa fa-check"></i><b>2.5.5</b> The balance of trade</a></li>
+<li class="chapter" data-level="2.5.6" data-path="activity.html"><a href="activity.html#balance-of-payments"><i class="fa fa-check"></i><b>2.5.6</b> Balance of payments</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="activity.html"><a href="activity.html#summary"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measuring-well-being.html"><a href="measuring-well-being.html"><i class="fa fa-check"></i><b>3</b> Measuring Well-Being</a><ul>
+<li class="chapter" data-level="3.1" data-path="measuring-well-being.html"><a href="measuring-well-being.html#what-this-chapter-is-about-2"><i class="fa fa-check"></i><b>3.1</b> What this chapter is about</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="measuring-well-being.html"><a href="measuring-well-being.html#intended-learning-outcomes-2"><i class="fa fa-check"></i><b>3.1.1</b> Intended learning outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="measuring-well-being.html"><a href="measuring-well-being.html#what-is-well-being"><i class="fa fa-check"></i><b>3.2</b> What is well-being?</a></li>
+<li class="chapter" data-level="3.3" data-path="measuring-well-being.html"><a href="measuring-well-being.html#gdp-and-well-being"><i class="fa fa-check"></i><b>3.3</b> GDP and well-being</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="measuring-well-being.html"><a href="measuring-well-being.html#the-stiglitz-report"><i class="fa fa-check"></i><b>3.3.1</b> The Stiglitz Report</a></li>
+<li class="chapter" data-level="3.3.2" data-path="measuring-well-being.html"><a href="measuring-well-being.html#criticism-of-gdp-as-a-well-being-measure"><i class="fa fa-check"></i><b>3.3.2</b> Criticism of GDP as a well-being measure</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="measuring-well-being.html"><a href="measuring-well-being.html#how-to-measure-well-being-quality-of-life"><i class="fa fa-check"></i><b>3.4</b> How to measure well-being &amp; quality of life</a></li>
+<li class="chapter" data-level="3.5" data-path="measuring-well-being.html"><a href="measuring-well-being.html#measuring-well-being-in-practice"><i class="fa fa-check"></i><b>3.5</b> Measuring well-being in practice</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="measuring-well-being.html"><a href="measuring-well-being.html#quick-guide-combining-several-variables"><i class="fa fa-check"></i><b>3.5.1</b> Quick guide: Combining several variables</a></li>
+<li class="chapter" data-level="3.5.2" data-path="measuring-well-being.html"><a href="measuring-well-being.html#the-human-development-index-un"><i class="fa fa-check"></i><b>3.5.2</b> The Human Development Index (UN)</a></li>
+<li class="chapter" data-level="3.5.3" data-path="measuring-well-being.html"><a href="measuring-well-being.html#world-happiness-report"><i class="fa fa-check"></i><b>3.5.3</b> World Happiness Report</a></li>
+<li class="chapter" data-level="3.5.4" data-path="measuring-well-being.html"><a href="measuring-well-being.html#oecd-better-life-index"><i class="fa fa-check"></i><b>3.5.4</b> OECD Better Life Index</a></li>
+<li class="chapter" data-level="3.5.5" data-path="measuring-well-being.html"><a href="measuring-well-being.html#ons-measuring-national-well-being"><i class="fa fa-check"></i><b>3.5.5</b> ONS Measuring National Well-being</a></li>
+<li class="chapter" data-level="3.5.6" data-path="measuring-well-being.html"><a href="measuring-well-being.html#quality-of-life-indicators"><i class="fa fa-check"></i><b>3.5.6</b> Quality of life indicators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="measuring-well-being.html"><a href="measuring-well-being.html#why-is-the-gdp-used-anyway"><i class="fa fa-check"></i><b>3.6</b> Why is the GDP used anyway?</a></li>
+<li class="chapter" data-level="3.7" data-path="measuring-well-being.html"><a href="measuring-well-being.html#summary-1"><i class="fa fa-check"></i><b>3.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="life-and-death.html"><a href="life-and-death.html"><i class="fa fa-check"></i><b>4</b> Life and Death</a><ul>
+<li class="chapter" data-level="4.1" data-path="life-and-death.html"><a href="life-and-death.html#what-this-chapter-is-about-3"><i class="fa fa-check"></i><b>4.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="4.2" data-path="life-and-death.html"><a href="life-and-death.html#describing-fertility-trends"><i class="fa fa-check"></i><b>4.2</b> Describing fertility trends</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="life-and-death.html"><a href="life-and-death.html#data-requirements"><i class="fa fa-check"></i><b>4.2.1</b> Data requirements</a></li>
+<li class="chapter" data-level="4.2.2" data-path="life-and-death.html"><a href="life-and-death.html#relating-the-fertility-measures-to-each-other"><i class="fa fa-check"></i><b>4.2.2</b> Relating the fertility measures to each other</a></li>
+<li class="chapter" data-level="4.2.3" data-path="life-and-death.html"><a href="life-and-death.html#decomposing-the-development-in-life-births"><i class="fa fa-check"></i><b>4.2.3</b> Decomposing the development in life births</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="life-and-death.html"><a href="life-and-death.html#life-expectancy"><i class="fa fa-check"></i><b>4.3</b> Life expectancy</a></li>
+<li class="chapter" data-level="4.4" data-path="life-and-death.html"><a href="life-and-death.html#summary-2"><i class="fa fa-check"></i><b>4.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prices.html"><a href="prices.html"><i class="fa fa-check"></i><b>5</b> Prices</a><ul>
+<li class="chapter" data-level="5.1" data-path="prices.html"><a href="prices.html#what-this-chapter-is-about-4"><i class="fa fa-check"></i><b>5.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="5.2" data-path="prices.html"><a href="prices.html#price-indexes---in-theory"><i class="fa fa-check"></i><b>5.2</b> Price indexes - in theory</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="prices.html"><a href="prices.html#the-objective"><i class="fa fa-check"></i><b>5.2.1</b> The objective</a></li>
+<li class="chapter" data-level="5.2.2" data-path="prices.html"><a href="prices.html#a-simple-index"><i class="fa fa-check"></i><b>5.2.2</b> A simple index</a></li>
+<li class="chapter" data-level="5.2.3" data-path="prices.html"><a href="prices.html#the-laspeyre-index"><i class="fa fa-check"></i><b>5.2.3</b> The Laspeyre Index</a></li>
+<li class="chapter" data-level="5.2.4" data-path="prices.html"><a href="prices.html#the-paasche-price-index"><i class="fa fa-check"></i><b>5.2.4</b> The Paasche Price Index</a></li>
+<li class="chapter" data-level="5.2.5" data-path="prices.html"><a href="prices.html#the-fisher-price-index"><i class="fa fa-check"></i><b>5.2.5</b> The Fisher Price Index</a></li>
+<li class="chapter" data-level="5.2.6" data-path="prices.html"><a href="prices.html#the-lowe-price-index"><i class="fa fa-check"></i><b>5.2.6</b> The Lowe Price Index</a></li>
+<li class="chapter" data-level="5.2.7" data-path="prices.html"><a href="prices.html#other-indexes"><i class="fa fa-check"></i><b>5.2.7</b> Other indexes</a></li>
+<li class="chapter" data-level="5.2.8" data-path="prices.html"><a href="prices.html#chain-linked-vs.-unchained-indexes"><i class="fa fa-check"></i><b>5.2.8</b> Chain-linked vs. unchained indexes</a></li>
+<li class="chapter" data-level="5.2.9" data-path="prices.html"><a href="prices.html#summary-on-price-indexes"><i class="fa fa-check"></i><b>5.2.9</b> Summary on price indexes</a></li>
+<li class="chapter" data-level="5.2.10" data-path="prices.html"><a href="prices.html#weigths"><i class="fa fa-check"></i><b>5.2.10</b> Weigths</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="prices.html"><a href="prices.html#price-indexes---in-practice"><i class="fa fa-check"></i><b>5.3</b> Price indexes - in practice</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="prices.html"><a href="prices.html#consumer-price-indexes"><i class="fa fa-check"></i><b>5.3.1</b> Consumer Price Indexes</a></li>
+<li class="chapter" data-level="5.3.2" data-path="prices.html"><a href="prices.html#producer-price-index-import-price-index-and-export-price-index"><i class="fa fa-check"></i><b>5.3.2</b> Producer Price Index, Import Price Index and Export Price Index</a></li>
+<li class="chapter" data-level="5.3.3" data-path="prices.html"><a href="prices.html#other-indexes-1"><i class="fa fa-check"></i><b>5.3.3</b> Other indexes</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="prices.html"><a href="prices.html#comparing-monetary-values-across-time"><i class="fa fa-check"></i><b>5.4</b> Comparing monetary values across time</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="prices.html"><a href="prices.html#inflation"><i class="fa fa-check"></i><b>5.4.1</b> Inflation</a></li>
+<li class="chapter" data-level="5.4.2" data-path="prices.html"><a href="prices.html#real-vs.-nominal-values"><i class="fa fa-check"></i><b>5.4.2</b> Real vs. nominal values</a></li>
+<li class="chapter" data-level="5.4.3" data-path="prices.html"><a href="prices.html#the-real-interest-rate"><i class="fa fa-check"></i><b>5.4.3</b> The real interest rate</a></li>
+<li class="chapter" data-level="5.4.4" data-path="prices.html"><a href="prices.html#the-phillips-curve"><i class="fa fa-check"></i><b>5.4.4</b> The Phillips Curve</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="prices.html"><a href="prices.html#comparing-monetary-values-across-regions"><i class="fa fa-check"></i><b>5.5</b> Comparing monetary values across regions</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="prices.html"><a href="prices.html#the-big-mac-index"><i class="fa fa-check"></i><b>5.5.1</b> The Big Mac index</a></li>
+<li class="chapter" data-level="5.5.2" data-path="prices.html"><a href="prices.html#purchasing-power-parity"><i class="fa fa-check"></i><b>5.5.2</b> Purchasing Power Parity</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="prices.html"><a href="prices.html#summary-3"><i class="fa fa-check"></i><b>5.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="money.html"><a href="money.html"><i class="fa fa-check"></i><b>6</b> Money</a><ul>
+<li class="chapter" data-level="6.1" data-path="money.html"><a href="money.html#what-this-chapter-is-about-5"><i class="fa fa-check"></i><b>6.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="6.2" data-path="money.html"><a href="money.html#interest-rates"><i class="fa fa-check"></i><b>6.2</b> Interest rates</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="money.html"><a href="money.html#the-basics-what-is-the-interest-rate"><i class="fa fa-check"></i><b>6.2.1</b> The basics: What is the interest rate?</a></li>
+<li class="chapter" data-level="6.2.2" data-path="money.html"><a href="money.html#three-interest-rates"><i class="fa fa-check"></i><b>6.2.2</b> Three interest rates</a></li>
+<li class="chapter" data-level="6.2.3" data-path="money.html"><a href="money.html#getting-data-on-interest-rates"><i class="fa fa-check"></i><b>6.2.3</b> Getting data on interest rates</a></li>
+<li class="chapter" data-level="6.2.4" data-path="money.html"><a href="money.html#summary-interest-rates"><i class="fa fa-check"></i><b>6.2.4</b> Summary: Interest rates</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="money.html"><a href="money.html#exchange-rates"><i class="fa fa-check"></i><b>6.3</b> Exchange rates</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="money.html"><a href="money.html#definition-of-exchange-rates"><i class="fa fa-check"></i><b>6.3.1</b> Definition of exchange rates</a></li>
+<li class="chapter" data-level="6.3.2" data-path="money.html"><a href="money.html#ups-and-downs-appreciation-and-depreciation"><i class="fa fa-check"></i><b>6.3.2</b> Ups and downs: appreciation and depreciation</a></li>
+<li class="chapter" data-level="6.3.3" data-path="money.html"><a href="money.html#summary-exchange-rates"><i class="fa fa-check"></i><b>6.3.3</b> Summary: Exchange rates</a></li>
+<li class="chapter" data-level="6.3.4" data-path="money.html"><a href="money.html#getting-data-on-exchange-rates"><i class="fa fa-check"></i><b>6.3.4</b> Getting data on exchange rates</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="money.html"><a href="money.html#linking-interest-rates-and-exchange-rates"><i class="fa fa-check"></i><b>6.4</b> Linking interest rates and exchange rates</a></li>
+<li class="chapter" data-level="6.5" data-path="money.html"><a href="money.html#summary-4"><i class="fa fa-check"></i><b>6.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="the-labor-market.html"><a href="the-labor-market.html"><i class="fa fa-check"></i><b>7</b> The labor market</a><ul>
+<li class="chapter" data-level="7.1" data-path="the-labor-market.html"><a href="the-labor-market.html#what-this-chapter-is-about-6"><i class="fa fa-check"></i><b>7.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="7.2" data-path="the-labor-market.html"><a href="the-labor-market.html#from-population-data-to-the-labor-market"><i class="fa fa-check"></i><b>7.2</b> From population data to the labor market</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="the-labor-market.html"><a href="the-labor-market.html#grouping-the-population-according-to-economic-activity"><i class="fa fa-check"></i><b>7.2.1</b> Grouping the population according to economic activity:</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="the-labor-market.html"><a href="the-labor-market.html#unemployment"><i class="fa fa-check"></i><b>7.3</b> Unemployment</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="the-labor-market.html"><a href="the-labor-market.html#what-is-unemployment"><i class="fa fa-check"></i><b>7.3.1</b> What is unemployment?</a></li>
+<li class="chapter" data-level="7.3.2" data-path="the-labor-market.html"><a href="the-labor-market.html#employment"><i class="fa fa-check"></i><b>7.3.2</b> Employment</a></li>
+<li class="chapter" data-level="7.3.3" data-path="the-labor-market.html"><a href="the-labor-market.html#the-unemployment-rate"><i class="fa fa-check"></i><b>7.3.3</b> The unemployment rate</a></li>
+<li class="chapter" data-level="7.3.4" data-path="the-labor-market.html"><a href="the-labor-market.html#out-of-the-labor-force"><i class="fa fa-check"></i><b>7.3.4</b> Out of the labor force</a></li>
+<li class="chapter" data-level="7.3.5" data-path="the-labor-market.html"><a href="the-labor-market.html#labor-supply-extensive-vs.-intensive-margin"><i class="fa fa-check"></i><b>7.3.5</b> Labor supply: Extensive vs. intensive margin</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="the-labor-market.html"><a href="the-labor-market.html#the-demand-side-vacancies"><i class="fa fa-check"></i><b>7.4</b> The demand side: Vacancies</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="the-labor-market.html"><a href="the-labor-market.html#measuring-labor-demand"><i class="fa fa-check"></i><b>7.4.1</b> Measuring labor demand</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="the-labor-market.html"><a href="the-labor-market.html#supply-meets-demand"><i class="fa fa-check"></i><b>7.5</b> Supply meets demand</a></li>
+<li class="chapter" data-level="7.6" data-path="the-labor-market.html"><a href="the-labor-market.html#summary-5"><i class="fa fa-check"></i><b>7.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html"><i class="fa fa-check"></i><b>8</b> Poverty and inequality</a><ul>
+<li class="chapter" data-level="8.1" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#what-this-chapter-is-about-7"><i class="fa fa-check"></i><b>8.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="8.2" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#working-with-income-and-wealth-data"><i class="fa fa-check"></i><b>8.2</b> Working with income and wealth data</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#net-and-gross-values"><i class="fa fa-check"></i><b>8.2.1</b> Net and gross values</a></li>
+<li class="chapter" data-level="8.2.2" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#equivalenced-income"><i class="fa fa-check"></i><b>8.2.2</b> Equivalenced income</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#inequality"><i class="fa fa-check"></i><b>8.3</b> Inequality</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#the-lorenz-curve"><i class="fa fa-check"></i><b>8.3.1</b> The Lorenz curve</a></li>
+<li class="chapter" data-level="8.3.2" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#the-gini-coefficient"><i class="fa fa-check"></i><b>8.3.2</b> The Gini coefficient</a></li>
+<li class="chapter" data-level="8.3.3" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#other-measures-of-inequality"><i class="fa fa-check"></i><b>8.3.3</b> {Other measures of inequality</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#poverty"><i class="fa fa-check"></i><b>8.4</b> Poverty</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#measuring-global-development"><i class="fa fa-check"></i><b>8.4.1</b> Measuring global development</a></li>
+<li class="chapter" data-level="8.4.2" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#measuring-poverty"><i class="fa fa-check"></i><b>8.4.2</b> Measuring poverty</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="poverty-and-inequality.html"><a href="poverty-and-inequality.html#summary-6"><i class="fa fa-check"></i><b>8.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="part-ii-data-sources-and-tools.html"><a href="part-ii-data-sources-and-tools.html"><i class="fa fa-check"></i>Part II: Data sources and tools</a></li>
+<li class="chapter" data-level="9" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html"><i class="fa fa-check"></i><b>9</b> Where data comes from</a><ul>
+<li class="chapter" data-level="9.1" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#what-this-chapter-is-about."><i class="fa fa-check"></i><b>9.1</b> What this chapter is about.</a></li>
+<li class="chapter" data-level="9.2" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#data-source-types"><i class="fa fa-check"></i><b>9.2</b> Data source types</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#overview"><i class="fa fa-check"></i><b>9.2.1</b> Overview</a></li>
+<li class="chapter" data-level="9.2.2" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#simulated-data"><i class="fa fa-check"></i><b>9.2.2</b> Simulated data</a></li>
+<li class="chapter" data-level="9.2.3" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#sample-surveys"><i class="fa fa-check"></i><b>9.2.3</b> Sample surveys</a></li>
+<li class="chapter" data-level="9.2.4" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#census-survey"><i class="fa fa-check"></i><b>9.2.4</b> Census survey</a></li>
+<li class="chapter" data-level="9.2.5" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#administrative-data"><i class="fa fa-check"></i><b>9.2.5</b> Administrative data</a></li>
+<li class="chapter" data-level="9.2.6" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#comparison-of-data-sources"><i class="fa fa-check"></i><b>9.2.6</b> Comparison of data sources</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#economic-data-sources"><i class="fa fa-check"></i><b>9.3</b> Economic data sources</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#data-from-statistical-offices"><i class="fa fa-check"></i><b>9.3.1</b> Data from Statistical Offices</a></li>
+<li class="chapter" data-level="9.3.2" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#downloading-data-from-statistical-offices"><i class="fa fa-check"></i><b>9.3.2</b> Downloading data from Statistical Offices</a></li>
+<li class="chapter" data-level="9.3.3" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#central-banks"><i class="fa fa-check"></i><b>9.3.3</b> Central banks</a></li>
+<li class="chapter" data-level="9.3.4" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#international-organizations"><i class="fa fa-check"></i><b>9.3.4</b> International organizations</a></li>
+<li class="chapter" data-level="9.3.5" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#topic-specific-databases"><i class="fa fa-check"></i><b>9.3.5</b> Topic specific databases</a></li>
+<li class="chapter" data-level="9.3.6" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#publicly-available-data-an-overview"><i class="fa fa-check"></i><b>9.3.6</b> Publicly available data: An overview</a></li>
+<li class="chapter" data-level="9.3.7" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#using-apis"><i class="fa fa-check"></i><b>9.3.7</b> Using APIs</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="where-data-comes-from.html"><a href="where-data-comes-from.html#summary-7"><i class="fa fa-check"></i><b>9.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html"><i class="fa fa-check"></i><b>10</b> How data is stored</a><ul>
+<li class="chapter" data-level="10.1" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#what-this-lecture-is-about"><i class="fa fa-check"></i><b>10.1</b> What this lecture is about</a></li>
+<li class="chapter" data-level="10.2" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#how-computers-work"><i class="fa fa-check"></i><b>10.2</b> How computers work</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#or-0"><i class="fa fa-check"></i><b>10.2.1</b> 1 or 0</a></li>
+<li class="chapter" data-level="10.2.2" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#from-0-and-1-to-interpretable-content."><i class="fa fa-check"></i><b>10.2.2</b> From 0 and 1 to interpretable content.</a></li>
+<li class="chapter" data-level="10.2.3" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#from-signals-to-bits-and-bytes."><i class="fa fa-check"></i><b>10.2.3</b> From signals to bits and bytes.</a></li>
+<li class="chapter" data-level="10.2.4" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#a-never-ending-confusion-1000-or-1024"><i class="fa fa-check"></i><b>10.2.4</b> A never ending confusion 1000 or 1024?</a></li>
+<li class="chapter" data-level="10.2.5" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#how-fast-is-your-internet-connection"><i class="fa fa-check"></i><b>10.2.5</b> How fast is your Internet connection?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#encoding"><i class="fa fa-check"></i><b>10.3</b> Encoding</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#how-encoding-and-decoding-works"><i class="fa fa-check"></i><b>10.3.1</b> How encoding and decoding works</a></li>
+<li class="chapter" data-level="10.3.2" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#where-does-the-big-table-come-from"><i class="fa fa-check"></i><b>10.3.2</b> Where does the big table come from?</a></li>
+<li class="chapter" data-level="10.3.3" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#there-are-many-codebooks.-what-a-mess"><i class="fa fa-check"></i><b>10.3.3</b> There are many codebooks. What a mess!</a></li>
+<li class="chapter" data-level="10.3.4" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#encoding-and-decoding-what-you-should-know-and-do"><i class="fa fa-check"></i><b>10.3.4</b> Encoding and decoding: What you should know and do?</a></li>
+<li class="chapter" data-level="10.3.5" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#the-unicode-encoding-scheme"><i class="fa fa-check"></i><b>10.3.5</b> The unicode encoding scheme</a></li>
+<li class="chapter" data-level="10.3.6" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#encoding-and-decoding-goes-wrong-what-can-you-do"><i class="fa fa-check"></i><b>10.3.6</b> Encoding and decoding goes wrong, what can you do?</a></li>
+<li class="chapter" data-level="10.3.7" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#encoding-what-you-shouldnt-do"><i class="fa fa-check"></i><b>10.3.7</b> Encoding: What you shouldn’t do!</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#estimating-file-size-and-memory-use"><i class="fa fa-check"></i><b>10.4</b> Estimating file size and memory use</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#variable-types"><i class="fa fa-check"></i><b>10.4.1</b> Variable types</a></li>
+<li class="chapter" data-level="10.4.2" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#file-size"><i class="fa fa-check"></i><b>10.4.2</b> File size</a></li>
+<li class="chapter" data-level="10.4.3" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#what-happens-if-we-use-the-wrong-variable-format"><i class="fa fa-check"></i><b>10.4.3</b> What happens if we use the wrong variable format?</a></li>
+<li class="chapter" data-level="10.4.4" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#estimates-are-estimates"><i class="fa fa-check"></i><b>10.4.4</b> Estimates are estimates</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="how-data-is-stored.html"><a href="how-data-is-stored.html#summary-8"><i class="fa fa-check"></i><b>10.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html"><i class="fa fa-check"></i><b>11</b> Basics of good data visualization</a><ul>
+<li class="chapter" data-level="11.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#what-this-chapter-is-about-8"><i class="fa fa-check"></i><b>11.1</b> What this chapter is about</a></li>
+<li class="chapter" data-level="11.2" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#how-we-show-data-matters"><i class="fa fa-check"></i><b>11.2</b> How we show data matters</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#illustration-the-anscombe-quartet"><i class="fa fa-check"></i><b>11.2.1</b> Illustration: The Anscombe quartet</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#tables-vs-charts"><i class="fa fa-check"></i><b>11.3</b> Tables vs charts</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#the-goal-of-the-visualization"><i class="fa fa-check"></i><b>11.3.1</b> The goal of the visualization</a></li>
+<li class="chapter" data-level="11.3.2" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#the-quantity-of-data"><i class="fa fa-check"></i><b>11.3.2</b> The quantity of data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#table-design"><i class="fa fa-check"></i><b>11.4</b> Table design</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#table-structure"><i class="fa fa-check"></i><b>11.4.1</b> Table structure</a></li>
+<li class="chapter" data-level="11.4.2" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#table-layout-and-design"><i class="fa fa-check"></i><b>11.4.2</b> Table layout and design</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#chart-design"><i class="fa fa-check"></i><b>11.5</b> Chart design</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#basic-chart-structure"><i class="fa fa-check"></i><b>11.5.1</b> Basic chart structure</a></li>
+<li class="chapter" data-level="11.5.2" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#how-charts-work"><i class="fa fa-check"></i><b>11.5.2</b> How charts work</a></li>
+<li class="chapter" data-level="11.5.3" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#common-chart-types"><i class="fa fa-check"></i><b>11.5.3</b> Common chart types</a></li>
+<li class="chapter" data-level="11.5.4" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#charts-to-avoid"><i class="fa fa-check"></i><b>11.5.4</b> Charts to avoid</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#lies-junk-and-non-data-ink."><i class="fa fa-check"></i><b>11.6</b> Lies, junk and non-data ink.</a><ul>
+<li class="chapter" data-level="11.6.1" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#tuftes-concepts-for-good-data-visualizations."><i class="fa fa-check"></i><b>11.6.1</b> Tufte’s concepts for good data visualizations.</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#the-self-explanatory-data-visualization"><i class="fa fa-check"></i><b>11.7</b> The self-explanatory data visualization</a></li>
+<li class="chapter" data-level="11.8" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#a-cook-book-for-good-data-visualizations"><i class="fa fa-check"></i><b>11.8</b> A cook-book for good data visualizations</a></li>
+<li class="chapter" data-level="11.9" data-path="basics-of-good-data-visualization.html"><a href="basics-of-good-data-visualization.html#summary-9"><i class="fa fa-check"></i><b>11.9</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>12</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Economic Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="activity" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Data about economic activity</h1>
+<div id="what-this-chapter-is-about-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> What this chapter is about</h2>
+<div id="intended-learning-outcomes-1" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Intended learning outcomes</h3>
+<p>This chapter is about visualizing and describing data on economic activity. Economic activity is measured in the System of National Accounts (SNA) and conceptualized by the Gross Domestic Product, (GDP). We will not cover the SNA in detail.<a href="references.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> It is basically a set of rules and instructions that have been agreed internationally to ensure that measures of economic activity are comparable across countries. However, we will go through some of the key <em>aggregegates</em> of the SNA (for example GDP, Gross National Income, the GDP inflator etc.). An aggregate is a measure that <em>aggregates</em> several underlying variables. This chapter is mainly about the GDP, but we will also briefly touch upon other aggregates of the SNA as well as what the GDP is used for. After reading this chapter you should be able to:</p>
+<ul>
+<li>Explain what the gross domestic product (GDP) is and calculate it.</li>
+<li>Explain the three ways to measure GDP
+<ol style="list-style-type: decimal">
+<li>The Income Approach</li>
+<li>The Expenditure Approach</li>
+<li>The Output approach.</li>
+</ol></li>
+<li>Explain what The gross national income (GNI) is and calculate it.</li>
+<li>Calculate GDP per person and productivity.</li>
+<li>Visualize data on economic activity.</li>
+</ul>
+</div>
+<div id="a-brief-history-of-gdp" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> A brief history of GDP</h3>
+<p>I initially planned to commence this chapter with the history of GDP. That story would probably start around the Great Depression in the 1930ies US. The U.S. Congress realized that the economy was not running as well as it could, but had a hard time quantifying it. To the rescue came the economist Simon Kusnets who presented a report on the “National Income, 1929-1935” for the Congress (see <a href="activity.html#fig:gdp1">2.1</a>), where he presented the idea of capturing the entire production, income and expenditure of the economy. And so the GDP was born. This story of how the GDP was created is probably the most well-known story of the GDP, but in reality the story of GDP is more complicated.</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp1"></span>
+<img src="_resources/chapter_gdp/kusnetz.png" alt="Kusnets' report for the U.S. Congress, 1934. Source:  [Fraser St. Louis FED](fraser.stlouisfed.org/title/971)." width="65%" />
+<p class="caption">
+Figure 2.1: Kusnets’ report for the U.S. Congress, 1934. Source: <a href="fraser.stlouisfed.org/title/971">Fraser St. Louis FED</a>.
+</p>
+</div>
+<p>The idea of quantifying the size of the economy probably goes back to at least the 17th century. The exact definition of GDP has since then been redefined and adjusted. It is actually continuesly adjusted. More on that later. Giving Simon Kusnets a lot of credit for the GDP is not completely wrong. He refined the concept a lot and his report made it prominent. However, it wasn’t until much later that it became the “statistic to rule them all”.</p>
+<p>The GDP as a concept is critisized a lot. The most prominent critisism is probably the “Report by the Commission on the Measurement of Economic Performance and Social Progress” published in Autumn 2009 by the economists Joseph Stiglitz, Amartya Sen and Jean-Poul Fitoussi. What is the key critisism of GDP? The main problem with the GDP is not so much the GDP itself, but more the misuse of GDP as a measure of well-being or welfare. Simon Kusnets was actually already aware of some of these issues and the potential misue of GDP. Figure <a href="activity.html#fig:gdp1">2.1</a> shows a small section of the 273 page long report by Kusnetz.</p>
+<p>Figure <a href="activity.html#fig:gdp2">2.2</a> shows extracts of pages 5-7 in Kusnets original report <span class="citation">(Kusnets <a href="#ref-kuznets1934national" role="doc-biblioref">1934</a>)</span>. Kusnets made several points that are at the heat of the disucssion today, for example that “With quantitative measurements especially, the definiteness of the result suggests, often misleadingly, a precision and simplicity in the outlines of the object measured.” and “Economic welfare cannot be adequately measured unless the personal distribution of income is known. And no income measurement undertakes to estimate the reverse side of income, that is, the intensity and unpleasantness of effort going into the earning of income.”</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp2"></span>
+<img src="_resources/chapter_gdp/kusnetz2.png" alt="Page 5-7 in 'National Income, 1929–1932'. 73rd US Congress, 2d session, Senate document no. 124, 1934. Source:  [Fraser St. Louis FED](fraser.stlouisfed.org/title/971). " width="70%" />
+<p class="caption">
+Figure 2.2: Page 5-7 in ‘National Income, 1929–1932’. 73rd US Congress, 2d session, Senate document no. 124, 1934. Source: <a href="fraser.stlouisfed.org/title/971">Fraser St. Louis FED</a>.
+</p>
+</div>
+<p>So why should we care about GDP if it is no good? Actually it is a quite good of economic activity. But it is simply a measure of economic activity. We will return to the criticism of GDP in later chapters, but here we will discuss what it actually captures. When we know what the GDP measures, we can say more about what it doesn’t measure and how we should and should not use it. After reading this chapter, you should be able to</p>
+</div>
+</div>
+<div id="the-economy-of-microcountry" class="section level2">
+<h2><span class="header-section-number">2.2</span> The Economy of Microcountry</h2>
+<p>Let me introduce a very small country. It is not my home country, Denmark, but a country that is even smaller: Microcountry. Microcountry is just next to Neighbourcountry. Microcountry is so small that I can explain all economic activity in this country to you.</p>
+<p>In this country we have one farm that produces flour. The farm sells the flour to a bakery for 10 GBP. To produce the flour, the farm has workers, and these workers earn a wage of 8 GBP. Finally, the farm pays a tax to the government of 2 GBP.</p>
+<p>The bakery produces bread based on labor inputs in terms workers and the flour bought from the farm. The workers at the bakery receive 14 GBP in wages, and the government receives 2 GBP in taxes from the bakery. The bakery sells bread for 18 GBP to the households in Microcountry. The households of Neighbourcountry buy bread from the bakery in Microcountry for 9 GBP, and the bakery in Microcountry is actually owned by residents of Neighbourcountry.</p>
+<p>The households in Microcountry work for the bakery, the farm and for the government. They pay 1 GBP in taxes to the government, and buy bread for 18 GBP at the bakery. The households also import goods from Neighbourcountry for a value of in total 8 GBP. The government provides health service for the society of Microcountry and spends 5 GBP in wages to be able to supply this service.</p>
+<p>Now the big questions are:</p>
+<ul>
+<li>The Gross Domestic Product (GDP) of Microcountry?</li>
+<li>The Gross National Income (GNI) of Microcountry?</li>
+</ul>
+<p>To answer this we need to know what GDP is and how we can measure it.</p>
+</div>
+<div id="what-is-gdp-and-how-do-we-measure-it" class="section level2">
+<h2><span class="header-section-number">2.3</span> What is GDP and how do we measure it?</h2>
+<p>The Gross Domestic Product captures the economic activity of an economy. What is economic activity? Just think of when you are economically active:</p>
+<ol style="list-style-type: decimal">
+<li>When you go shopping and spend money.</li>
+<li>When you work and receive a wage income.</li>
+<li>When you create a product and sell it to someone.</li>
+</ol>
+<p>These three examples of how we as individuals are economically active actually capture the three ways we measure the Gross Domestic Product. The expenditure approach, the income approach and the output approach. Let us now discuss these approaches in detail. The GDP captures how much is spend, how much is produced or how much is earned within a period. It is therefore a flow variable.</p>
+<p>Below is a short animation of what the GDP is, created by the UK Treasury.</p>
+<div class="figure" style="text-align: center"><span id="fig:whatisgdp"></span>
+<iframe src="https://www.youtube.com/embed/UOuzPLjwkMc" width="70%" height="400px">
+</iframe>
+<p class="caption">
+Figure 2.3: What is GDP?. Source: HM Treasury.
+</p>
+</div>
+<div id="the-expenditure-approach" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> The Expenditure Approach</h3>
+<p>The <em>expenditure</em> approach (called the spending approach in <span class="citation">(The CORE Team <a href="#ref-core" role="doc-biblioref">2017</a>)</span>) measures the GDP in terms of expenditures by households and the Government, as well investments and net exports of goods and services (i.e. exports minus imports). All these expenditures are summarized in the following equation:
+<span class="math display">\[\begin{align}
+   \text{GDP}^{\text{E}} \text{=Y=C+G+I+X-M}
+\end{align}\]</span>
+where:</p>
+<ul>
+<li><strong>Y</strong> is the Gross Domestic Product (GDP).</li>
+<li><strong>C</strong> is final consumption of goods and services by households. It includes goods like food, cars, and clothing, as well as services such as hotel stays.</li>
+<li><strong>G</strong> is final consumption expenditure of goods and services by the government.</li>
+<li><strong>I</strong> is investments (also called gross capital formation) are investments in fixed assets such as machinery, buildings etc.</li>
+<li><strong>X</strong> is goods and services produced domestically but consumed abroad (Exports)</li>
+<li><strong>M</strong> is goods and services produced abroad and consumed domestically (Imports).</li>
+</ul>
+<p>Using data from the OECD, Figure <a href="activity.html#fig:gdp3">2.4</a> shows the size of each element of the expenditure approach for the United Kingdom over the period 2000 to 2015. In Figure <a href="activity.html#fig:gdp3">2.4</a> A, the development is shown in current prices. A change in the value from year to year is therefore a combination of a change in prices and a change in volume. We could have the extreme case, where we actually bought exactly the same quantity in all these years, but because the price increased, we would get the pattern shown in Figure <a href="activity.html#fig:gdp3">2.4</a>. However, this is clearly not the case in the United Kingdom over this period. As Figure <a href="activity.html#fig:gdp3">2.4</a> B shows, the values also increased in <em>real</em> terms. In Figure <a href="activity.html#fig:gdp3">2.4</a> B we used the GDP deflator to adjust the values in current prices (shown in A) to the 2017 price level.</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp3"></span>
+<img src="_resources/chapter_gdp/fig1.png" alt="The expenditure approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. Imports enter negatively. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category." width="80%" />
+<p class="caption">
+Figure 2.4: The expenditure approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. Imports enter negatively. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category.
+</p>
+</div>
+<p>The charts in Figure <a href="activity.html#fig:gdp3">2.4</a> are stacked area charts. As you might recall from the chapter on measuring people, area charts shows the size of the value by the size of the area and we are then putting each category on top of each other. This seems like a good solution with data on parts that constitute a whole, such as the population of the Wales, Northern Ireland, Scotland and UK, that constitute the population of the UK. Is it also a good idea to use this approach to show the expenditure parts of GDP like in Figure <a href="activity.html#fig:gdp3">2.4</a>? Because the GDP by expenditure approach involves both negative and positive values, this does not work well Moreover, we are tempted to conclude that all categories increased in real (absolute) terms (i.e. in volumes) over the period 2000 to 2018. But for all categories, except the first one, it is very difficult to see, because the all changes in the first category will map over in the following category. Government consumption (G) has for example been steadily increasing over the period. There was no drop over the financial crisis. But this is very hard to see from Figure <a href="activity.html#fig:gdp3">2.4</a>.</p>
+<p>It is much easier to identify the changes in individual series by means of a simple line chart, as shown in Figure <a href="activity.html#fig:gdp4">2.5</a>. From Figure <a href="activity.html#fig:gdp4">2.5</a> B we clearly see that Imports, Exports, Private Consumption and Investments suffered a drop in real values during the financial crisis, but Government Consumption did not. Both Figures <a href="activity.html#fig:gdp3">2.4</a> and <a href="activity.html#fig:gdp4">2.5</a> illustrate that Private Consumption (C) is the largest component of GDP in terms of the expenditure approach.</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp4"></span>
+<img src="_resources/chapter_gdp/fig2.png" alt="The expenditure approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category" width="80%" />
+<p class="caption">
+Figure 2.5: The expenditure approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category
+</p>
+</div>
+<p>Figure <a href="activity.html#fig:gdp5">2.6</a> shows a line chart of the relative change in each component of the expenditure approach by means of an index, where the base value is the value in the year 2000. This figure also highlights the importance of adjusting for price changes. In terms of nominal values (in other words in current prices), the values increased by up to more than 200 percent over the period (as Figure <a href="activity.html#fig:gdp5">2.6</a> A shows), but in real terms the change is much more modest (as Figure <a href="activity.html#fig:gdp5">2.6</a> B shows). The Figure also shows that the relative drop over the financial was remarkable in terms of the Investments (I).</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp5"></span>
+<img src="_resources/chapter_gdp/fig3.png" alt="The expenditure approach components of the Gross Domestic Product for the United Kingdom using line charts and an index with base year 2000. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category." width="80%" />
+<p class="caption">
+Figure 2.6: The expenditure approach components of the Gross Domestic Product for the United Kingdom using line charts and an index with base year 2000. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category.
+</p>
+</div>
+<div id="the-income-approach" class="section level4">
+<h4><span class="header-section-number">2.3.1.1</span> The income approach</h4>
+<p>A second approach to measuring GDP is the income approach. The income approach measures the GDP in terms of the generated income in the economy. The income generated in an economy consists of all compensation to workers (wages, pension contributions etc.), operating surplus (profits and rents) and mixed income (where mixed income is a mix of earnings and profits for self-employed) and taxes minus subsidies.<a href="references.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p><span class="math display">\[\begin{align}
+   \text{GDP}^{\text{I}} \text{=W+P+NT}
+\end{align}\]</span>
+where</p>
+<ul>
+<li><em>W</em> is worker compensation.</li>
+<li><em>P</em> is operating surplus.</li>
+<li><em>NT</em> is taxes minus subsidies.</li>
+</ul>
+<p>Figure <a href="activity.html#fig:gdp6">2.7</a> shows the size of each of these three components for 2015 for the UK economy. Compensating of workers accounts for roughly half of the GDP, while operating surpluses account for about two-fifths. Note that the stacked area chart works better for the income approach compared to the expenditure approach, because all components are positive. The level of the top of the stacked area chart therefore corresponds to the actual GDP level.</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp6"></span>
+<img src="_resources/chapter_gdp/fig4.png" alt="The income approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. Data source: OECD. Values are converted to the 2017 price level using the overall GDP deflator." width="80%" />
+<p class="caption">
+Figure 2.7: The income approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. Data source: OECD. Values are converted to the 2017 price level using the overall GDP deflator.
+</p>
+</div>
+<p>Figure <a href="activity.html#fig:gdp7">2.8</a> shows the development of the wages (compensations of workers), profits (gross operation surplus) and taxes individually. The sharp decline in profits over the financial crisis is clearly visible. The growth in the wage component also flattened considerably over the financial crisis.</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp7"></span>
+<img src="_resources/chapter_gdp/fig5.png" alt="The income approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the overall GDP deflator" width="80%" />
+<p class="caption">
+Figure 2.8: The income approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the overall GDP deflator
+</p>
+</div>
+<p>Figure <a href="activity.html#fig:gdp8">2.9</a> again illustrates the difference between real and nominal comparisons. In nominal terms, the incomes increased by between 80 and 100 percent. In real terms it was “only” about 30 to 40 percent. The sharp drop ion profits over the financial crisis is also clearly shown, but this category also increased sharply shortly after.</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp8"></span>
+<img src="_resources/chapter_gdp/fig6.png" alt="The income approach components of the Gross Domestic Product for the United Kingdom using line charts and an index with base year 2000. Data source: OECD.  Values are converted to the 2017 price level using the overall GDP deflator." width="80%" />
+<p class="caption">
+Figure 2.9: The income approach components of the Gross Domestic Product for the United Kingdom using line charts and an index with base year 2000. Data source: OECD. Values are converted to the 2017 price level using the overall GDP deflator.
+</p>
+</div>
+<p>It is possible to decompose the income approach further. We can investigate both wages and profits by sector to identify the sectors that contribute the most to GDP, and also to identify the sectors that were mostly affected by a recession. However, one challenge with the income approach is that these values are often not available in real terms. In Figures <a href="activity.html#fig:gdp6">2.7</a> to <a href="activity.html#fig:gdp8">2.9</a> we adjusted the current values to real values using the overall GDP. This is generally not recommended, because sub-categories might experience quite different price changes than overall GDP. In this case the deflator for each element of the income approach is not available.</p>
+</div>
+<div id="the-production-approach" class="section level4">
+<h4><span class="header-section-number">2.3.1.2</span> The production approach</h4>
+<p>The third and last approach to measuring GDP is the production approach (also known as the output approach). So far we have considered how much we’ve spend (the expenditure approach), the income generated (the income approach) and now we finally look at how much we produce. The production approach measures the GDP in terms of production or <em>value added</em>. The value added is the value of the output minus the costs of the intermediate goods. If a bakery buys flour for 15 GBP and sells bread for 50 GBP, the value added by the bakery is 50-15=35 GBP. Intermediate goods are all goods used in the production process, such as raw materials, fuel, rental costs, cleaning and marketing costs.</p>
+<p>We typically distinguish between two types of outputs, market and non-market outputs. The market output are goods and services sold on the market, such as the bread sold by the bakery. In that case the value added is straightforward to calculate, as it is the sales price minus the price of the intermediate goods. However, not not all goods are necessarily sold, so we also include the change in inventories. For non-market output, such as health and defense, the output is the production costs, i.e. the cost of labor and intermediate goods (and depreciation in fixed assets). Finally, there is a distinction between value added in basic prices and value added in market prices. To obtain the latter we have to add sales tax and subtract subsidies.</p>
+<p><span class="math display">\[\begin{align}
+   \text{GDP}^{\text{P}} \text{=GVA+NT}
+\end{align}\]</span>
+where</p>
+<ul>
+<li><em>GVA</em> gross value added.</li>
+<li><em>NT</em> is taxes minus subsidies.</li>
+</ul>
+<p>It should be noted that NT in this case not necessarily equals NT in the income approach. This is because taxes and subsidies here only relate to the taxes and subsidies on goods produced domestically. In the income approach taxes and subsidies refer to the products produced domestically and the products that are imported. Figure <a href="activity.html#fig:gdp9">2.10</a> the development of these components by sectors of the UK economy. As all aspects contribute positively to the overall GDP, we can interpret the height of the stacked area chart as the overall GDP level.<a href="references.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<div class="figure" style="text-align: center"><span id="fig:gdp9"></span>
+<img src="_resources/chapter_gdp/fig7.png" alt="The production approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category." width="80%" />
+<p class="caption">
+Figure 2.10: The production approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category.
+</p>
+</div>
+<p>The stacked area chart is appealing, but it is hard to get a sense of the individual values. Again, the line chart (shown in Figure <a href="activity.html#fig:gdp10">2.11</a>) is a lot more informative about the individual levels.</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp10"></span>
+<img src="_resources/chapter_gdp/fig8.png" alt="The production approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category." width="80%" />
+<p class="caption">
+Figure 2.11: The production approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category.
+</p>
+</div>
+<p>The index line chart in Figure <a href="activity.html#fig:gdp11">2.12</a> shows that some sectors are still below their 2000 level in real value added terms (for example the sector “Industry, including energy”).</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp11"></span>
+<img src="_resources/chapter_gdp/fig9.png" alt="The production approach components of the Gross Domestic Product for the United Kingdom using line charts and an index with base year 2000. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category" width="80%" />
+<p class="caption">
+Figure 2.12: The production approach components of the Gross Domestic Product for the United Kingdom using line charts and an index with base year 2000. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category
+</p>
+</div>
+</div>
+</div>
+<div id="what-is-included-in-the-gdp-measure" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> What is included in the GDP measure?</h3>
+<p>Measuring GDP also requires us to understand which activities we should include, and which we should not include. Based on the general principles described in the <span class="citation">(The European Commission - Eurostat <a href="#ref-esa2010" role="doc-biblioref">2013</a>)</span>, the Office for National Statistics decides on an production boundary, which contains all economic activities that should be included in the GDP measurements. An activity is included in the boundaries if:</p>
+<ul>
+<li>The activity produces a meaningful output.</li>
+<li>The product or activity has a meaningful market value, or the market value can be imputed.</li>
+<li>The inclusion of the activity increases the meaningfulness of cross-country comparisons.</li>
+</ul>
+<p>Several activities are less clear-cut that you might think, for example activities where “production is forbidden by law; as long as all units involved in the transaction enter into it voluntarily” are included. Breeding of fish in fish farms is included, but breeding of fish in open seas is not included.</p>
+</div>
+<div id="gdp---why-3-approaches" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> GDP - Why 3 approaches?</h3>
+<p>Note how all three approaches shown result in the same GDP. For simplicity, one might therefore argue that we should just stick to one approach and ignore the two other approaches. However, each approach has its own advantage. First, expenditure approach is very useful if you want to assess whether changes in GDP are driven by for example domestic consumption or exports. Moreover, we can decompose all approaches in more detail. We could for example identify which sector is contributing most to the value added using the production approach.</p>
+<p>As noted, the three approaches to measuring GDP should all lead to the same overall GDP. As an illustration, Table <a href="activity.html#fig:gdp12">2.13</a> shows the GDP components for each of the three approaches for the United Kingdom in 2017. While the three approaches in theory should lead to exactly the same number, we often observe small discrepancies in practice. These discrepancies are called “statistical discrepancy” and area as Table <a href="activity.html#fig:gdp12">2.13</a> shows relatively small. The table also illustrates why the three approaches are useful: they are informative about different perspectives. We could ask, was the recession mainly related to a drop in private consumption or exports (based on the expenditure approach)? Or, was the recession mainly related to a drop in profits or compensation of employees (the income approach). Or, which sector’s production dropped most during the recession?</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp12"></span>
+<img src="_resources/chapter_gdp/tab1.png" alt="Gross Domestic Product of the United Kingdom in 2017.Data source: OECD. All values are in 2017 prices." width="80%" />
+<p class="caption">
+Figure 2.13: Gross Domestic Product of the United Kingdom in 2017.Data source: OECD. All values are in 2017 prices.
+</p>
+</div>
+<center>
+<div class="myblock">
+<center>
+<strong>Measuring GDP - an overview</strong>
+</center>
+<p>
+<em>1. The expenditure approach</em>
+</p>
+<ul>
+<li>
+The expenditure approach (called the spending approach in <span class="citation"><span class="citation">(The CORE Team <a href="#ref-core" role="doc-biblioref">2017</a>)</span></span>) measures the GDP in terms of expenditures by households and the Government, as well investments and net exports of goods and services (i.e. exports minus imports).
+</li>
+</ul>
+<p>
+<span class="math display"><span class="math display">\[\begin{align}
+  Y=C+G+I+X-M
+\end{align}\]</span></span>
+</p>
+<ul>
+<li>
+<em>Y</em> is the Gross Domestic Product (GDP).
+</li>
+<li>
+<em>C</em> is final consumption of goods and services by households. It includes goods like food, cars, and clothing, as well as services such as hotel stays.
+</li>
+<li>
+<em>G</em> is final consumption expenditure of goods and services by the government.
+</li>
+<li>
+<em>I</em> is investments (also called gross capital formation) are investments in fixed assets such as machinery, buildings etc.
+</li>
+<li>
+<em>X</em> is goods and services produced domestically but consumed abroad (Exports)
+</li>
+<li>
+<em>M</em> is goods and services produced abroad and consumed domestically (Imports).
+</li>
+</ul>
+<p>
+<em>2. The income approach</em>
+</p>
+<ul>
+<li>
+The income approach measures the GDP in terms of the generated income in the economy.
+</li>
+</ul>
+<p>
+<span class="math display"><span class="math display">\[\begin{align}
+   Y=W+P+NT
+\end{align}\]</span></span>
+</p>
+<ul>
+<li>
+<em>W</em> is worker compensation.
+</li>
+<li>
+<em>P</em> is operating surplus.
+</li>
+<li>
+<em>NT</em> is taxes minus subsidies.
+</li>
+</ul>
+<p>
+<em>3. The production approach</em> (also known as the output approach)
+</p>
+<ul>
+<li>
+The production approach measures the GDP in terms of production or <em>gross value added</em>.
+</li>
+</ul>
+<p>
+<span class="math display"><span class="math display">\[\begin{align}
+  Y=GVA+NT
+\end{align}\]</span></span>
+</p>
+<ul>
+<li>
+<em>GVA</em> gross value added.
+</li>
+<li>
+<em>NT</em> is taxes minus subsidies.
+</li>
+</ul>
+</div>
+</center>
+</div>
+</div>
+<div id="gross-national-income-gni" class="section level2">
+<h2><span class="header-section-number">2.4</span> Gross National Income (GNI)</h2>
+<p>Gross national income (GNI) is the income received by residents of the domestic economy. The GNI is thus defined as the GDP plus the net property income from abroad. Where property income consists of interests, rent on land and income from corporations. The GDP and GNI can be very different. If for example most firms in the economy have foreign owners, the profits of these firms will be subtracted from the GDP, and the GNI will thus be considerably lower.</p>
+</div>
+<div id="what-we-use-gdp-for." class="section level2">
+<h2><span class="header-section-number">2.5</span> What we use GDP for.</h2>
+<p>Now what do we need these measures for? The GDP is an important aspect in many policy makers evaluation of the condition of the economy. For example, during the Great Depression in the late 1920ies and early 1930ies the economy looked quite bad, but how bad was actually hard to describe. The United States congress therefore asked the economist Simon Kuznetz to quantify US economic activity. Kuznetz estimates gave the first insights in the magnitude of the Great Depression by showing the change in economic activity during the great depression. Let us just consider a few general uses of GDP.</p>
+<div id="growth-rates" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Growth rates</h3>
+<p>As it was the case of the great depression, we are in general typically more interested in changes than in levels of GDP. A very commonly shown statistic is therefore the annual change in GDP. To get from the level of GDP to the growth rates is straightforward, given that the levels are measured in <em>real</em> terms, that is at a constant price level (we will return to the issue of real and nominal terms in later chapters).</p>
+<p>Figure <a href="activity.html#fig:gdp13">2.14</a> shows the GDP of the UK using a fixed price level and the annual growth rates. The yearly growth rates roughly correspond to the first derivative of the level, as they show the changes. Therefore, we are actually able to identify the large dip in 2009 even in the levels shown in the graphs above. However, identifying whether growth rates are 2 or 3 percent is difficult based on the levels, and bar charts of growth rates are therefore a very common way to visualize the economic conditions.</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp13"></span>
+<img src="_resources/chapter_gdp/fig10.png" alt="Annual GDP growth rates for the UK, 2000-2018. Using a bar  chart. Source: OECD. The GDP level is measured in terms of the 2017 price level." width="80%" />
+<p class="caption">
+Figure 2.14: Annual GDP growth rates for the UK, 2000-2018. Using a bar chart. Source: OECD. The GDP level is measured in terms of the 2017 price level.
+</p>
+</div>
+</div>
+<div id="business-cycles" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Business cycles</h3>
+<p>Once we know the changes in economic activity, we can start characterizing periods by terms such as business cycles, booms, overheating and recessions. The actual definitions of these concepts are considerably less clear. The US National Bureau of Economic Research has a “Business Cycle Dating Committee” that specifies the chronology of the US business cycles. The committee does not have a fixed definition of recessions Instead the combine real GDP, with data on the labour market and data on income. However, their definitions of recessions often coincide with a definition based on two consecutive quarters of decline in real GDP.</p>
+<p>How exactly expansions and recessions are identified varies from country to country, but in the European Union we typically define a recession as two successive quarters of negative economic growth. A business cycle is typically defined as the period from a boom to recession and back to boom, in other words, from peak to peak. Figure <a href="activity.html#fig:gdp12">2.13</a> shows annual levels, and we clearly see a drop in real output in 2008 and 2009. In terms of quarters, the growth rate was negative from the second quarter in 2008 to the second quarter in 2009.</p>
+<center>
+<div class="myblock">
+<center>
+<strong>GDP and business cycles</strong>
+</center>
+<ul>
+<li>
+An economic recession is the period from peak economic activity to the lowest level of economic activity.
+</li>
+<li>
+An economic expansion is the period from the lowest level of economic activity to the highest level of economic activity.
+</li>
+<li>
+The economic cycle of recessions and expansions is called business cycles.
+</li>
+<li>
+There is no general stringent definition of a recession, but two consecutive quarters of decline in real GDP is often seen as a sign of of a recession.
+</li>
+</ul>
+</div>
+</center>
+</div>
+<div id="gdp-per-capita" class="section level3">
+<h3><span class="header-section-number">2.5.3</span> GDP per capita</h3>
+<p>While GDP growth rates are used across time, we are sometimes also interested in comparing across regions or countries. First, we could be interested in identifying regional recessions and expansions. Second, we could be interested in comparing the level of economic activity per capita. To achieve the latter, we divide data on total GDP for each region or country and divide by the number of residents in the region or country. Figure <a href="activity.html#fig:gdp14">2.15</a> shows the economic activity per person in 2015. We have adjusted the price levels to be comparable across time and space. In this chart the values correspond to the price level of 2017 and we have adjusted all national values to the US price level and show the values in US dollars. To be clear, we do not simply use the exchange rate to translate the national currencies, but we also take differences in price levels across countries into account. Luxembourg has, by far, the highest level of economic activity per person, followed by Ireland and Switzerland. Of the OECD data with available data, Chile has the lowest GDP per person.</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp14"></span>
+<img src="_resources/chapter_gdp/fig11.png" alt="GDP per capita for selected countries in 2015, measured in 2017 USD - PPP adjusted. Source: OECD.  The R script for the GDP per capita Figures is available [here](https://www.dropbox.com/s/p2u4epol8hqn6ab/GDP_per_capita.R?dl=0}{Link to script)." width="80%" />
+<p class="caption">
+Figure 2.15: GDP per capita for selected countries in 2015, measured in 2017 USD - PPP adjusted. Source: OECD. The R script for the GDP per capita Figures is available <a href="https://www.dropbox.com/s/p2u4epol8hqn6ab/GDP_per_capita.R?dl=0%7D%7BLink%20to%20script">here</a>.
+</p>
+</div>
+<p>Figure <a href="activity.html#fig:gdp15">2.16</a> shows the relative change in real economic activity per person from 2000 to 2015. Most countries increased the output per person, but not all.</p>
+<div class="figure" style="text-align: center"><span id="fig:gdp15"></span>
+<img src="_resources/chapter_gdp/fig12.png" alt="Real change in GDP per capita for selected countries 2000-2015, real values measured  in 2017 USD - PPP adjusted. Source: OECD.  The R script for the GDP per capita Figures is available [here](https://www.dropbox.com/s/p2u4epol8hqn6ab/GDP_per_capita.R?dl=0}{Link to script)." width="80%" />
+<p class="caption">
+Figure 2.16: Real change in GDP per capita for selected countries 2000-2015, real values measured in 2017 USD - PPP adjusted. Source: OECD. The R script for the GDP per capita Figures is available <a href="https://www.dropbox.com/s/p2u4epol8hqn6ab/GDP_per_capita.R?dl=0%7D%7BLink%20to%20script">here</a>.
+</p>
+</div>
+</div>
+<div id="productivity" class="section level3">
+<h3><span class="header-section-number">2.5.4</span> Productivity</h3>
+<p>Productivity is a measure of how much we can produce relative to the resources used in the production. A higher productivity means that we produce more given resources (or produce the same with less resources).</p>
+<p>A very common approach is to measure the Gross Value Added per worker or per hours worked. A higher value then suggests that we can produce a greater value added with less labor inputs. However, we could also consider other inputs such as capital. However, the most simple approach is probably GDP per worker. This is closely related to GDP capita, which we discussed above, but in this approach we only consider the individuals who are on the labor market. Using this approach we can provide a crude but straightforward indicator for the labor productivity of a country. Changes in productivity are often the first step in understanding changes in economic activity.</p>
+</div>
+<div id="the-balance-of-trade" class="section level3">
+<h3><span class="header-section-number">2.5.5</span> The balance of trade</h3>
+<p>The balance of trade is the difference between exports and imports, also called net exports and denoted <span class="math inline">\(NX\)</span>:</p>
+<p><span class="math display">\[\begin{align}
+  NX=X-M
+\end{align}\]</span></p>
+<ul>
+<li><em>NX</em> is the balance of trade or net exports.</li>
+<li><em>X</em> is goods and services produced domestically but consumed abroad (Exports)</li>
+<li><em>M</em> is goods and services produced abroad and consumed domestically (Imports).</li>
+</ul>
+<p>If the balance of trade is positive it means that a country has a trade surplus, because it exports more than it imports. If a country imports more than it exports, in other words, when the trade balance is negative, the country has a trade deficit.</p>
+</div>
+<div id="balance-of-payments" class="section level3">
+<h3><span class="header-section-number">2.5.6</span> Balance of payments</h3>
+<p>The balance of payments (BoP) captures the overall transactions between a country and the rest of the world. According to the BoP the the sum of the current account, financial account and capital account has to be zero.</p>
+<ul>
+<li>The current account consists of the the balance of trade (as defined above) and the income balance (income earned abroad from domestic residents minus income earned by foreign residents).</li>
+<li>The capital account captures international capital transfers.</li>
+<li>The balancing item captures statistical inaccuracies.</li>
+</ul>
+<p><span class="math display">\[\begin{align}
+  \text{current account}+\text{capital account}+\text{balancing item}=0 
+\end{align}\]</span></p>
+<p>Let’s consider an example: If we go to Germany on holiday and spend 10GBP in restaurants and hotels using our English credit card, we are causing a 10GBP debit on the trade balance. Let’s say that we also export some English Breakfast tea for the value of 100GBP to Germany. This is noted as a 100GBP credit on the trade balance. The balance of trade is then <span class="math inline">\(100GBP-10GBP=+90GBP\)</span>. We don’t earn anything abroad and no foreigner earned something in England. The current account would then be <span class="math inline">\(+90GBP\)</span>.</p>
+<p>Now let us look at the capital account. The 10GBP spent abroad using our English credit card will be recorded as a credit in our capital account as an investments. If we also buy some German stocks for say 15GBP, then these stocks will appear in debit as “portfolio investment”. However, because we use our English credit card to buy these stocks, the 15GBP will also appear on our capital account as a credit (just like the hotel and restaurant shopping). Finally, the trade credit payment from the German tea buyer is recorded in the financial accounts as a debit. The net capital account is then <span class="math inline">\(25GBP-115GBP=-90GBP\)</span>. As expected, the sum of the current account plus the capital account is zero. This occurs by definition through the double entry accounting framework (each entry is entered both as a debit or a credit).</p>
+<p>It is common to separate out “financial account” from the capital account and use this extended definition:
+<span class="math display">\[\begin{align}
+  \text{current account}+\text{capital account}+\text{financial account}+\text{balancing item}=0
+\end{align}\]</span></p>
+</div>
+</div>
+<div id="summary" class="section level2">
+<h2><span class="header-section-number">2.6</span> Summary</h2>
+<p>So what should you take away from this chapter?</p>
+<ul>
+<li>What GDP and GNI are.</li>
+<li>How GDP and GNI are measured.</li>
+<li>The difference between real and nominal GDP.</li>
+<li>How to calculate growth rates.</li>
+<li>Identifying business cycles.</li>
+<li>GDP per capita and productivity measures</li>
+<li>Balance of Trade and Payments.</li>
+</ul>
+
+</div>
+</div>
+<h3> References</h3>
+<div id="refs" class="references">
+<div id="ref-kuznets1934national">
+<p>Kusnets, Simon. 1934. <em>National Income, 1929-1932</em>. Vol. 124. Washington: United States Government Printing Office.</p>
+</div>
+<div id="ref-core">
+<p>The CORE Team. 2017. <em>The Economy-Economics for a Changing World</em>. 1st ed. Oxford University Press, UK.</p>
+</div>
+<div id="ref-esa2010">
+<p>The European Commission - Eurostat. 2013. “European System of Accounts - Esa 2010.”</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="people.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="measuring-well-being.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["book.pdf", "book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
