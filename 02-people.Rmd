@@ -40,7 +40,7 @@ rm(list=ls())
 #install.packages("tidyverse")
 library("tidyverse")
 # load eurostat dataset: "data1_population_source_eurostat.csv"
-setwd("C:\\Users\\hs17922\\Dropbox\\Work\\Teaching\\Economic Data\\2019_2020\\github\\book\\_resources\\chapter_people\\rawdata")
+setwd("C:\\Users\\hs17922\\Dropbox\\Work\\Teaching\\Economic Data\\2019_2020\\reading\\economicdata_book\\economicdata\\_resources\\chapter_people\\rawdata")
 url<-"data1_population_source_eurostat.csv"
 pop_data<-read_csv(url)
 head(pop_data)
