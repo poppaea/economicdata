@@ -91,11 +91,11 @@ cat('Table: (\\#tab:deatht) Data requirements for life tables
 |Col  |Notation  |Content  |Source  |
 | - |-----------| ---------------|-----|
 |(1)| $x,x+n$ | The age interval              | Provided  |
-|(2)| $m_x$   | The age-specific death rate.  | $\frac{\text{deaths  $x,x+n$ }}{\text{population $x,x+n$ }}$|
-|(3) | $_nq_n$ | Prob. dying within interval.                | $\\frac{2\times n\times m_x}{2+n\times m_x}$|
+|(2)| $m_x$   | The age-specific death rate.  | $\\frac{\\text{deaths } x,x+n}{\\text{population } x,x+n }$|
+|(3) | $_nq_n$ | Prob. dying within interval.                | $\\frac{2\\times n\\times m_x}{2+n\\times m_x}$|
 |(4) | $I_x$   | Alive at age $x$                            | $I_0=100,000$|
 |    |         |                                             | $I_{x+n}=I_x-_nd_x$|
-|(5) | $_nd_x$ | Number of people who die within interval.   | $I_x\times _nq_x $|
+|(5) | $_nd_x$ | Number of people who die within interval.   | $I_x \\times _nq_x$|
 |(6) | $L_x$   | Person-years of life in interval            | $\\frac{I_{x}+I_{x+n}}{2}$|
 |(7) | $T_x$   | Cumulative person-years of life             | $\\sum_{end}^x{L_x}$|
 |(8) | $e_x$   | Average  years of life remaining at age $x$ | $T_x/I_x$|')
