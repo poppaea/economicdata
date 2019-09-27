@@ -5,6 +5,7 @@ date: "Version 0.3"
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
+    split_by: none
     config:
       toc:
         collapse: subsection
