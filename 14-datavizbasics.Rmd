@@ -357,6 +357,16 @@ Tables and charts should always be self-explanatory. Self-explanatory simply mea
 
 We can summarize the principles for good data visualization using a "cook-book" type instructions. 
 
+
+
+
+<center>
+```{block, type='myblock'}
+<center>
+**A cook book for good data visualization**
+</center>
+ 
+  
 1. Table or chart
     * Charts are typically more effective for large datasets.
     * Charts are typically preferred for visualizing patterns and tables are often the best choice for showing exact values.
@@ -372,6 +382,8 @@ We can summarize the principles for good data visualization using a "cook-book" 
     * Does the visualization contain everything needed to understand and replicate the chart?
     * Are all axes clearly labeled? Is the source clearly stated?
     
+```
+</center>
 
 ## Summary
 

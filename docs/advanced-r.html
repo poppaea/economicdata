@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Data about people | Economic Data</title>
-  <meta name="description" content="Chapter 1 Data about people | Economic Data for EFIM 10016 - University of Bristol" />
+  <title>Chapter 18 Advanced R | Economic Data</title>
+  <meta name="description" content="Chapter 18 Advanced R | Economic Data for EFIM 10016 - University of Bristol" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Data about people | Economic Data" />
+  <meta property="og:title" content="Chapter 18 Advanced R | Economic Data" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 1 Data about people | Economic Data for EFIM 10016 - University of Bristol" />
+  <meta property="og:description" content="Chapter 18 Advanced R | Economic Data for EFIM 10016 - University of Bristol" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Data about people | Economic Data" />
+  <meta name="twitter:title" content="Chapter 18 Advanced R | Economic Data" />
   
-  <meta name="twitter:description" content="Chapter 1 Data about people | Economic Data for EFIM 10016 - University of Bristol" />
+  <meta name="twitter:description" content="Chapter 18 Advanced R | Economic Data for EFIM 10016 - University of Bristol" />
   
 
 <meta name="author" content="Hans Henrik Sievertsen" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="part-i-econ-concepts-and-definitions.html">
-<link rel="next" href="activity.html">
+<link rel="prev" href="charts-in-r.html">
+<link rel="next" href="references.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -325,325 +325,20 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="people" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Data about people</h1>
-<div id="what-this-chapter-is-about" class="section level2">
-<h2><span class="header-section-number">1.1</span> What this chapter is about</h2>
-<div id="intended-learning-outcomes" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> Intended learning outcomes</h3>
-<p>This chapter is about showing data on people. For example the the number of people living in the United Kingdom on January 1, 2019. Population data is a good point of departure. Firstly, because data about people is some of the most important data in social sciences. Secondly, because data about people is quite straightforward and yet it involves a good range of basic concepts. After reading this chapter you should be able to</p>
+<div id="advanced-r" class="section level1">
+<h1><span class="header-section-number">Chapter 18</span> Advanced R</h1>
 <ul>
-<li>Create data visualization on.
-<ul>
-<li>Population stocks.</li>
-<li>Population flows.</li>
-<li>Population age compositions.</li>
-</ul></li>
-<li>Explain the difference between a flow and stock variable.</li>
-<li>Quantify changes in stocks and levels.
-<ul>
-<li>This is covered in more detail in chapter X.</li>
-</ul></li>
-<li>Create an index with one variable.
-<ul>
-<li>This is covered in more detail in chapter X.</li>
-</ul></li>
-<li>Create charts and tables and Excel.
-<ul>
-<li>This is covered in more detail in chapter X.</li>
-</ul></li>
-</ul>
-</div>
-<div id="population-data-visualization-examples" class="section level3">
-<h3><span class="header-section-number">1.1.2</span> Population data visualization examples</h3>
-<p>So let us look at some data on people. Figure <a href="people.html#fig:fig1">1.1</a> shows the population of the United Kingdom from 1960 to 2018 using a line chart. This chart is a bit dull. There are no bells and whistles such as 3D effects or colors. That is actually a good thing. Charts that should focus on the data and not distract the reader. We will discuss chart design in much more detail in later chapters. But for now, let us just focus on this boring chart. What can we use this chart for? We can clearly see that the population of the UK has been increasing over the last 50 years from less than 50 million in the 1960ies to more than 60 million around 2018. Can we say what the precise number of people in the UK is in 2018? Not really. A chart is rarely useful for looking up precise values. But a chart is really good at showing patterns in the data. For example the pattern that the population is increasing.</p>
-<div class="figure" style="text-align: center"><span id="fig:fig1"></span>
-<img src="book_files/figure-html/fig1-1.png" alt="\label{fig:figs}Population of the UK. Data Source: Eurostat" width="384" />
-<p class="caption">
-Figure 1.1: Population of the UK. Data Source: Eurostat
-</p>
-</div>
-<p>While the line chart above is a bit boring, Figure <a href="people.html#fig:fig2">1.2</a> is certainly not boring. It is very colourful and shows lots of data. This chart type is called a population pyramid chart. The chart shows the age composition of the global population. The width at the bottom of the chart represents the number of people in the youngest age group and the top the number of people in the oldest age group. Why do you think it is called a pyramid chart? And why do you think this version of the chart looks more like a cake? And finally, why is this trend both good and worrying for policy makers?</p>
-<div class="figure" style="text-align: center"><span id="fig:fig2"></span>
-<img src="_resources/chapter_people/poppyramid.jpg" alt="Global Population Age Composition. Source: Our World in Data" width="80%" />
-<p class="caption">
-Figure 1.2: Global Population Age Composition. Source: Our World in Data
-</p>
-</div>
-<p>Data on the number of people are important in itself but are also important ingredients in many other economics statistics. We therefore need to know how population levels are defined, how me measure population levels and and how we visualize data on population levels.</p>
-<p>Let’s get started.</p>
-</div>
-</div>
-<div id="definitions-on-people" class="section level2">
-<h2><span class="header-section-number">1.2</span> Definitions on people</h2>
-<p>When we show and discuss data it is important that we agree on how we define the concept. We therefore begin by going through some definitions. Some of these definitions are not only limited to economic data. For example the definition on flow and stock variables, which we can use for any data type. Most of the definitions are fairly simple. That is actually the case for most definitions in this book. It is not the understanding of the definition that is challenging. The challenging part of working with economic data is knowing that there are definitions and that using a different definition can lead to a different conclusion about patterns in economic data.</p>
-<div id="flow-and-stock-variables" class="section level3">
-<h3><span class="header-section-number">1.2.1</span> Flow and stock variables</h3>
-Variables either capture flows or stocks. We can illustrate flow and stock variables using a bathtub as in Figure <a href="people.html#fig:baththub">1.3</a>. The water level in the bathtub at a given point in time is a stock variable. The amount of water that has flown into the tub over a period of time is a flow variable.
-<div class="figure" style="text-align: center"><span id="fig:baththub"></span>
-<img src="_resources/chapter_people/flowbathtub.png" alt="A bathtub with water illustrating flows and stocks" width="90%" />
-<p class="caption">
-Figure 1.3: A bathtub with water illustrating flows and stocks
-</p>
-</div>
-<p>The easiest way to distinguish between flow and stock variables is that a flow variable is measured over a <em>period</em> of time while stock variable is measured at a specific <em>point</em> of time. If some asked you: “How much water flowed into the bathtub on September 4 at 4:40pm and 10 seconds?” It would be very difficult to answer. However, if someone asked “How much water was in the bathtub on September 4 at 4:40pm and 10 seconds?”, it would be quite easy to answer (given that you had some tool to measure). This is because the water level is a stock variable. A stock variable is measured at a point in time and “September 4, at 4:40pm and 10 seconds” is a point in time. On the other hand if someone asked “How much water flowed into the bathtub on September 4 between 4:40pm and 4:50pm?”, you would also be able to oanswer it, because you are now given a “period of time” (a period of 10 minutes) and flow variables are measured over a period.</p>
-<center>
-<div class="myblock">
-<center>
-<strong>Flow variable and stock variables</strong>
-</center>
-<ul>
-<li>
-A <em>flow</em> variable measures a flow of quantity over a <em>period</em> of time.
-<ul>
-<li>
-For example the flow of migrants into the UK from January 1 2017 to December 31 2017.
-</li>
-</ul>
-</li>
-<li>
-A <em>stock</em> variable measures the level of quantity at a <em>point</em> of time.
-<ul>
-<li>
-For example the number of people residing in the UK at January 1, 2018.
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</center>
-<p>Let’s think about economic variables instead of water and bathtubs. What would be an example of stock and flow variables? An example of a stock variable would be wealth. We measure wealth at a “point in time”. An example of a flow variable would be income. We measure income over a period of time.</p>
-<p>Why is it important to know whether a variable is a flow or stock variable? First, because it is useful when we want to understand the changes in a variable. The change in the water level of the bathtub (a stock variable) can be described by the inflow and outflow of water. The change in wealth (stock) is a function of income and consumption flows. Second, because the best way to visualize the data depends on the type of variable.</p>
-<p>We can often describe the change in a stock variable by underlying flows:</p>
-<p><span class="math display">\[ \Delta Stock=Stock_{1}-Stock_{0}=Flow_{0-1} \]</span></p>
-<p>For example the change in the population level of the UK from 1 January, 2002 to 1 January, 2003 equals the number of people who immigrated to the UK, minus the number of people who left the UK (emmigrated), plus the number of children born, plus the number pof people who died in the period from 1 January, 2002 to 1 January 2003. In this example the population level is a stock variable. It is measured at a point in time (January 1, 2002). The other variables are all flow variables that are measured over a period of time. For example the number of births from 1 January 2002 to 1 January, 2003.</p>
-<p>In the limit we would not be able to measure a flow variable as a stock variable. We could measure the number of people living in the UK on January 1, 2002 at five seconds and 3 milliseconds after 10:00AM, but how many children are born in exactly that millisecond? A child birth typically takes more than a second, so how do we allocate a birth a precise millisecond?</p>
-</div>
-<div id="the-population-level" class="section level3">
-<h3><span class="header-section-number">1.2.2</span> The population level</h3>
-<p>Let us now turn to a definition that we already discussed: The population.</p>
-<center>
-<div class="myblock">
-<center>
-<strong>The population level</strong>
-</center>
-<ul>
-<li>
-The number of people in an area at a specific point in time.
-</li>
-</ul>
-</div>
-</center>
-<p>In most cases we are interested in the number of people of <em>living</em> in an area, but in some contexts it could be something else. For example the number of people <em>working</em> in an area. For example the number of people working in Bristol (I work in Bristol, but I do not reside in Bristol).</p>
-<p>The area could be a planet, a continent a country, a region, a county, a municipality, a house or any other clearly defined space.</p>
-</div>
-<div id="the-population-flows" class="section level3">
-<h3><span class="header-section-number">1.2.3</span> The population flows</h3>
-<p>The population level of an area can change because of non-zero net migration flows and non-zero natural reproduction flows. These two concepts are defined below:</p>
-<center>
-<div class="myblock">
-<center>
-<strong>Migration flows</strong>
-</center>
-<ul>
-<li>
-Immigration: the number of people entering an area over a period of time.
-</li>
-<li>
-Emigration: the number of people leaving an area over a period of time.
-</li>
-<li>
-Net migration: Immigration minus emigration
-</li>
-</ul>
-</div>
-</center>
-<center>
-<div class="myblock">
-<center>
-<strong>Natural reproduction flows</strong>
-</center>
-<ul>
-<li>
-Deaths: the number of people in an area who died within a period of time.
-</li>
-<li>
-Births: the number of people in an area who are born within a period of time.
-</li>
-<li>
-Natural reproduction: The number of minus births the number of deaths.
-</li>
-</ul>
-</div>
-</center>
-<p>What do we mean with non-zero? If the net migration flow is zero it means that the number of people who left the area equals the number of people who entered the area. In that case the population is unchanged. Only if the number of people leaving the area is not equal to the number of people entering the area can population levels change because of migration flows.</p>
-</div>
-</div>
-<div id="people:vis" class="section level2">
-<h2><span class="header-section-number">1.3</span> Visualizing population data</h2>
-<p>Having sorted out the basic definitions on population levels and the underlying flows in terms of net migration, births and deaths, we can now turn to the visualization of the population data. But how do we select the appropriate visualisation mode? We can generally split the data visualization process into three purposes:</p>
-<ol style="list-style-type: decimal">
-<li>Exploratory data visualization</li>
-<li>Analytical data visualization</li>
-<li>Data visualization for communication.</li>
-</ol>
-<p>Let us say that we want to explore the data on the UK population. The first thing we might do is to download the data from the UK office for National Statistics and simply open it using the appropriate software such as MS Excel or R.</p>
-<div id="exploring-data-on-population-levels" class="section level3">
-<h3><span class="header-section-number">1.3.1</span> Exploring data on population levels</h3>
-<p>Let us first get some data from the website of the UK Office for National Statistics:</p>
-<div class="figure" style="text-align: center"><span id="fig:gettingdata"></span>
-<img src="https://www.dropbox.com/s/p9vqan2nyyb7djc/gettingpopdata.gif?dl=1" alt="Getting data from the ONS website" width="70%" />
-<p class="caption">
-Figure 1.4: Getting data from the ONS website
-</p>
-</div>
-<p>Now that we have the data, we are ready to look at the data. Figure <a href="people.html#fig:popdata">1.5</a> shows the sheet called “MYE4” of the downloaded file. This sheet contains “Population estimates: Summary for the UK, mid-1971 to mid-2018”. That sounds about right.</p>
-<div class="figure" style="text-align: center"><span id="fig:popdata"></span>
-<img src="_resources/chapter_people/table.png" alt="UK population data opened in MS Excel" width="60%" />
-<p class="caption">
-Figure 1.5: UK population data opened in MS Excel
-</p>
-</div>
-<p>What do we learn from Figure <a href="people.html#fig:popdata">1.5</a>? First of all, that there are many numbers. Secondly, it looks a bit like the population is increasing in all regions. But overall it is really hard to tell. This is because a table is good for showing exact values, but with a lot of exact values we lose the overview.</p>
-<div class="figure" style="text-align: center"><span id="fig:firstchart"></span>
-<img src="https://www.dropbox.com/s/2smkgdlga2h27a1/visualisingdata1.gif?dl=1" alt="Creating our first chart in MS Excel" width="60%" />
-<p class="caption">
-Figure 1.6: Creating our first chart in MS Excel
-</p>
-</div>
-<p>What can we learn from the chart created in <a href="people.html#fig:firstchart">1.6</a>? Not much. First of all, the chart indicates a decreasing trend. We typically read charts from left to right and almost all lines were decreasing. Secondly, it was very difficult to say anything about the population data for Wales, Scotland and Northern Ireland based on that chart, because the level is so low compared to England and the UK.</p>
-<p>Let us solve the first problem first. Looking at the data again (see Figure <a href="people.html#fig:popdata">1.5</a> ), we observe that theONS puts the most recent value at the top. “Mid-2018” (i.e. the point in time the stock variable is measured) is the first value, followed by “Mid-2017” and so on. That is not how Excel works. When we create charts in Excel, Excel will assume that the first value is the oldest value and the last value the most recent value. This is even more important when the values don’t reflect dates that Excel might recognize. Excel will treat “Mid-2018” as any other name (just like “Hans”, “Julia” and “Jim”). And because we haven’t told Excel anything else, it will just assume that we want to show the first value first (furthest to the left) and the last value last (furthest to the right). That sounds reasonable, or? So we first need to reorder the data. We can do this using the “sort” function in R as illustrated in Figure <a href="people.html#fig:sorted">1.7</a>.</p>
-<div class="figure" style="text-align: center"><span id="fig:sorted"></span>
-<img src="https://www.dropbox.com/s/fkbfzz3dtcebwtm/sorted.gif?dl=1" alt="Resorting the data" width="70%" />
-<p class="caption">
-Figure 1.7: Resorting the data
-</p>
-</div>
-<p>The new chart created in Figure <a href="people.html#fig:sorted">1.7</a> now shows the data in the right way. However, there is still the issue of the trends for the Northern Ireland, Wales and Scotland. Let us for now just concentrate on the UK and try to create a nice looking chart. In Figure <a href="people.html#fig:nicelooking">1.8</a> we create a chart that looks like <a href="people.html#fig:fig1">1.1</a>. It is a bit dull, but it only shows what it should show. The population level of the UK and how it developed over time. As the animation in <a href="people.html#fig:nicelooking">1.8</a> shows, creating a nice looking chart requires a lot of small adjustments in Excel. We adjust text color, font size, font type, line color, line width, axis colors, axis labels, titles and many other things. Adjusting all these aspects can be a bit tiresome, but they are important. Figure <a href="people.html#fig:fig1">1.1</a> is created using the software R. When creating charts with R, we can write a “code” that instructs R on how to create the chart. This can save a lot of time. Especially because we can reuse the code. We will hear more about R, but let us first think about how we could include population data for England, Scotland, Northern Ireland and Wales in one chart.</p>
-<div class="figure" style="text-align: center"><span id="fig:nicelooking"></span>
-<img src="https://www.dropbox.com/s/anfar1ktmoa72fe/nicechart.gif?dl=1" alt="Creating our first nice looking chart using Excel. Data source: ONS." width="50%" /><img src="_resources/chapter_people/nicechart.png" alt="Creating our first nice looking chart using Excel. Data source: ONS." width="50%" />
-<p class="caption">
-Figure 1.8: Creating our first nice looking chart using Excel. Data source: ONS.
-</p>
-</div>
-<p>The key problem is that England’s population is a different level and that the y axis scale would be different if we only included Northern Ireland, Wales and Scotland and not England. What we can do is to create a second y axis. Let’s have a go in Figure <a href="people.html#fig:nicelookingc">1.9</a>.</p>
-<div class="figure" style="text-align: center"><span id="fig:nicelookingc"></span>
-<img src="https://www.dropbox.com/s/b1ixqgwalhy7czb/nicechartcombined.gif?dl=1" alt="Creating a chart of the population of the UK  using Excel. Data source: ONS." width="50%" /><img src="_resources/chapter_people/nice1.png" alt="Creating a chart of the population of the UK  using Excel. Data source: ONS." width="50%" />
-<p class="caption">
-Figure 1.9: Creating a chart of the population of the UK using Excel. Data source: ONS.
-</p>
-</div>
-<p>In the chart we create in Figure <a href="people.html#fig:nicelookingc">1.9</a> the population level of England is shown on the right axis, while the levels for the other countries are shown on the left axis. When using this strategy, it is very important to clearly state what axis each line belongs to. In the example above this could be improved. How would you improve that chart?</p>
-<p>So far we just used the line chart. The line chart is one of the most popular chart types. How does it work?</p>
-<ul>
-<li>The chart shows the relationship between two variables.</li>
-<li>The value of the first variable is reflected by the horizontal position.</li>
-<li>The value of the second variable is reflected by the vertical position.</li>
-<li>The values are connected along the horizontal axis suggesting that the variable is continuous.</li>
-</ul>
-<p>Could we also use a different chart type to show the population of the UK? Yes, we could exploit that England, Nortern Ireland, Scotland and Wales are a part of a whole. Where the whole is the UK. We can use a stacked chart to show this. A stacked chart “stacks” the values on the vertical axis on top of each other. Stacking population levels for England, Wales, Northern Ireland and Scotland leads to the population of the UK. In Figure <a href="people.html#fig:stacked">1.10</a> we create a stacked area chart of the UK population. Now we do not need two axes. However, it is now much more difficult to identify the trends for the individual countries. This is a valuable lesson in data visualizations. We often have to sacrifice. We cannot show everything. We have to decide what the most important aspect of the data is.</p>
-<div class="figure" style="text-align: center"><span id="fig:stacked"></span>
-<img src="https://www.dropbox.com/s/47qm7hi15sr86km/stacked.gif?dl=1" alt="Creating a stacked area chart for the UK population  using Excel. Data source: ONS." width="50%" /><img src="_resources/chapter_people/stacked.png" alt="Creating a stacked area chart for the UK population  using Excel. Data source: ONS." width="50%" />
-<p class="caption">
-Figure 1.10: Creating a stacked area chart for the UK population using Excel. Data source: ONS.
-</p>
-</div>
-<p>An area chart works very much likes a line chart, with one important difference:</p>
-<ul>
-<li>The value is not simply reflected by the vertical and horizontal position, but by the size of the area.</li>
-<li>We should therefore not truncate any of the axes (i.e. make the shorter), because that would remove parts of the area.</li>
-</ul>
-</div>
-<div id="showing-relative-changes" class="section level3">
-<h3><span class="header-section-number">1.3.2</span> Showing relative changes</h3>
-<p>What if the most important aspect of the population data is the relative change since 1971? We can see the changes in Figure <a href="people.html#fig:nicelookingc">1.9</a>, but it is not easy to compare the relative changes for the individual countries. To highlight the relative change in population levels since 1971 and allow us to compare across countries we can create an index. For all countries we readjust the values in such a way that the value in 1971 is 100 using the following formula:</p>
-<p><span class="math display">\[ I_{year}=100\times \frac{Population_{year}}{Population_{1971}}\]</span></p>
-<p>We use this formula on the data from the examples above in Figure <a href="people.html#fig:index">1.11</a>. From that chart we see that the population has increased the most in Northern Ireland and the least in Scotland, in relative terms. That was hard to see from the previous charts. However, now we cannot say anything about the levels anymore. This is because the level is “canceled out” in the index and only the relative changes remain.</p>
-<div class="figure" style="text-align: center"><span id="fig:index"></span>
-<img src="https://www.dropbox.com/s/aajcywdhujo56qb/index.gif?dl=1" alt="Showing the relative population growth of the UK using an index in Excel. Data source: ONS." width="50%" /><img src="_resources/chapter_people/index.png" alt="Showing the relative population growth of the UK using an index in Excel. Data source: ONS." width="50%" />
-<p class="caption">
-Figure 1.11: Showing the relative population growth of the UK using an index in Excel. Data source: ONS.
-</p>
-</div>
-</div>
-<div id="creating-a-table-on-population-changes" class="section level3">
-<h3><span class="header-section-number">1.3.3</span> Creating a table on population changes</h3>
-<p>Now what if we are only interested in the population level in 1971 and 2018 and how it changed. Could we show that in a different way that gives us access to more information? Yes, we could use a table because now it is only a few variables that needs to be shown. But designing a table also requires quite a bit of adjustment in Excel (or Word).</p>
-<p>In Figure <a href="people.html#fig:tableb">1.12</a> we create a simple Table, but pay attention how we use black lines, borders, white space and text alignment to make the table as readable as possible.</p>
-<ul>
-<li>Solid black lines separate titles from main data and data levels from changes.</li>
-<li>As numbers have the same width we can align the numbers and the text in the center.</li>
-<li>We can now confirm the pattern from the index above, Northern Ireland experienced the largest growth in relative terms and Scotland the lowest.</li>
-<li>Compared to the charts above we have precise information about both the levels and the changes.</li>
-</ul>
-<div class="figure" style="text-align: center"><span id="fig:tableb"></span>
-<img src="https://www.dropbox.com/s/9th51azdvsxmouv/table.gif?dl=1" alt="Showing the population of the UK using a Table. Data source: ONS." width="50%" /><img src="_resources/chapter_people/tableb.png" alt="Showing the population of the UK using a Table. Data source: ONS." width="50%" />
-<p class="caption">
-Figure 1.12: Showing the population of the UK using a Table. Data source: ONS.
-</p>
-</div>
-</div>
-<div id="describing-the-change-in-levels-by-the-underlying-flow-variables" class="section level3">
-<h3><span class="header-section-number">1.3.4</span> Describing the change in levels by the underlying flow variables</h3>
-<p>We can investigate the underlying population flows to get a better understanding of the dynamics that led to the change in the population levels we observed. Consider the change in the population of the UK from January 1 2015 to January 1 2016. We can decompose the change in the population level (a stock variable) by the following four flows:</p>
-<ul>
-<li>The population on January 1 2015
-<ul>
-<li><span class="math inline">\(+\)</span> moved to the country during 2015.</li>
-<li><span class="math inline">\(-\)</span> moved out of the country during 2015.</li>
-<li>=net migration</li>
-<li><span class="math inline">\(+\)</span> born the during 2015.</li>
-<li><span class="math inline">\(-\)</span>} died the during 2015.</li>
-<li>(=natural population change)</li>
-</ul></li>
-<li><span class="math inline">\(=\)</span> The population on January 1 2016.</li>
-</ul>
-<p>The Eurostat database provides data on the underlying flows in the population levels. The question is: how to best visualize this change? In Figure <a href="people.html#fig:popflows">1.13</a> we show the flows by means of stacked bars and the stocks in terms of a line chart. We thereby exploit that the total change is equal to the natural population change plus the net migration. One challenge with the latter approach (stacking bars and areas) is that if a series can contain both negative and positive values, it might be hard to read or even slightly misleading, because the negative or positive value is hidden. However, the overall pattern is clearly visible. In recent years, the population of the UK ihas increased a lot, and this is both due to positive net migration flows and postive reproduction flows.</p>
-<div class="figure" style="text-align: center"><span id="fig:popflows"></span>
-<img src="_resources/chapter_people/fig7.png" alt="Annual changes in the  population of the United Kingdom in terms of net migration (immigration minus emigration) and the natural population change (births minus deaths). Data source: Eurostat.  The R script for this Figure is available [here](https://www.hhsievertsen.net/economicdata/notes/lecture12/rmaterial/lecnote_12_script_for_fig3.)." width="80%" />
-<p class="caption">
-Figure 1.13: Annual changes in the population of the United Kingdom in terms of net migration (immigration minus emigration) and the natural population change (births minus deaths). Data source: Eurostat. The R script for this Figure is available <a href="https://www.hhsievertsen.net/economicdata/notes/lecture12/rmaterial/lecnote_12_script_for_fig3.">here</a>.
-</p>
-</div>
-</div>
-<div id="creating-a-pyramid-chart-using-excel" class="section level3">
-<h3><span class="header-section-number">1.3.5</span> Creating a pyramid chart using Excel</h3>
-<p>We have now shown the basic levels and flows, can we also create more advanced charts in Excel? For example a chart like <a href="people.html#fig:fig2">1.2</a>?. The population pyramid chart. Yes. We can create a lot of charts using Excel. And a pyramid chart can be created with some creativity. Let’s first consider the various aspects of this chart</p>
-<ul>
-<li>The width of the chart shows the number of people in a specific age group.</li>
-<li>We split the chart by gender and show the number of men and women, respectively to the left and to the right.</li>
-<li>The vertical position reflects the age group.</li>
-</ul>
-<p>We can create this chart in Excel by creating a a bar chart. A bar chart is very similar to an area chart, we show the value in terms of the size of an area. However, in contrast to both the area and line chart, the values are not connected. This is very useful when values are not continuous. This is not the case here, but it it is good to keep this in mind. Figure <a href="people.html#fig:pyramid">1.14</a> shows how we can do it. Pay good attention to how we remove the minus.</p>
-<div class="figure" style="text-align: center"><span id="fig:pyramid"></span>
-<img src="https://www.dropbox.com/s/9th51azdvsxmouv/table.gif?dl=1" alt="Showing the population of the UK using a Table. Data source: ONS." width="50%" /><img src="_resources/chapter_people/pyramid.png" alt="Showing the population of the UK using a Table. Data source: ONS." width="50%" />
-<p class="caption">
-Figure 1.14: Showing the population of the UK using a Table. Data source: ONS.
-</p>
-</div>
-</div>
-</div>
-<div id="people:sum" class="section level2">
-<h2><span class="header-section-number">1.4</span> Summary</h2>
-<p>So what should you take away from this chapter?</p>
-<ul>
-<li>The difference between a stock and a flow variable</li>
-<li>Advantages of Tables vs. Charts</li>
-<li>How we measure the population level and migration and reproduction flows.</li>
-<li>Creating basic charts and tables in Excel</li>
-<li>Creating a pyramid chart in Excel</li>
-<li>Using and interpreting an Index with one variable.</li>
+<li>to be completed</li>
 </ul>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="part-i-econ-concepts-and-definitions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="activity.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="charts-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

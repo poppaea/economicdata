@@ -1,7 +1,7 @@
 --- 
 title: "Economic Data"
 author: "Hans Henrik Sievertsen"
-date: "Version 0.2"
+date: "Version 0.3"
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
