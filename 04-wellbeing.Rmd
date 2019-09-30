@@ -2,9 +2,11 @@
 
 ## What this chapter is about
 
+We will now follow up on some of the issues on measuring well-being raised in the last chapter. In the last chapter we learned how GDP is a measure of economic activity and how it is (mis)used as a measure of well-being. In this chapter we discuss the problems with using GDP as a well-being measure, what well-being is, and how we can measure it.
+
 ### Intended learning outcomes
 
-We will now follow up on some of the issues on measuring well-being raised in the last chapter. In the last chapter we learned how GDP is a measure of economic activity and how it is (mis)used as a measure of well-being. In this chapter we discuss the problems with using GDP as a well-being measure, what well-being is, and how we can measure it. After reading this chapter you should be able to:
+ After reading this chapter you should be able to:
 
 * Explain the problems of using GDP as a well-being measure.
 * Explain and identify subjective and objective measures of well-being. 
@@ -33,9 +35,11 @@ quality of life.
 
 [ page 41 in @stiglitz2010report]
 
+
 We will go through the three conceptual approaches discussed in the Stiglitz report below and later present some measured of quality of life and well-being in practice and how they relate to the conceptual approaches. 
 
 ## GDP and well-being
+
 ### The Stiglitz Report
 One important milestone in the debate on measuring well-being and quality of life is the so called "Stiglitz Report" [@stiglitz2010report], named after one of the authors, professor Joseph E. Stiglitz. The official title of the report is "Report by the Commission on the Measurement of Economic Performance and Social Progress". The goal of the commission behind the report was
 
@@ -80,11 +84,37 @@ The report provides detailed examples and criticism of GDP as a measure of well-
 
 
 ## How to measure well-being & quality of life
-The commission the Stiglitz report identified the following the conceptual approaches to measuring quality of life:
 
-1. Subjective well-being
+### Recommendations from the Stiglitz report
+
+The commission the Stiglitz report identified the following three  conceptual approaches to measuring quality of life:
+
+1. *Subjective well-being*
 
     The key idea is that we simply ask people about their well-being and happiness with the idea that: "that enabling people to be happy and satisfied with their life is a universal goal of human existence."   from page 7 in  [@stiglitz2010report]
+
+
+There are several standardized questionnaires to capture the measures above and many of them show consistent patterns:
+
+> "Research has shown that it is possible to collect meaningful and reliable data on
+subjective well-being. Subjective well-being encompasses different aspects (cognitive
+evaluations of one's life, positive emotions such as joy and pride, and negative emotions such as pain and worry): each of them should be measured separately to derive a more comprehensive appreciation of people's lives. Quantitative measures of these subjective aspects hold the promise of delivering not just a good measure of quality of life per se, but also a better understanding of its determinants, reaching beyond people's income and material conditions."
+
+page 58 in [@stiglitz2010report]
+
+
+2. *Capabilities*
+
+    The second conceptual approach to measuring well-being is to measure individuals ability to pursue and realise the goals that they value (the capabilities). 
+
+3. *Fair allocations*
+
+    The third conceptual approach to measuring well-being is to measure  the allocation of resources among people with different tastes and abilities.
+
+
+### Operationalizing well-being measures
+
+#### Subjective well-being measures
   
 Subjective well-being measures are often divided into the following three types:
 
@@ -99,32 +129,13 @@ Subjective well-being measures are often divided into the following three types:
     
     This approach focuses on psychological aspects of individual well-being and relates to the individual's position and control over their life. 
 
-
-There are several standardized questionnaires to capture the measures above and many of them show consistent patterns:
-
-> "Research has shown that it is possible to collect meaningful and reliable data on
-subjective well-being. Subjective well-being encompasses different aspects (cognitive
-evaluations of one's life, positive emotions such as joy and pride, and negative emotions such as pain and worry): each of them should be measured separately to derive a more comprehensive appreciation of people's lives. Quantitative measures of these subjective aspects hold the promise of delivering not just a good measure of quality of life per se, but also a better understanding of its determinants, reaching beyond people's income and material conditions."
-
 ```{r wfig2, echo=FALSE, out.width = '70%',fig.align='center',fig.cap="Ask people how they feel"}
 knitr::include_graphics("_resources/chapter_wellbeing/subwb.jpg")
 ```
 
 
-
-page 58 in [@stiglitz2010report]
-
-2. Capabilities
-
-    The second conceptual approach to measuring well-being is to measure individuals ability to pursue and realise the goals that they value (the capabilities). 
-
-3. Fair allocations
-
-    The third conceptual approach to measuring well-being is to measure  the allocation of resources among people with different tastes and abilities.
-
-
-
 #### Objective well-being measures
+
 While subjective well-being typically is measured through questionnaires where we directly ask people about their their well-being, the capabilities and fair allocations approaches typically rely on "objective measures". However, these approaches should not be considered as "more objective" compared to the subjective measures. For example the choice of indicators to include depend on a normative judgement. 
 
 > "The information relevant to valuing quality of life goes beyond people's self-reports and perceptions to include measures of their functionings and freedoms. While the precise list of these features inevitably rests on value judgements, there is a consensus that quality of life depends on people's health and education, their everyday activities (which include the right to a decent job and housing), their participation in the political process, the social and natural
@@ -146,26 +157,51 @@ When working with topics such as global development or well-being, we are often 
 1. Creating an index
 
     Well-being measures such as the Human Development are s based on aggregating three individual indices by means of the **geometric mean**.
-    
-    \begin{align}
-         HDI=(LEI\times EI\times II)^{1/3}
-     \end{align} 
+
+\begin{align}
+   HDI=(LEI\times EI\times II)^{1/3}
+\end{align} 
      
   Where $LEI$ is the life expectancy index, $EI$ is the education index, and $II$ is the income index. Each of these indices are measured on a scale from 0 to 1, where the raw variables are related to some "max" value. For example for life expectancy, the maximum is 85 (i.e. an index value of 1) and the minimum is 20 (i.e. an index value of 0). A standard formula of measuring the individual index is as follows:
        
-     \begin{align}
-         I=\frac{Y-Y_{MIN}}{Y_{MAX}-Y_{MIN}}.
-     \end{align}
+\begin{align}
+   I=\frac{Y-Y_{MIN}}{Y_{MAX}-Y_{MIN}}.
+\end{align}
+
+To create an index, just like the HDI, we therefore first convert each variable to be on a scale between 0 and 1 using the formula above, and we then compute the geometric mean across all Indexes $i$:
+
+
+\begin{align}
+   \text{Aggregate Index}=\left(\prod_{i=1}^N I_i\right)^{1/N}
+\end{align} 
+     
+     
      
 2. Principal Component Analysis  and Factor Analysis
       
-      Principal component analysis (PCA) and Factor analysis are methods to reduce the dimensionality of data. These approaches are very often used in regressions, when you want to reduce the number of variables. With these method you can identify a set of \emph{components} or \emph{factors} that describe the variation in the data. The goal is typically to identify a set of components and factors that are smaller than the number of variables used. 
+Principal component analysis (PCA) and Factor analysis are methods to reduce the dimensionality of data. These approaches are very often used in regressions, when you want to reduce the number of variables. With these method you can identify a set of \emph{components} or \emph{factors} that describe the variation in the data. The goal is typically to identify a set of components and factors that are smaller than the number of variables used. 
 
-      Intuitively speaking, the goal is to identify variables that "move in the same direction". Imagine that you have a dataset with 25 behavioural measures of a child. Five of these measures relate to the child's peer relations. When one of these variables go up, the other four also tend to go up. Another five variables might capture the child's level of hyperactivity and inattention, again, if one of the five variables goes up, the other four also tend to go up. We have those identified two separate components, that each cover five underlying variables.
+Intuitively speaking, the goal is to identify variables that "move in the same direction". Imagine that you have a dataset with 25 behavioural measures of a child. Five of these measures relate to the child's peer relations. When one of these variables go up, the other four also tend to go up. Another five variables might capture the child's level of hyperactivity and inattention, again, if one of the five variables goes up, the other four also tend to go up. We have those identified two separate components, that each cover five underlying variables.
 
-      Factor analysis and principal component analysis are two distinct methods. Factor analysis is more based on theories of underlying latent (unobserved) variables, while principal component analysis is more based the objective to reduce the number of dimensions (number of variables) in the data.
+Factor analysis and principal component analysis are two distinct methods. Factor analysis is more based on theories of underlying latent (unobserved) variables, while principal component analysis is more based the objective to reduce the number of dimensions (number of variables) in the data.
+      
+       
+<center>
+```{block, type='myblock'}
+<center>
+**Reducing the dimensions**
+</center>
+ Because well-being depends on several aspects, such as health, environment, income and education, it is hard to compare across time and space. There are simply too many "dimensions". We would like to reduce the well-being to one variable, to one dimension. There are several approaches to combine several variables in one variable. The following two methods are very common:
+  
+  * A *An index based on a geometric mean*
+  * A *Principal component analysis*
+
+```
+</center>
+
 
 ### The Human Development Index (UN)
+
 The Human Development Index (HDI) is developed by the United Nations Development Programme (UNDP). The index is an example of combining several objective indicators of well-being in one measure. The index consists of the three dimensions:
 
 * Life expectancy index

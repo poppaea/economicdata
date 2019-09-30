@@ -1,3 +1,229 @@
 # Advanced Excel 
 
-- to be completed
+## What this chapter is about
+
+Excel and most other spreadsheet software packages have a wide range of advanced tools to make the data work faster and more efficient. In this lecture we will cover a few of these tools that are of great use as economists working with data in excel. After this lecture you should be able to 
+
+* Create control structures in spreadsheets.
+* Create Pivot tables.
+* Record simple macros.
+
+## Control structures in Excel
+
+### Boolean logic
+
+he formula *"=IF(A2>A1,A2,A1)"* applies a logical test of whether the value in cell *A1* is bigger than the value in cell *A2*, if the  logical test returns true (i.e. the value in cell *A1} is bigger than the value in cell *A2), it returns the value in cell *A1*, otherwise the value in cell *A2* is returned. This  approach is called "Boolean Logic", where we test whether a given condition is true or false, and act differently depending on whether the statement was true or false. We call the IF function for a control statement, because this statement controls which operation to execute. 
+
+### Using control structures in Excel
+
+Control structures are used a lot in programming and in Excel. It allows us to make the code flexible and it works excellently with tidy data structures. We can implement control structures in formulas within cells, either directly as in the example above or combined with a built-in function.  The  most basic control structure is the *=If(Logical test,value if true,value if false)* condition. The first argument of the function is the logical test we would like to perform, the second argument is the value that this cell should take, if the logical test is true, and the third argument is the value of the cell if the argument is false. Note that values in this case can be formulas and functions, or even additional if-conditions.
+
+#### How to specify conditions{-}
+
+We can perform a range of logical tests in Excel:
+
+* *=* "Equal" is true if the element to the left of the sign equals the element to the right of the sign.
+* *>* "Greater than" is true if the element to the left of the sign is greater than the element to the right of the sign.
+* *>=* "Weakly greater than" is true if the element to the left of the sign is greater than or equal the element to the right of the sign.
+*  *<* "Smaller than" is true if the element to the left of the sign is smaller than the element to the right of the sign.
+* *<=* "Weakly Smaller than" is true if the  element to the left of the sign is smaller than or equal the element to the right of the sign.
+*  *<>* "Not equal" is true if the to the left of the sign is not equal to the element to the right of the sign.
+*   <tt>ISBLANK(A1) </tt> "Is blank" is true if cell A1 is blank. 
+*  <tt>ISNUMBER(A1) </tt> "Is number" is true if cell A1 contains a number.
+*  <tt> ISEVEN(A1) </tt> "Is even" is true if cell A1 contains an even number.
+*   <tt> ISNA(A1) </tt> "Is NA" is true if cell A1 has content <tt>\#N/A</tt>.
+
+There are more tests, but the list above will be sufficient in many cases. We can find more logical tests by start writing  <tt>IS.. </tt> in a formula.
+
+#### And, Or, Not{-} 
+
+We can combine several logical tests with the AND and OR functions:
+
+*  <tt> AND(logical test,logical\_test,logical\_test...) </tt>: This function evaluates to true if all logical\_tests within this function evaluates to true.
+
+*  <tt>OR(logical test,logical test,logical test...) </tt>: This function evaluates to true if at least one of the logical\_tests within this function evaluates to true.
+
+In some cases it is more intuitive to test whether something is not the case. We can use the NOT function to achieve that:
+
+*  <tt>NOT(logical\_test) </tt>: This function evaluates to true if the logical\_test within this function evaluates to false.
+
+There are several ways to conduct the same test. For example if we would like Excel to assess whether the content of cell A1 is not equal to 1, we could use any of these two tests:
+
+* <tt> =IF(NOT(A1=1),"True",False)</tt>
+* <tt> =IF(A1<>1,"True",False)</tt>
+
+#### Using if conditions on a range{-}
+
+The logical tests are slightly differently formulated  when we apply them on ranges of data. For "is equal" tests, we simply enter the value in the criteria ("=Female" would also work) as shown in Figure \@ref(fig:advex1) (left).
+
+```{r advex1, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Using if conditions on a range of cells."}
+knitr::include_graphics(c("_resources/chapter_advexc/7.png","_resources/chapter_advexc/8.png"))
+```
+
+For greater than (or smaller than) we include the greater than sign within the quotation marks: <tt>"..."</tt> as shown in Figure  \@ref(fig:advex1) (right)
+
+#### Using built-in functions with if conditions{-}
+
+Many popular Excel functions are also available in a version that allows for if conditions. For example <tt>"=sumif(range,criteria, sum range)"</tt> will sum over the cells defined in sum range, if the corresponding value in range satisfies the criteria. Figures \@ref(fig:advex2) to \@ref(fig:advex4) show  examples of how we can calculate the average for a subgroup, using either a manual approach, built-in functions to obtain the sum and the count built-in functions to calculate the average for values that satisfies the criteria. 
+
+```{r advex2, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Calculating the average for a subgroup of the data, using a manual approach."}
+knitr::include_graphics(c("_resources/chapter_advexc/9.png"))
+```
+
+
+```{r advex3, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="Calculating the average for a subgroup of the data, using the sumif and countif functions."}
+knitr::include_graphics(c("_resources/chapter_advexc/10.png"))
+```
+
+
+```{r advex4, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="Calculating the average for a subgroup of the data, using the averageif approach."}
+knitr::include_graphics(c("_resources/chapter_advexc/11.png"))
+```
+
+## Pivot tables: Excel loves tidy data
+
+#### What are Pivot tables? {-}
+
+By referencing across cells and conditional statements, we can calculate and summarize rich datasets in Excel. But even simple requests requires many formulas, many mouse clicks, and result in inflexible worksheets. For example if we have an individual level dataset with the variables income, occupations, gender, education, age and year, and we were interested in the average income by occupation across years, we could easily write formulas based on the function 
+<tt>AVERAGEIFS</tt>, but the formulas would get a long, and it is prone to mistakes. Moreover, it would be inflexible. If decided to change it to be across education and age instead of occupation, we would have to rewrite all formulas. 
+
+Luckily Excel (and Google Sheets and OpenOffice Calc) has a tool to make this much easier. This is called: Pivot table. The Pivot table function is a very useful tool in Excel to summarize data without formulas. Using a Pivot table we can create a table containing the subset of the original data given some restrictions we impose, we can create tables with summary statistics for variables by groups of the data and much more. All this is created without entering formulas manually and in a flexible framework, that allows us to make changes at any later point.
+
+#### The data structure required for Pivot tables{-}
+
+To create a Pivot table we need to define the dataset that should form the basis of the Pivot table. This dataset should have a specific structure to allow Excel to recognize the variables and observation: Observations should be stored in rows and variables (or "fields") should be stored in columns. Sounds familiar, yes it is the first two tidy data principles. That is all.
+
+#### How do we create a Pivot table?{-}
+
+In Excel, the Pivot table function is typically available through the <tt>Insert</tt> tab. We create the table by simply selecting <tt>Pivot table</tt> which opens a menu as shown in Figure \@ref(fig:advex5), where we are asked to select the data for the table and where to create the table. 
+
+
+```{r advex5, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="Inserting a Pivot table."}
+knitr::include_graphics(c("_resources/chapter_advexc/4.png"))
+```
+
+In the menu we select the data range. We can either enter a range of cells (<tt>Sheet1!\$A\$1:\$C\$5</tt>) or, if we had named the dataset first, we could simply enter the name of the dataset. 
+
+We can also insert Pivot \emph{charts} using the same approach. Pivot charts work in much the same way as Pivot tables. We will not cover them in these unit, but you are encouraged to try them out.
+
+### Extracting data with Pivot tables{-}
+
+We can use our Pivot table to create new dataset that contains a subset of data from from the original dataset. We might for example be interested in restricting a tale to all observations where the variable "Gender" equals "Male". We could achieve this using formulas ("<tt>If(Gender="Male",...)</tt>", but it is much easier to do this by means of a Pivot table. 
+
+To select a subset of the dataset, we select the variables we would like to restrict our dataset on (e.g. "Gender") as "Filter" variables and add the variables that should be shown in the table as "Values". We can then use the filter variable to restrict the Pivot table to only include the observations that satisfy the filter criteria. Figure \@ref(fig:advex6) shows an example, where we restrict the sample to observations where the variable "Gender" is "Male". 
+
+```{r advex6, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="Using Pivot tables to subset a dataset by means of filter variables."}
+knitr::include_graphics(c("_resources/chapter_advexc/5.png"))
+```
+
+#### Calculating summary statistics with Pivot tables{-}
+
+While Pivot tables are very useful for selecting parts of the original dataset, the real power (and most popular use) of Pivot tables is to create tables with summary statistics. 
+
+Figure \@ref(fig:advex7) shows the original data, the Pivot table and the <tt>PivotTable fields</tt>  menu. In the PivotTable fields menu, we select the fields (variables) to be used respectively as filter (to extract a subset of the dataset as described above),  as row variable, as a column variable and as the value variables. The latter field denotes the variables to be used in our calculations. 
+
+```{r advex7, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="Using Pivot to create tables with summary statistics by groups."}
+knitr::include_graphics(c("_resources/chapter_advexc/6.png"))
+```
+
+In the shown example, we show the average of variable 1 and variable 2 (the value variables) by gender (the row variable). The column variable is this case simply used to separate the two variables that we use as value variables.
+
+We select whether we want to show the average, the sum, the standard deviation or other statistics by right-clicking on the table and selecting <tt>"Value Field Settings"</tt> or <tt>"Summarize value by"</tt>.
+
+## Developer and VBA programming
+
+#### Activating the developer tab{-}
+
+Most spreadsheet software has range of advanced functions that are disabled as the default. For example in Excel, the <tt>Developer</tt> tab is not activated in the default setting. To activate it we select <tt>File</tt> and then <tt>Options</tt> and then  <tt>Customize Ribbon</tt>. We can now add elements (or hide elements) and tabs. If we tick "Developer", we will get a new tab, as shown in Figure \@ref(fig:advex7). The developer tab gives access to range of advanced features in Excel. We will not go through all of them, but discuss two features might come in handy: (recording) macro and VBA programming.
+
+
+```{r advex8, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="The developer tab."}
+knitr::include_graphics(c("_resources/chapter_advexc/13.png"))
+```
+
+#### Recording macros{-}
+Macros are sets of commands. Imagine that we have a routine task, that we do very often in Excel. It involves several mouse-clicks and formulas. Instead of doing the same task again and again manually, we can Excel save all the commands in a macro. We can then run all the tasks by just activating the macro.
+
+There are several ways to create a macro. We can write code that saves the instructions we want the macro to contain or we can simply record all the instructions by doing them. To record them, simply select the "Record Macro" button in the Developer tab, select a name, and click OK. To stop the recording simply select "Stop recording". The newly created macro is now stored in the document, and we can activate it by selecting "Macros".
+
+#### VBA programming{-}
+
+When we record a macro, Excel generates  code using  Visual Basics for Applications (VBA). We can access this code by selecting "Visual Basic" in the Developer tab. Visual Basic is a programming language which we will not cover explicitly in this unit. However, we can manually check the code created by the record macro and make small adjustments. There are many online sources available for Visual Basic programming. 
+
+
+## A small basket of tricks
+
+### Selecting cells in Excel
+
+#### Using <tt>shift</tt> to select several adjacent cells{-}
+
+We can use shortcuts known from most operation systems to select several cells in spreadsheets. We select a cell by pointing on the cell and clicking the the left mouse button. We can select several adjacent cells by holding the <tt>shift</tt> key while selecting another cell. The spreadsheet software will then select all cells between the initially selected cell and the newly selected cell. 
+
+#### Using <tt>ctrl/cmd</tt> to select several non-adjacent cells{-}
+
+It is not always the case that we want to select adjacent cells. If we would like to select several cells, but not the cells between them, we can hold the <tt>ctrl</tt> key instead, while selecting additional cells. 
+
+#### Using the keyboard to select cells{-}
+
+We can also use the cursor keys to select cells, and also use the <tt>shift</tt> key to select several adjacent keys. We can select non-adjacent using the cursor and the <tt>F8</tt>-key as well as <tt>shift</tt>+<tt>F8</tt> to activate (and deactivated) extended mode. 
+
+#### Using <tt>shift</tt> and <tt>ctrl</tt>/<tt>cmd</tt> to select complete entire range of (non-interrupted) cells{-}
+If we would like to select all cells within a uninterrupted sequence of cells, we can hold the <tt>ctrl</tt> and <tt>shift</tt> keys while navigating the area with the cursor. This is especially helpful when selecting data for charts and tables. 
+
+
+### Using names
+
+#### Naming cells{-}
+
+While cell references are intuitive, it is easy to lose track of cells in a long formula.  Cell <tt>C5</tt> is the third column and fifth row. Easy enough. But what about the cell </tt>XER312</tt>? Also, consider this simple formula for the size of the area: <tt>=A1\*B2</tt>, wouldn't it be easier if we could write: <tt>=height*width</tt> (especially in cases with much longer formulas)?  We can actually name a cell by simply selecting a cell and entering the name in the "name box" as shown in Figure \@ref(fig:advex9). 
+
+
+```{r advex9, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="Naming cells."}
+knitr::include_graphics(c("_resources/chapter_advexc/1.png"))
+```
+
+ Using intuitive names instead of letters and numbers to refer to cells make formulas more readable and reduces the risk of mistakes as shown in Figure \@ref(fig:advex10).
+
+```{r advex10, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="Using named cells in formulas cells."}
+knitr::include_graphics(c("_resources/chapter_advexc/2.png"))
+```
+
+
+We can use the same approach we used to name a cell to name an entire column. This is very useful when we work with datasets, as we can give variables a name. Figure \@ref(fig:advex11) shows an example, where we named column <tt>B</tt> Income and column <tt>C</tt> Gender, and then used these names in a formula. The formula to compute the average income among women is then  <tt>=AVERAGEIF(Gender,</tt> <tt>"F",Income)</tt>, without naming variables, the formula  would have been <tt>=AVERAGEIF</tt> <tt>(C:C,"F",B:B)</tt> (we discuss how to use IF conditions below).
+
+```{r advex11, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="Using named cell ranges in formulas cells."}
+knitr::include_graphics(c("_resources/chapter_advexc/3.png"))
+```
+
+Finally, we can use the name box to give a name to an entire dataset. We simply select all the cells relating to that dataset and enter a name in the name box. Naming the dataset is for example very useful when working with Pivot table, as we will see later. 
+
+### Sorting data and remove duplicates
+#### Sorting observations{-}
+
+We can sort our spreadsheet according to one or multiple columns. To achieve this, simply select all the data that should be affected by the sort, and go to  the <tt>Data</tt> menu and select <tt>Sort</tt>, which will open a menu asking
+
+* "Sort by" (what column/variable should the data be sorted by)
+* "Sort on" (what we would like to sort on, e.g. values, colors)
+* "Order" (e.g. from low to high or vice versa)
+
+#### Removing duplications{-}
+
+We can also use the data menu to remove duplicates. Simply select the data and go to   the <tt>Data</tt> tab and then select <tt>Remove Duplicates</tt>. We can then select the columns/variables to consider, when deleting duplicates. While the sort function is quite standard across software solutions, the removing duplicates is not yet standard. In OppenOffice Calc we can remove duplicates by selecting the data and then go to the </tt>Data</tt> tab and select <tt>Filter</tt>, where we tick the "No duplication" option.
+
+### Keeping the overview
+
+### Freeze panes{-}
+
+When working with large datasets in worksheets it can be difficult to keep track of which column and row we are working in. In these cases it would be nice if we could navigate the worksheet but keep the column and row names visible. To achieve that, we can use the "Freeze pane" functions in the <tt>View</tt> tab. There are three options: We can freeze the top row, we can freeze the first column, and we can freeze all cells to the left and above the currently selected cell. Freezing a cell means that these cells will not move when we move around in the spreadsheet.
+
+## Summary
+In this chapter we covered the following topics
+
+* Controlling the flow of functions using control statements such as <tt>IF..</tt>.
+* Creating Pivot tables
+* Naming variables and datasets.
+* Efficiently selecting data.
+* Sorting data and removing duplicates.
+* Recording macros and activating the Developer Tab.
+
+See [@bible] if you want to learn more about Excel.

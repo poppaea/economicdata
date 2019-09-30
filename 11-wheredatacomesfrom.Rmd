@@ -3,7 +3,8 @@
 
 # Where data comes from
 
-## What this chapter is about.
+## About this chapter
+
 
 Data comes from somewhere. The data visualization author should know where the data comes from. The reader should know where the data comes from. Knowing the origin of the data allows us to replicate the visualization, modify the visualization and combine the data with other data. Knowing the origin also tells us something about whether we can trust the data: Does the data really represent what the visualization assumes it represents? Or is there a potential bias? How certain can we be?
 
@@ -12,7 +13,12 @@ In practice, the origin of the data has two levels. Firstly, where did we get th
 As the author of data visualizations it is not only our job to know where the data comes from, but it is also our job to clearly communicate to the reader where the data comes from. We typically only communicate  where we got the data from. For example by writing "Data source: Bank of England.
 Series: IUMABEDR." The reader can then visit the website of the Bank of England to investigate how the data behind series "IUMABEDR" was collected.
 
-In the next section we describe approaches to get data. These approaches are used by statistical agencies and researchers to obtain data. In the following section we list a number of key data sources for economic data and how to use them.
+### Intended learning outcomes
+After reading this chapter you should be able to 
+
+* explain the different types of data sources: administrative, sample survey, census survey.
+* use publicly available data sources. 
+
 
 ## Data source types
 

@@ -1,8 +1,10 @@
 --- 
 title: "Economic Data"
 author: "Hans Henrik Sievertsen"
-date: "Version 0.3"
+date: "Version 0.4"
 site: bookdown::bookdown_site
+github-repo: "hhsievertsen/economicdata"
+cover-image: "_resources/cover.png"
 output: 
   bookdown::gitbook:
     split_by: none
@@ -20,4 +22,3 @@ bibliography:
 biblio-style: apalike
 
 ---
-

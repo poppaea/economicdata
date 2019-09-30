@@ -1,8 +1,17 @@
 ## Poverty 
 
-NOTE: A major revision is scheduled for this chapter
+## About this chapter
 
-### Measuring global development
+In the last chapter we discussed how we could quantify the distribution of resources. This chapter is about quantifying the degree of poverty. 
+
+### Indended learning outcomes
+
+After reading this chapter you should be able to
+
+* Describe the difference between relative and absolute poverty
+* Create data visualizations of poverty over time and across regions. 
+
+## Measuring global development
 
 Quantifying global development is a challenging task. First, it challenging to obtain data covering the globe. Administrative data is only 
 available for a small number of selected countries, global censuses would be very expensive, and it is challenging to create representative surveys across the world (but it is done). Second, as we already discussed, even within one single country, there is a lot of work involved in measuring and standardizing concepts such as unemployment and GDP. Third, countries differ substantially in their institutional setting.
@@ -44,7 +53,7 @@ An alternative approach is to think of a poverty line reflecting the ability to 
 It is important not to define poverty by the *mean* of the income distribution, because this would imply that if an extremely rich person moves out of the country, the poverty rates would be reduced considerably.  Finally, it is important to stress that relative poverty measures never can replace absolute measures completely. At some low level of median income the relative poverty line might below the absolute poverty line and thereby not allow people to survive. 
 
 
-#### Poverty measures
+## Poverty measures
 
 
 **The OECD Definition**

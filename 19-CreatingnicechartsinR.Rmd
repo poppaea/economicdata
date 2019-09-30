@@ -1,3 +1,0 @@
-# Charts in R
-
-- to be completed

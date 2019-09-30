@@ -3,11 +3,13 @@
 
 # Data about people {#people}
 
-## What this chapter is about
+## About this chapter
+
+This chapter is about showing data on people. For example the  the number of people living in the United Kingdom on January 1, 2019. Population data is a good point of departure. Firstly, because data about people is some of the most important data in social sciences. Secondly, because data about people is quite straightforward and yet it involves a good range of basic concepts.
 
 ### Intended learning outcomes
 
-This chapter is about showing data on people. For example the  the number of people living in the United Kingdom on January 1, 2019. Population data is a good point of departure. Firstly, because data about people is some of the most important data in social sciences. Secondly, because data about people is quite straightforward and yet it involves a good range of basic concepts. After reading this chapter you should be able to 
+ After reading this chapter you should be able to 
 
 * Create data visualization on.
   * Population stocks.

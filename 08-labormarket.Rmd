@@ -1,8 +1,12 @@
 # The labor market
 
-## What this chapter is about
+## About this chapter
 
-This chapter is about the labor market. We start with a description of how we can divide the population into groups according to economic activity. We discuss how we define employment and unemployment and two ways of measuring  unemployment rates. We will also  discuss the difference between the intensive and extensive margin of labor supply and briefly describe how we can quantify the demand side of the labor market and create a graphical representation of the matching efficiency in the labor market by means of the Beveridge curve. After reading this chapter you should be able to 
+This chapter is about the labor market. We start with a description of how we can divide the population into groups according to economic activity. We discuss how we define employment and unemployment and two ways of measuring  unemployment rates. We will also  discuss the difference between the intensive and extensive margin of labor supply and briefly describe how we can quantify the demand side of the labor market and create a graphical representation of the matching efficiency in the labor market by means of the Beveridge curve.
+
+### Indend learning outcomes
+
+After reading this chapter you should be able to 
 
 * Explain and apply definitions of unemployment rates:
   * The survey based measure of unemployment.

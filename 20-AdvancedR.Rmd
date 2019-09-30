@@ -1,3 +1,0 @@
-# Advanced R
-
-- to be completed

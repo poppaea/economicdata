@@ -1,11 +1,13 @@
 # Data about economic activity {#activity}
 
 
-## What this chapter is about
+## About this chapter
+
+This chapter is about visualizing and describing data on economic activity. Economic activity is measured in the System of National Accounts (SNA) and conceptualized by the Gross Domestic Product, (GDP). We will not cover the SNA in detail.^[For details on the SNA, please visit the following [website](https://unstats.un.org/unsd/nationalaccount/sna.asp)] It is basically a set of rules and instructions that have been agreed internationally to ensure that measures of economic activity are comparable across countries. However, we will go through some of the key *aggregegates* of the SNA (for example GDP, Gross National Income, the GDP inflator etc.). An aggregate is a measure that *aggregates* several underlying variables. This chapter is mainly about the GDP, but we will also briefly touch upon other aggregates of the SNA as well as what the GDP is used for.
 
 ### Intended learning outcomes
 
-This chapter is about visualizing and describing data on economic activity. Economic activity is measured in the System of National Accounts (SNA) and conceptualized by the Gross Domestic Product, (GDP). We will not cover the SNA in detail.^[For details on the SNA, please visit the following [website](https://unstats.un.org/unsd/nationalaccount/sna.asp)] It is basically a set of rules and instructions that have been agreed internationally to ensure that measures of economic activity are comparable across countries. However, we will go through some of the key *aggregegates* of the SNA (for example GDP, Gross National Income, the GDP inflator etc.). An aggregate is a measure that *aggregates* several underlying variables. This chapter is mainly about the GDP, but we will also briefly touch upon other aggregates of the SNA as well as what the GDP is used for. After reading this chapter you should be able to:
+ After reading this chapter you should be able to:
 
 * Explain what the  gross domestic product (GDP) is and calculate it.
 * Explain the three ways to measure GDP
@@ -19,7 +21,7 @@ This chapter is about visualizing and describing data on economic activity. Econ
 
 ### A brief history of GDP
 
-I initially planned to commence this chapter with the history of GDP. That story would probably start around the Great Depression in the 1930ies US. The  U.S. Congress realized that the economy was not running as well as it could, but had a hard time quantifying it. To the rescue came the economist Simon Kusnets who presented a report on the "National Income, 1929-1935" for the Congress (see  \@ref(fig:gdp1)), where he presented the idea of capturing the entire production, income and expenditure of the economy. And so the GDP was born.  This story of how the GDP was created is probably the most well-known story of the GDP, but in reality the story of GDP is more complicated.
+Most texts about the history of GDP  start around the Great Depression in the 1930ies United States. The  U.S. Congress realized that the economy was not running as well as it could, but had a hard time quantifying it. To the rescue came the economist Simon Kusnets who presented a report on the "National Income, 1929-1935" for the Congress (see  \@ref(fig:gdp1)), where he presented the idea of capturing the entire production, income and expenditure of the economy. And so the GDP was born.  This story of how the GDP was created is probably the most well-known story of the GDP, but in reality the story of GDP is more complicated.
 
 
 ```{r gdp1, echo=FALSE, out.width = '65%',fig.align='center',fig.cap="Kusnets' report for the U.S. Congress, 1934. Source:  [Fraser St. Louis FED](fraser.stlouisfed.org/title/971)."}
@@ -44,11 +46,11 @@ So why should we care about GDP if it is no good? Actually it is a quite good of
 
 Let me introduce a very small country. It is not my home country, Denmark, but a country that is even smaller: Microcountry. Microcountry is just next to Neighbourcountry. Microcountry is so small that I can explain all economic activity in this country to you. 
 
- In this country we have one farm that produces flour. The farm sells the flour to a bakery for 10 GBP. To produce the flour, the farm has workers, and these workers earn a wage of 8 GBP. Finally, the farm pays a tax to the government of 2 GBP. 
+ In this country we have one farm that produces flour. The farm sells the flour to a bakery for 10 £. To produce the flour, the farm has workers, and these workers earn a wage of 8 £. Finally, the farm pays a tax to the government of 2 £. 
 
-The bakery produces bread based on labor inputs in terms workers and  the flour bought from the farm. The workers at the bakery receive 14 GBP in wages, and the government receives  2 GBP in taxes from the bakery. The bakery sells bread for 18 GBP to the households in Microcountry. The households of Neighbourcountry buy bread from the bakery in Microcountry for 9 GBP, and the bakery in Microcountry is actually owned by residents of Neighbourcountry. 
+The bakery produces bread based on labor inputs in terms workers and  the flour bought from the farm. The workers at the bakery receive 14 £ in wages, and the government receives  2 £ in taxes from the bakery. The bakery sells bread for 18 £ to the households in Microcountry. The households of Neighbourcountry buy bread from the bakery in Microcountry for 9 £, and the bakery in Microcountry is actually owned by residents of Neighbourcountry. 
 
-The households in Microcountry work for the bakery, the farm and for the government. They pay 1 GBP in taxes to the government, and buy bread for 18 GBP at the bakery. The households also import goods from Neighbourcountry for a value of in total 8 GBP. The government  provides health service for the society of Microcountry and spends  5 GBP in wages to be able to supply this service. 
+The households in Microcountry work for the bakery, the farm and for the government. They pay 1 £ in taxes to the government, and buy bread for 18 £ at the bakery. The households also import goods from Neighbourcountry for a value of in total 8 £. The government  provides health service for the society of Microcountry and spends  5 £ in wages to be able to supply this service. 
 
 Now the big questions are:
 
@@ -94,19 +96,21 @@ where:
  Using data from the OECD, Figure  \@ref(fig:gdp3) shows the size of each element of the expenditure approach for the United Kingdom over the period 2000 to 2015. In Figure  \@ref(fig:gdp3) A, the development is shown in current prices. A change in the value from year to year is therefore a combination of a change in prices and a change in volume. We could have the extreme case, where we actually bought exactly the same quantity in all these years, but because the price increased, we would get the pattern shown in Figure  \@ref(fig:gdp3). However, this is clearly not the case in the United Kingdom over this period. As Figure  \@ref(fig:gdp3) B shows, the values also increased in *real* terms. In Figure  \@ref(fig:gdp3) B we used the GDP deflator to adjust the values in current prices (shown in A) to the 2017 price level. 
  
  
-```{r gdp3, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="The expenditure approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. Imports enter negatively. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category."}
+```{r gdp3, echo=FALSE, out.width = '90%',fig.align='center',fig.cap="The expenditure approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. **This is an example of an inappropriate chart type!** Imports enter negatively. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category."}
 knitr::include_graphics("_resources/chapter_gdp/fig1.png")
 ```
 
 
 
-The charts in Figure  \@ref(fig:gdp3) are stacked area charts. As you might recall from the chapter on measuring people,  area charts shows the size of the value by the size of the area and we are then putting each category on top of each other. This seems like a good solution with data on parts that constitute a whole, such as the population of the Wales, Northern Ireland, Scotland and UK, that constitute the population of the UK. Is it also a good idea to use this approach to show the expenditure parts of GDP like in Figure  \@ref(fig:gdp3)? Because the GDP by expenditure approach involves  both negative and positive values, this does not work well Moreover, we are tempted to conclude that all categories increased in real (absolute) terms (i.e. in volumes) over the period 2000 to 2018. But for all categories, except the first one, it is very difficult to see, because the all changes in the first category will map over in the following category. Government consumption (G) has for example been steadily increasing over the period. There was no drop over the financial crisis. But this is very hard to see from Figure  \@ref(fig:gdp3).
+The charts in Figure  \@ref(fig:gdp3) are stacked area charts. As you might recall from the chapter on measuring people,  area charts shows the size of the value by the size of the area and we are then putting each category on top of each other. This seems like a good solution with data on parts that constitute a "whole", such as the population of the Wales, Northern Ireland, Scotland and UK, that constitute the population of the UK. 
+
+Is it also a good idea to use stacked area charts to show the expenditure parts of GDP like in Figure  \@ref(fig:gdp3)? **No! The stacked area chart is not appropriate in this case!**  Because the GDP by expenditure approach involves  both negative and positive values, the stacked area chart does not work well Moreover, we are tempted to conclude that all categories increased in real (absolute) terms (i.e. in volumes) over the period 2000 to 2018. But for all categories, except the first one, it is very difficult to see, because the all changes in the first category will map over in the following category. Government consumption (G) has for example been steadily increasing over the period. There was no drop over the financial crisis. But this is very hard to see from Figure  \@ref(fig:gdp3).
 
 It is much easier to identify the changes in individual series by means of a simple line chart, as shown in Figure   \@ref(fig:gdp4). From Figure   \@ref(fig:gdp4) B we clearly see that Imports, Exports, Private Consumption and Investments suffered a drop in real values during the financial crisis, but Government Consumption did not. Both Figures  \@ref(fig:gdp3) and  \@ref(fig:gdp4) illustrate that Private Consumption (C) is the largest component of GDP in terms of the expenditure approach.
 
 
  
-```{r gdp4, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="The expenditure approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category"}
+```{r gdp4, echo=FALSE, out.width = '90%',fig.align='center',fig.cap="The expenditure approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category"}
 knitr::include_graphics("_resources/chapter_gdp/fig2.png")
 ```
 
@@ -118,11 +122,30 @@ Figure  \@ref(fig:gdp5) shows a line chart of the relative change in each compon
 knitr::include_graphics("_resources/chapter_gdp/fig3.png")
 ```
 
+#### The expendture approach and economic activity in Microcountry
 
+Let us return to Microcountry and use the expenditure approach to calculate the economic activity of Microcountry. 
 
+* $C$ household consumption:
+    - The households buy bread at the bakery for 18£ and import goods from Neighbourcountry for 8£, $C=8£+18£=26£$.
+  
+  
+* $G$ Government consumption: 
+    - The government spends 5£ on health services, $G=5£$.
+  
+* $I$ Investments:
+    - There are no investments in this economy, $I=0£$.
+  
+* $X$ Exports:
+    - The bakery exports bread to Neighbourcountry for 9£, $X=9£.
+  
+* $M$ Imports:
+    - Microcountry imports goods for the value of 8£ from Neigbourcountry, $M=8£.
+  
+  The GDP of Microcountry is therefore $Y=26£+5£+9£-8£=32£.
 
-#### The income approach
-A second approach to measuring GDP is the income approach. The income approach measures the GDP in terms of the generated income in the economy. The income generated in an economy consists of all compensation to workers (wages, pension contributions etc.), operating surplus (profits and rents) and  mixed income (where mixed income is a mix of earnings and profits for self-employed) and taxes minus subsidies.^[Note that while the notation for the expenditure approach is fairly standard, the notation for the production and income approaches are less standardized.] 
+### The income approach
+A second approach to measuring GDP is the income approach. The income approach measures the GDP in terms of the generated income in the economy. The income generated in an economy consists of all compensation to workers (wages, pension contributions etc.), operating surplus (profits and rents)  and sales taxes minus subsidies.^[Note that while the notation for the expenditure approach is fairly standard, the notation for the production and income approaches are less standardized.]
 
 \begin{align}
    \text{GDP}^{\text{I}} \text{=W+P+NT}
@@ -131,18 +154,18 @@ where
  
 * *W* is worker compensation.
 * *P* is operating surplus.
-* *NT* is taxes minus subsidies.
+* *NT* is sales taxes minus subsidies.
  
-Figure \@ref(fig:gdp6)  shows the size of each of these three components for 2015 for the UK economy. Compensating of workers accounts for roughly half of the GDP, while operating surpluses account for about two-fifths. Note that the stacked area chart works better for the income approach compared to the expenditure approach, because all components are positive. The level of the top of the stacked area chart therefore corresponds to the actual GDP level. 
+Sometimes  you'll see that the income approach also incldues "mixed income". This term captures the value of work to the owners of self-employed firms. It is "mixed", because it is hard to tell whether it is profits or worker compensation.  Figure \@ref(fig:gdp6)  shows the size of each of these three components for 2015 for the UK economy. Compensating of workers accounts for roughly half of the GDP, while operating surpluses account for about two-fifths. Note that the stacked area chart works better for the income approach compared to the expenditure approach, because all components are positive. The level of the top of the stacked area chart therefore corresponds to the actual GDP level. 
 
-```{r gdp6, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="The income approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. Data source: OECD. Values are converted to the 2017 price level using the overall GDP deflator."}
+```{r gdp6, echo=FALSE, out.width = '90%',fig.align='center',fig.cap="The income approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. Data source: OECD. Values are converted to the 2017 price level using the overall GDP deflator."}
 knitr::include_graphics("_resources/chapter_gdp/fig4.png")
 ```
 
 
 Figure \@ref(fig:gdp7)  shows the development of the wages (compensations of workers), profits (gross operation surplus) and taxes individually. The sharp decline in profits over the financial crisis is clearly visible. The growth in the wage component also flattened considerably over the financial crisis. 
 
-```{r gdp7, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="The income approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the overall GDP deflator"}
+```{r gdp7, echo=FALSE, out.width = '90%',fig.align='center',fig.cap="The income approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the overall GDP deflator"}
 knitr::include_graphics("_resources/chapter_gdp/fig5.png")
 ```
 
@@ -150,15 +173,34 @@ knitr::include_graphics("_resources/chapter_gdp/fig5.png")
 
 Figure \@ref(fig:gdp8)  again illustrates the difference between real and nominal comparisons. In nominal terms, the incomes increased by between 80 and 100 percent. In real terms it was "only" about 30 to 40 percent. The sharp drop ion profits over the financial crisis is also clearly shown, but this category also increased sharply shortly after.
 
-```{r gdp8, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="The income approach components of the Gross Domestic Product for the United Kingdom using line charts and an index with base year 2000. Data source: OECD.  Values are converted to the 2017 price level using the overall GDP deflator."}
+```{r gdp8, echo=FALSE, out.width = '90%',fig.align='center',fig.cap="The income approach components of the Gross Domestic Product for the United Kingdom using line charts and an index with base year 2000. Data source: OECD.  Values are converted to the 2017 price level using the overall GDP deflator."}
 knitr::include_graphics("_resources/chapter_gdp/fig6.png")
 ```
 
 
-It is possible to decompose the income approach  further. We can investigate both wages and profits by sector to identify the sectors that  contribute the most to GDP, and also to identify the sectors that were mostly affected by a recession. However, one challenge with the income approach is that these values are often not available in real terms. In Figures \@ref(fig:gdp6) to \@ref(fig:gdp8) we adjusted the current values to real values using the overall GDP. This is generally not recommended, because sub-categories might experience quite different price changes than overall GDP. In this case the deflator for each element of the income approach is not available. 
+It is possible to decompose the income approach in further detail. We can investigate both wages and profits by sector to identify the sectors that  contribute the most to GDP, and also to identify the sectors that were mostly affected by a recession. However, one challenge with the income approach is that these values are often not available in real terms. In Figures \@ref(fig:gdp6) to \@ref(fig:gdp8) we adjusted the current values to real values using the overall GDP. This is generally not recommended, because sub-categories might experience quite different price changes than overall GDP. In this case the deflator for each element of the income approach is not available. 
 
-#### The production approach
-The third and last approach to measuring GDP is the production approach (also known as the output approach). So far we have considered how much we've spend (the expenditure approach), the income generated (the income approach) and now we finally look at how much we produce. The production approach measures the GDP in terms of production or *value added*. The value added is the value of the output minus the costs of the intermediate goods. If a bakery buys flour for 15 GBP and sells bread for 50 GBP, the value added by the bakery is 50-15=35 GBP. Intermediate goods are all goods used in the production process, such as raw materials, fuel, rental costs, cleaning and marketing costs.
+#### The income approach and economic activity in Microcountry
+
+Let us return to Microcountry and use the income approach to calculate the economic activity of Microcountry. 
+
+* $W$,worker compensation:
+
+    - The farm workers receive a wage compensation of 8£, the bakery workers receive a wage compensation of 14£ and the health service workers receive a  compensation of 5£. The total wage comensation is therefore $W=8£+14£+5£=27$.
+    
+* $P$, operating surplus:
+
+    - The farm has zero profits, but the bakery has a profit of 1£, $P=1£$.
+
+* $NT$, taxes minus subsidies:
+
+  - The farm pay 2£ in taxes and the bakery pays 2£. There are subsidies. The taxes minus subsidies is therefore, $NT=2£+2£=4£$.
+  
+The GDP of Microcountry is therefore $Y=27£+4£+1£=32£.
+
+
+### The production approach
+The third and last approach to measuring GDP is the production approach (also known as the output approach). So far we have considered how much we've spend (the expenditure approach), the income generated (the income approach) and now we finally look at how much we produce. The production approach measures the GDP in terms of production or *value added*. The value added is the value of the output minus the costs of the intermediate goods. If a bakery buys flour for 15 £ and sells bread for 50 £, the value added by the bakery is 50-15=35 £. Intermediate goods are all goods used in the production process, such as raw materials, fuel, rental costs, cleaning and marketing costs.
 
 We typically distinguish between two types of outputs, market and non-market outputs. The market output are goods and services sold on the market, such as the bread sold by the bakery. In that case the value added is straightforward to calculate, as it is the sales price minus the price of the intermediate goods. However, not  not all goods are necessarily sold, so we also include the change in inventories.  For non-market output, such as health and defense, the output is the production costs, i.e. the cost of labor and intermediate goods (and depreciation in fixed assets).  Finally, there is a distinction between value added in basic prices and value added in market prices. To obtain the latter we have to add sales tax and subtract subsidies. 
 
@@ -172,14 +214,14 @@ where
  
 It should be noted that  NT in this case not necessarily equals NT in the income approach. This is because taxes and subsidies here only relate to the taxes and subsidies on goods produced domestically. In the income approach taxes and subsidies refer to the products produced domestically and the products that are imported. Figure \@ref(fig:gdp9) the development  of these  components by sectors of the UK economy. As all aspects contribute positively to the overall GDP, we can interpret the height of the stacked area chart as the overall GDP level.^[Note that this would not be the case if subsidies were larger than taxes.] 
 
-```{r gdp9, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="The production approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category."}
+```{r gdp9, echo=FALSE, out.width = '90%',fig.align='center',fig.cap="The production approach components of the Gross Domestic Product for the United Kingdom using a stacked area chart. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category."}
 knitr::include_graphics("_resources/chapter_gdp/fig7.png")
 ```
 
 
 The stacked area chart is appealing, but it is hard to get a sense of the individual values. Again, the line chart (shown in Figure \@ref(fig:gdp10)) is a lot more informative about the individual levels. 
 
-```{r gdp10, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="The production approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category."}
+```{r gdp10, echo=FALSE, out.width = '90%',fig.align='center',fig.cap="The production approach components of the Gross Domestic Product for the United Kingdom using line charts. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category."}
 knitr::include_graphics("_resources/chapter_gdp/fig8.png")
 ```
 
@@ -187,10 +229,24 @@ knitr::include_graphics("_resources/chapter_gdp/fig8.png")
 The index line chart in Figure \@ref(fig:gdp11) shows that some sectors are still below their 2000 level in real value added terms (for example the sector "Industry, including energy"). 
 
 
-```{r gdp11, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="The production approach components of the Gross Domestic Product for the United Kingdom using line charts and an index with base year 2000. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category"}
+```{r gdp11, echo=FALSE, out.width = '90%',fig.align='center',fig.cap="The production approach components of the Gross Domestic Product for the United Kingdom using line charts and an index with base year 2000. Data source: OECD. Values are converted to the 2017 price level using the GDP deflator for each category"}
 knitr::include_graphics("_resources/chapter_gdp/fig9.png")
 ```
 
+#### The production approach and economic activity in Microcountry
+
+Let us return to Microcountry and use the expenditure approach to calculate the economic activity of Microcountry. 
+
+* $GVA$, gross value added
+
+    - The farm sells flour for 10£ and pays 2£ in taxes. The gross value added of the bakery is therefore 8£. The bakery sells bread for 27£, pays a sales tax of 2£ and pays 10£ for the flour from the bakery. The gross value added of the bakery is therefore 15£. Finally, the public sector provides  a health service. The value of public sector provision is typically estimated by means of the costs, which in this case is 5£. The total gross value added in Microcountry is therefore $GVA=8£+15£+5£=28£.
+    
+
+  - The farm pay 2£ in taxes and the bakery pays 2£. There are subsidies. The sales taxes minus subsidies is therefore, $NT=2£+2£=4£$.
+  
+The GDP of Microcountry is therefore $Y=28$+4£=32£.
+
+    
 
 ### What is included in the GDP measure?
 Measuring GDP  also requires us to understand which activities we should include, and which we should not include. Based on the general principles  described in the   [@esa2010], the Office for National Statistics  decides on an production boundary, which contains all economic activities that should be included in the GDP measurements. An activity is included in the boundaries if:
@@ -224,7 +280,7 @@ knitr::include_graphics("_resources/chapter_gdp/tab1.png")
 * The expenditure approach (called the spending approach in [@core])  measures the GDP in terms of expenditures by households and the Government, as well investments and net exports of goods and services (i.e. exports minus imports). 
 
 \begin{align}
-  Y=C+G+I+X-M
+  Y=C+G+I+X-M=C+G+I+NX
 \end{align}
 
   * *Y* is the Gross Domestic Product (GDP).
@@ -244,7 +300,7 @@ knitr::include_graphics("_resources/chapter_gdp/tab1.png")
 
   * *W* is worker compensation.
   * *P* is operating surplus.
-  * *NT* is taxes minus subsidies.
+  * *NT* is sales taxes minus subsidies.
 
 *3. The production approach* (also known as the output approach)
 
@@ -255,7 +311,7 @@ knitr::include_graphics("_resources/chapter_gdp/tab1.png")
 \end{align}
 
   * *GVA* gross value added.
-  * *NT* is taxes minus subsidies.
+  * *NT* is sales taxes minus subsidies.
  
 
 ```
@@ -265,19 +321,41 @@ knitr::include_graphics("_resources/chapter_gdp/tab1.png")
 ## Gross National Income (GNI)
 Gross national income (GNI) is the income received by residents of the domestic economy. The GNI is thus defined as the GDP plus the net property income from abroad. Where property income consists of interests, rent on land and income from corporations. The GDP and GNI can be very different. If for example most firms in the economy have foreign owners, the profits of these firms will be subtracted from the GDP, and the GNI will thus be considerably lower. 
 
-## What we use GDP  for.
+Let's look at Microcountry. We found a GDP of 32£ independent of how we measured GDP. However, because the bakery is owned by residents in Neighborcountry, the profits go abroad, and the Gross National Income is: $GNI=32£-1£=31£.
+
+## What we use GDP  for
 Now what do we need these measures for? The GDP is an important aspect in many policy makers evaluation of the condition of the economy. For example, during the Great Depression in the late 1920ies and early 1930ies the economy looked quite bad, but how bad was actually hard to describe. The United States congress therefore asked the economist Simon Kuznetz to quantify US economic activity. Kuznetz estimates gave the first insights in the magnitude of the Great Depression by showing the change in economic activity during the great depression.  Let us just consider a few general uses of GDP.
 
 ###  Growth rates
-As it was the case of the great depression, we are in general typically more interested in changes than in levels of GDP. A very commonly shown statistic is therefore the annual change in GDP. To get from the level of GDP to the growth rates is straightforward, given that the levels are measured in *real* terms, that is at a constant price level (we will return to the issue of real and nominal terms in later chapters).
+As it was the case of the great depression, we are in general typically more interested in changes than in levels of GDP. It is maybe the most popular statistic of policy makers: the growth rates. To get from the level of GDP to the growth rates is straightforward, given that the levels are measured in *real* terms, that is at a constant price level (we will return to the issue of real and nominal terms in later chapters). We can use the following formula to calculate the growth rate in percent:
 
-Figure  \@ref(fig:gdp13) shows the GDP of the UK using a fixed price level and the annual growth rates. The yearly growth rates roughly correspond to the first derivative of the level, as they show the changes. Therefore, we are actually able to identify the large dip in 2009 even in the levels  shown in the graphs above. However, identifying whether growth rates are 2 or 3 percent is difficult based on the levels, and bar charts of growth rates are therefore a very common way to visualize the economic conditions.
+\begin{align}
+growth\text{}rate=100\times \left(\frac{GDP_t}{GDP_{t-1}}-1\right)
+\end{align}
+
+In this formula the letter $t$ refers to the time period. This could be a year, a quarter or a month. Figure  \@ref(fig:gdp13) shows the GDP of the UK using a fixed price level and the annual growth rates. The yearly growth rates roughly correspond to the first derivative of the level, as they show the changes. Therefore, we are actually able to identify the large dip in 2009 even in the levels  shown in the graphs above. However, identifying whether growth rates are 2 or 3 percent is difficult based on the levels, and bar charts of growth rates are therefore a very common way to visualize the economic conditions.
 
 
 ```{r gdp13, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="Annual GDP growth rates for the UK, 2000-2018. Using a bar  chart. Source: OECD. The GDP level is measured in terms of the 2017 price level."}
 knitr::include_graphics("_resources/chapter_gdp/fig10.png")
 ```
 
+#### Decompose growth 
+We can use each of the GDP measurement approaches above to decompose the overall GDP growth. Using the expenditure approach, we could calculate the overall GDP growth as follows:
+
+\begin{align}
+growth\text{ }rate=&growth\text{ }in\text{ }I\times I's\text{ }share\text{ }of\text{ }GDP\\
+                   &+growth\text{ }in\text{ }G\times G's\text{ }share\text{ }of\text{ }GDP\\
+                   &+growth\text{ }in\text{ }C\times C's\text{ }share\text{ }of\text{ }GDP\\
+                   &+growth\text{ }in\text{ }NX\times NX's\text{ }share\text{ }of\text{ }GDP
+\end{align}
+In words, the overall GDP growth is simply a weighted average of each components growth rates. The weights are the share of overall GDP in the initial period. 
+
+Why is this useful? Say we wanted to know how household consumption $C$ contributed to GDP growth. $C's$ contribution is given by: $growth\text{ }in\text{ }C\times C's\text{ }share\text{ }of\text{ }GDP$, which we can relate to the overall growth:
+
+\begin{align}
+C's\text{ }contribution\text{ }to\text{ }growth=\frac{growth\text{ }in\text{ }C\times C's\text{ }share\text{ }of\text{ }GDP}{overall\text{ }GDP\text{ }growth}
+\end{align}
 
 ### Business cycles
 
@@ -295,7 +373,6 @@ How exactly expansions and recessions are identified  varies from country to cou
 * An economic expansion is the period from the lowest level of economic activity to the highest level of economic activity.
 * The economic cycle of recessions and expansions is called business cycles.
 * There is no general stringent definition of a recession, but two  consecutive quarters of decline in real GDP is often seen as a sign of of a recession.
-
 
 ```
 </center>
@@ -346,9 +423,9 @@ The balance of payments (BoP) captures the overall transactions between a countr
   \text{current account}+\text{capital account}+\text{balancing item}=0 
 \end{align}
 
-Let's consider an example: If we go to Germany on holiday and spend 10GBP in restaurants and hotels using our English credit card, we are causing a 10GBP debit on the trade balance. Let's say that we also export some English Breakfast tea for the value of 100GBP to Germany. This is noted as a 100GBP  credit on the trade balance. The balance of trade is then $100GBP-10GBP=+90GBP$. We don't earn anything abroad and no foreigner earned something in England. The current account would then be $+90GBP$.
+Let's consider an example: If we go to Germany on holiday and spend 10£ in restaurants and hotels using our English credit card, we are causing a 10£ debit on the trade balance. Let's say that we also export some English Breakfast tea for the value of 100£ to Germany. This is noted as a 100£  credit on the trade balance. The balance of trade is then $100£-10£=+90£$. We don't earn anything abroad and no foreigner earned something in England. The current account would then be $+90£$.
 
-Now let us look at the capital account. The 10GBP spent abroad using our English credit card will be recorded as a credit in our capital account as an investments. If we also buy some German stocks for say 15GBP, then these stocks will appear in debit as "portfolio investment". However, because we use our English credit card to buy these stocks, the 15GBP will also appear on our capital account as a credit (just like the hotel and restaurant shopping). Finally, the  trade credit payment from the German tea buyer is recorded in the financial accounts as a debit. The net capital account is then $25GBP-115GBP=-90GBP$. As expected, the sum of the current account plus the capital account is zero. This occurs by definition through the double entry accounting framework (each entry is entered both as a debit or a credit). 
+Now let us look at the capital account. The 10£ spent abroad using our English credit card will be recorded as a credit in our capital account as an investments. If we also buy some German stocks for say 15£, then these stocks will appear in debit as "portfolio investment". However, because we use our English credit card to buy these stocks, the 15£ will also appear on our capital account as a credit (just like the hotel and restaurant shopping). Finally, the  trade credit payment from the German tea buyer is recorded in the financial accounts as a debit. The net capital account is then $25£-115£=-90£$. As expected, the sum of the current account plus the capital account is zero. This occurs by definition through the double entry accounting framework (each entry is entered both as a debit or a credit). 
 
 
 It is common to separate out "financial account" from the capital account and use this extended definition:

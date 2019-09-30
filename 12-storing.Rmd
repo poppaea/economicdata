@@ -1,9 +1,21 @@
 # How data is stored
 
-## What this lecture is about
+## About this chapter
+
 This lecture is about how data gets into the computer.  Once we have collected our dataset how do we store it? Why should you care about how a computer counts and store data as an economist? Knowing how a computer counts allows you to estimate the size of datasets and how to optimally store data. 
 
 Economists often work with datasets with millions (or billions) of observations and thousands of variables. Such a dataset can take hours or even days to open. Moreover, understanding how data is saved is important when the data looks different to what you expected. For  example when the sentence  "Thomas Müller plays for Bayern München" looks like "Thomas MÃ¼ller plays for Bayern MÃ¼nchen", what went wrong?
+
+### Intended learning outcomes
+
+After reading this chapter you should be able to
+
+* Use binary counting (base 2 counting)
+* Explain how computers store information (What is a bit?)
+* Explain what bits, bytes, kilobytes, megabytes and gigabytes are
+* Explain what decoding and encoding are.
+* Estimate the size of a dataset
+* Use the tidy data principles
 
 
 ## How computers work
@@ -257,6 +269,53 @@ So what if we converted our large dataset from floating point variables to integ
 ### Estimates are estimates
 You will probably discover, that the file size estimates using the approach presented here tends to underestimate the actual file size. The main reason for this is that files include some "overhead". The overhead might include information on the encoding type, but also information on the file format, which the software that reads the file uses. 
 
+
+## The tidy data principles
+
+Ideally we would like all raw datasets to be alike. As the R scientist Hadley Wickham puts it: *"Like families, tidy datasets are all alike but every messy dataset is messy in its own way"*^[This is a reference to a famous Leo Tolstoy quote. Try to find it!] [@wickham2014tidy]. 
+
+Why would we like all datasets to be alike? Having a standardized way of tidying data allows us to apply methods on various datasets, without bothering about the data structure. Imagine that you first created a very nice graph using one dataset. You would now like to create the same graph using a different dataset. Ideally, you would not have to change anything but the data source. This requires that the two datasets are organized in the same way. 
+
+To achieve a standardized way of storing datasets, a set of principles for "tidy data" have been set up:
+
+* Each variable forms a column.
+* Each observation forms a row.
+* Each type of observational unit forms a table.
+
+
+
+Figure \@ref(fig:store4) shows an example of a messy dataset. Why is it messy? Let's first note the variables in this dataset:
+
+* GDP 
+* Country
+* GNI
+* Year
+
+This dataset has four variables, but the dataframe in Figure \@ref(fig:store4) has seven columns. That clearly violates the first criteria above: the number of columns should be the same as the number of variables.
+
+```{r store4, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="A messy dataset."}
+knitr::include_graphics(c("_resources/chapter_storing/messy.png"))
+```
+
+Let's try to make it tidy. We tidy it by first creating new variables corresponding to those we listed above. Country already existed, but GDP, GNI and Year are created by separating the existing columns. The tidy version of this dataset is shown in Figure \@ref(fig:store4).
+
+
+```{r store5, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="A tidy dataset."}
+knitr::include_graphics(c("_resources/chapter_storing/tidy.png"))
+```
+
+Most statistical software (for example Excel and R) are designed for tidy datasets. You will see this in Excel when you create Pivot tables and in R when you create charts with ggplot.
+
+
+[@wickham2014tidy] also provides the following list of the most common issues with data:
+
+* Column headers are values, not variable names.
+*  Multiple variables are stored in one column.
+*  Variables are stored in both rows and columns.
+*  Multiple types of observational units are stored in the same table.
+*  A single observational unit is stored in multiple tables.
+
+
 ## Summary
 
 In this chapter we covered the following topics
@@ -266,4 +325,4 @@ In this chapter we covered the following topics
 * Bits, bytes, kilobytes, megabytes and gigabytes.
 * Encoding (ASCII and Unicode UTF-8)
 * Estimating dataset size.
-
+* Tidy data principles

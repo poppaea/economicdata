@@ -1,9 +1,13 @@
 # Money
 
 
-## What this chapter is about
+## About this chapter
 
-If you ask a bank to lend you money, they will probably charge you an interest rate. The interest rate is the price of money. This chapter is about  the different types of interest rates, and the price of money in other currencies, the exchange rates. After this chapter
+If you ask a bank to lend you money, they will probably charge you an interest rate. The interest rate is the price of money. This chapter is about  the different types of interest rates, and the price of money in other currencies, the exchange rates. 
+
+### Intended learning outcomes
+
+After reading this chapter
  
 * Distinguish between the policy interest rate, the interbank rate, and the bank lending rate.
 * To express the price of currencies in terms of exchange rates and describe movements in exchange rates.

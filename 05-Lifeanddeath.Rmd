@@ -72,24 +72,70 @@ knitr::include_graphics("_resources/chapter_death/fig10.png")
 
 
 
-**What is the chart telling us?** So why did we combine the two line charts in Figure \@ref(fig:death1)? Firstly, the goal was to investigate the link between these two series. The graph is scaled in a way such that the Total Fertility Rate should perfectly overlay the General Fertility Rate if they are the same (that is the level on the right vertical axis is equal to 31 times the corresponding value on the left axis). This is clearly not the case, but we see that the gap narrowed in the early 2000s. This will be the case if the age groups with higher age specific fertility rates are larger. If every age group has the same fertility rate this year and next year, but the number of people in an age group with a relatively  high age specific fertility rate is larger next year compared to this year, the General Fertility Rate will increase, but the Total Fertility Rate will be unchanged. 
+**What is the chart telling us?** 
+
+So why did we combine the two line charts in Figure \@ref(fig:death1)? Firstly, the goal was to investigate the link between these two series. The graph is scaled in a way such that the Total Fertility Rate should perfectly overlay the General Fertility Rate if they are the same (that is the level on the right vertical axis is equal to 31 times the corresponding value on the left axis). This is clearly not the case, but we see that the gap narrowed in the early 2000s. This will be the case if the age groups with higher age specific fertility rates are larger. If every age group has the same fertility rate this year and next year, but the number of people in an age group with a relatively  high age specific fertility rate is larger next year compared to this year, the General Fertility Rate will increase, but the Total Fertility Rate will be unchanged. 
 
 ### Decomposing the development in life births
-Life births are a good example for a situation where we can use the simple decomposition methods described in lecture note 4 (we already did that). We can use the General Fertility Rate and describe the development in the number of life births holding either the number of woman constant or the General Fertility Rate constant. 
+
+In the year 2000 the number of life births in England and Wales was 604,441. 16 years later, in 2016, the number of life births was 91,830 higher, at 696,271. What caused caused this increase? We can mechanichally decompose this change into the two underlying factors:
+
+1. The number of women in England and Wales in childbearing age.
+2. The General Fertility Rate.
+
+It could be the case that the number of life births increased because there are more women in childbearing ages. The fertility behaviour of these women was actually unchanged (in other words, the General Fertility Rate was constant). It could also be the case that the number of women in childbearing age stayed constant, but that the General Fertility Rate increased. Or it could be a mixture of both. 
+
+We can use the following formula to decompose the change in life births. Let $\DeltaX$ be the change in life births. We can then write this change as:
+
+\begin{align}
+	\Delta X&=Y_1\frac{X_1}{Y_1}-Y_0\frac{X_0}{Y_0}\nonumber\\
+\Rightarrow &=\overbrace{Y_0\left(\frac{X_1}{Y_1}-\frac{X_0}{Y_0}\right)}^{A}+\overbrace{\left(Y_1-Y_0\right)\frac{X_0}{Y_0}}^{B}+
+	\overbrace{\left(\frac{X_1}{Y_1}-\frac{X_0}{Y_0}\right)\left(Y_1-Y_0\right)}^{C}
+\end{align}
+
+Where General Fertility Rate (GFR) the ratio $X/Y$ and the number of women in childbearing age is $Y$. Term $A$ in the forumal above captures the change in life births that is due to the change in General Fertility Rate. $B$ captures the change that is due to a change in the number of women, and $C$ captures a combined effect of these changes. 
 
 
+```{r decomposefertility, echo=FALSE, results='asis'}
+cat('Table: (\\#tab:deatht) Life births, women in childbearing age and GFR. For England and Wales. Data source: UK Office for National Statistics Birth Summary Tables, England and Wales.
 
+| Year | Life births ($X$) |	Women aged 15-44 ($Y$) | General Fertility Rate ($X/Y$) |
+| - |-----------| ---------------|-----|
+|2000	|604,441|	10,812,898|	0.0559|
+|2016	|696,271|	11,176,100|	0.0623|
+|Change|	91,830|	363,201|	0.0064|')
+```
+
+Using these numbers in the formula above, we get:
+
+* $A$ Change in fertility times number of women in 2000:			69,203.
+* $B$ Change in the number of women times fertility in 2000:			20,303.
+* $C$ Combined effect:			2,324.
+* Total change: $A+B+C=	91,830$
+
+The decomposition shows that the change in the number of life birts is mainly due to an increasing General Fertility Rate, the change in the number of women in childbearing age has, however, also contributed positive to the increase.
 
 ## Life expectancy
 
-Having discussed one element of natural population change, births, we now turn to the other aspect: deaths. We will here briefly summarize the construction of life tables and estimation of life expectancy. Life tables provide a list of period live expectancies for given age groups.  Given you are in a specific age group today and given the mortality rates of each age group, what is your expected life expectancy. The alternative measure, the cohort life expectancy, takes variation in mortality rates across cohorts into account. We will here only cover the period life expectancy and how to construct a life table. 
+Having discussed one element of natural population change, births, we now turn to the other aspect: deaths. We will here briefly summarize the construction of life tables and estimation of life expectancy. Life expectancy is often considered one of the most important measures of social progress and it is often used in the public debate, as shown in the example from The Economist in Figure \@ref(fig:life). The tearm "Life expectancy seems quite intuitive. It answers an important question:  how long can we expect to life?. But how is it calculated?
+
+
+```{r life, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Example: Comparing the life expectancy across couuntry. Source: The Economist."}
+knitr::include_graphics(c("_resources/chapter_death/economist.jpg"))
+```
+
+Life tables provide a list of period live expectancies for given age groups.  Given you are in a specific age group today and given the mortality rates of each age group, what is your expected life expectancy. The alternative measure, the cohort life expectancy, takes variation in mortality rates across cohorts into account. We will here only cover the period life expectancy and how to construct a life table.  It is also one of the most common measures of life expectancy. 
+
+The intuition behind the period life expectancy is very similar to the intuition behind the total fertility rate. We simply consider the mortality rate of each age group today, and ask how long we would life. However, because we only can die once, it is slightly more complicated (we can have more children). We therefore first create a life table. Table \@ref(tab:deatht) shows the data requirements for creating life tables.
+
+
 
 
 ```{r deatht2, echo=FALSE, results='asis'}
 cat('Table: (\\#tab:deatht) Data requirements for life tables
 
-|Col  |Notation  |Content  |Source  |
-| - |-----------| ---------------|-----|
+|Col  |Notation  |Content                    |Source  |
+| ------ |-----------| ----------------------|-----|
 |(1)| $x,x+n$ | The age interval              | Provided  |
 |(2)| $m_x$   | The age-specific death rate.  | $\\frac{\\text{deaths } x,x+n}{\\text{population } x,x+n }$|
 |(3) | $_nq_n$ | Prob. dying within interval.                | $\\frac{2\\times n\\times m_x}{2+n\\times m_x}$|
@@ -101,7 +147,7 @@ cat('Table: (\\#tab:deatht) Data requirements for life tables
 |(8) | $e_x$   | Average  years of life remaining at age $x$ | $T_x/I_x$|')
 ```
 
-Table \@ref(tab:deatht) shows the data requirements for creating life tables. For each age group we require data on the  number of people in that group and the number of people who died in that group. Once we have these two variables we can construct the other variables. The first variable we construct is the age specific death rate, following by the probability of dying within the age group interval. We then construct a synthetic population that has a size of 100,000 individuals at the beginning of the first period. In each period we calculate the number of people who survive to this period and who die within this period. We can then use these estimates to calculate the number of life years lived in this period, and sum over these live years. At the end, we divide the number of life years left in any given period by the number of people getting to this period to obtain the estimated life expectancy.
+ For each age group we require data on the  number of people in that group and the number of people who died in that group. Once we have these two variables we can construct the other variables. The first variable we construct is the age specific death rate, following by the probability of dying within the age group interval. We then construct a synthetic population that has a size of 100,000 individuals at the beginning of the first period. In each period we calculate the number of people who survive to this period and who die within this period. We can then use these estimates to calculate the number of life years lived in this period, and sum over these live years. At the end, we divide the number of life years left in any given period by the number of people getting to this period to obtain the estimated life expectancy.
 
 ```{r deatht, echo=FALSE, results='asis'}
 cat('Table: (\\#tab:deatht2) Life table for the United Kingdom. Data source: Eurostat.
@@ -120,7 +166,7 @@ cat('Table: (\\#tab:deatht2) Life table for the United Kingdom. Data source: Eur
 
 
 
- Table \@ref(tab:deatht2) shows a subset of a life table for the United Kingdom using data from Eurostat and the recipe outlined in Table \@ref(tab:deatht). Figure \@ref(fig:deatht2) shows a graph of the live expectancy (the last column of Table \@ref(tab:deatht))  and survival rate for the United Kingdom based on data from Eurostat. 
+ Table \@ref(tab:deatht) shows a subset of a life table for the United Kingdom using data from Eurostat and the recipe outlined in Table \@ref(tab:deatht2). Figure \@ref(fig:death2) shows a graph of the live expectancy (the last column of Table \@ref(tab:deatht2))  and survival rate for the United Kingdom based on data from Eurostat. 
  
  
 ```{r death2, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Life expectancy by age (left) and survival probabilities (right). Data source: Eurostat. The R script for this Figure is available [here](https://www.hhsievertsen.net/economicdata/notes/lecture12/rmaterial/lecnote_12_script_for_fig6.R)"}
@@ -137,6 +183,7 @@ So what should you take away from this chapter?
     * The Total Fertility Rate
     * The General Fertility Rate
     * The Crude Birth Rate
+* Decompose changes in life births.
 * Creating life tables
 * Calculating life expectancy
 
