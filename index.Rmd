@@ -4,7 +4,6 @@ author: "Hans Henrik Sievertsen"
 date: "Version 0.5 - Sep 30, 2019"
 site: bookdown::bookdown_site
 github-repo: "hhsievertsen/economicdata"
-cover-image: "_resources/cover.png"
 output: 
   bookdown::gitbook:
     split_by: none

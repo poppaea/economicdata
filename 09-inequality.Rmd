@@ -38,11 +38,17 @@ In micro level data each observation represents the value for an individual, a h
 Because I cannot share of the micro level data I have publicly, the data in \@ref(fig:in0) is simulated. I created the data in R, using the following comands:^[I also made some minor adjustments to improve the data to ink ratio and make the chart self-explanatory. You should try that yourself.]
 
 
-```{r   message=FALSE, warning=FALSE}
+```{r results='asis', echo=FALSE, include=FALSE,}
 library(tidyverse)
 df<-tibble(income=exp(rnorm(100000,log(40),0.5)))
-ggplot(data=df,aes(x=income)) + 
+a<-ggplot(data=df,aes(x=income)) + 
   geom_histogram( bins=100,fill="black", col="white")
+```
+
+```{r inx, echo=FALSE, fig.width=6,fig.align = 'center', fig.height=3,fig.cap="\\label{fig:figx} A simulated income distribution"}
+# Show the graph here
+a
+
 ```
 
 
@@ -166,7 +172,7 @@ The frequency density is the frequency divided by the bin width, and the probabi
 How can we summarise distribution shown in Figure \@ref(fig:in0) in a measure of inequality? If we share a cake among four friends, we would evaluate whether the distribution of cake by assessing whether everyone had an equal share of the cake. Everyone should have 25 percent of the cake. We can conduct a similar exercise  with income. Let's first try this on the simulated example from above:
 
 
-```{r   message=FALSE, warning=FALSE}
+```{r results='asis', echo=FALSE, include=FALSE,}
 library(tidyverse)
 # simulate data
 df<-tibble(income=exp(rnorm(100000,log(40),0.5)))
@@ -177,24 +183,41 @@ percentiles<-df%>%
   summarise(income=sum(income))%>%
   mutate(income_share=income/sum(income))
 # plot income shares
-ggplot(percentiles,aes(x=income_percentile,y=income_share))+geom_line(size=1.5)
+b<-ggplot(percentiles,aes(x=income_percentile,y=income_share))+geom_line(size=1.5)
 
 ```
+
+
+```{r inx1, echo=FALSE, fig.width=6,fig.align = 'center', fig.height=3,fig.cap="\\label{fig:figx} Income shares based on simulated data."}
+# Show the graph here
+b
+
+```
+
 
 What does this chart show us? On the horizontal axis we have the income percentile. On the vertical axis we have the the income share. The percentile is based on the income rank. Percentile 1 contains the 1 percent of the observations with the lowest income. Percentile 100 contains the 1 percent of the population with the highest income. 
 
 From this chart we see that the 1 percent with the lowest income has a total income well of around 0.25 percent of the total income. The 1 percent with the highest income has more than 3 percent of total income. In the cake example we split the cake in four and an equal distribution is then that everyone has one-fourth of the total cake. In the sample above we do the same, but we split income in 100 percentiles instead of four. An equal distribution would be a situation where every percentile has 1-100 of the total income. In other words everyone should have 1 percent. But this is not the case. The richest 1 percent have more than 3 times their equal share. The poorest 1 have about one-fourth of their equal share. Let's try to look at some real data.The We don't have access to individual level income data, but several data sources provide processed income data on income. The following example uses data from the  [World Inequality Database](https://wid.world/data/).
 
 
-```{r   message=FALSE, warning=FALSE}
+```{r results='asis', echo=FALSE, include=FALSE,}
 library(tidyverse)
 # load data from the work inequality database
 df<-read_csv("https://www.dropbox.com/s/3lgkhahh37dazzv/wid.csv?dl=1")
 # create a line chart of  the income shares for the UK
-ggplot(df%>%filter(Country=="United Kingdom"),aes(x=Year,y=incomeshare,colour=measure))+
+c<-ggplot(df%>%filter(Country=="United Kingdom"),aes(x=Year,y=incomeshare,colour=measure))+
   geom_line(size=1.5)
 
 ```
+
+
+
+```{r inx2, echo=FALSE, fig.width=6,fig.align = 'center', fig.height=3,fig.cap="\\label{fig:figx} Income shares in the UK. Data source: World Inequality database"}
+# Show the graph here
+c
+
+```
+
 
 
 So what does this chart tell us? We can see that the in early 1980ies, the top 1 percent (the p99p100) had about seven percent of the total income in the UK. That is about 7 times more than their equal share. In 2012 that share was about 12 percent. The income share of the top 1 percent has increased and almost doubled over the last three decades. 
