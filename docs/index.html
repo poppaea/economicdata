@@ -11,7 +11,7 @@
   <meta property="og:title" content="Economic Data" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="_resources/cover.png" />
+  
   <meta property="og:description" content="Economic Data for EFIM 10016 - University of Bristol" />
   <meta name="github-repo" content="hhsievertsen/economicdata" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="Economic Data" />
   
   <meta name="twitter:description" content="Economic Data for EFIM 10016 - University of Bristol" />
-  <meta name="twitter:image" content="_resources/cover.png" />
+  
 
 <meta name="author" content="Hans Henrik Sievertsen" />
 
@@ -48,71 +48,6 @@
 
 
 
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -3060,11 +2995,12 @@ Figure 8.1: The distribution of income. Data is simulated.
 <h4>Micro level data</h4>
 <p>In micro level data each observation represents the value for an individual, a household, a firm or an institution. Micro data is often the basis for macro data. It is often based on surveys or administrative records. Micro data is rarely directly accessible from public sources. One reason for this is that micro data often contains a lot of detailed information that shouldn’t be shared freely with everyone. Getting access to micro data therefore often requires us to submit an application and sign a confidentiality agreement. Moreover, when working with micro level data we should be careful with how we share and store the data.</p>
 <p>Because I cannot share of the micro level data I have publicly, the data in <a href="#fig:in0">8.1</a> is simulated. I created the data in R, using the following comands:<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>df&lt;-<span class="kw">tibble</span>(<span class="dt">income=</span><span class="kw">exp</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>,<span class="kw">log</span>(<span class="dv">40</span>),<span class="fl">0.5</span>)))</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>df,<span class="kw">aes</span>(<span class="dt">x=</span>income)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="st">  </span><span class="kw">geom_histogram</span>( <span class="dt">bins=</span><span class="dv">100</span>,<span class="dt">fill=</span><span class="st">&quot;black&quot;</span>, <span class="dt">col=</span><span class="st">&quot;white&quot;</span>)</span></code></pre></div>
-<p><img src="book_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<div class="figure" style="text-align: center"><span id="fig:inx"></span>
+<img src="book_files/figure-html/inx-1.png" alt="\label{fig:figx} A simulated income distribution" width="576" />
+<p class="caption">
+Figure 8.2:  A simulated income distribution
+</p>
+</div>
 </div>
 </div>
 <div id="net-and-gross-values" class="section level3">
@@ -3257,27 +3193,21 @@ The frequency density is the frequency divided by the bin width, and the probabi
 <div id="income-shares" class="section level2">
 <h2><span class="header-section-number">8.3</span> Income shares</h2>
 <p>How can we summarise distribution shown in Figure <a href="#fig:in0">8.1</a> in a measure of inequality? If we share a cake among four friends, we would evaluate whether the distribution of cake by assessing whether everyone had an equal share of the cake. Everyone should have 25 percent of the cake. We can conduct a similar exercise with income. Let’s first try this on the simulated example from above:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co"># simulate data</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>df&lt;-<span class="kw">tibble</span>(<span class="dt">income=</span><span class="kw">exp</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>,<span class="kw">log</span>(<span class="dv">40</span>),<span class="fl">0.5</span>)))</span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># calculate income shares</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>percentiles&lt;-df<span class="op">%&gt;%</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">income_percentile =</span> <span class="kw">ntile</span>(income,<span class="dv">100</span>))<span class="op">%&gt;%</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="st">  </span><span class="kw">group_by</span>(income_percentile)<span class="op">%&gt;%</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">income=</span><span class="kw">sum</span>(income))<span class="op">%&gt;%</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">income_share=</span>income<span class="op">/</span><span class="kw">sum</span>(income))</span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="co"># plot income shares</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="kw">ggplot</span>(percentiles,<span class="kw">aes</span>(<span class="dt">x=</span>income_percentile,<span class="dt">y=</span>income_share))<span class="op">+</span><span class="kw">geom_line</span>(<span class="dt">size=</span><span class="fl">1.5</span>)</span></code></pre></div>
-<p><img src="book_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<div class="figure" style="text-align: center"><span id="fig:inx1"></span>
+<img src="book_files/figure-html/inx1-1.png" alt="\label{fig:figx} Income shares based on simulated data." width="576" />
+<p class="caption">
+Figure 8.3:  Income shares based on simulated data.
+</p>
+</div>
 <p>What does this chart show us? On the horizontal axis we have the income percentile. On the vertical axis we have the the income share. The percentile is based on the income rank. Percentile 1 contains the 1 percent of the observations with the lowest income. Percentile 100 contains the 1 percent of the population with the highest income.</p>
 <p>From this chart we see that the 1 percent with the lowest income has a total income well of around 0.25 percent of the total income. The 1 percent with the highest income has more than 3 percent of total income. In the cake example we split the cake in four and an equal distribution is then that everyone has one-fourth of the total cake. In the sample above we do the same, but we split income in 100 percentiles instead of four. An equal distribution would be a situation where every percentile has 1-100 of the total income. In other words everyone should have 1 percent. But this is not the case. The richest 1 percent have more than 3 times their equal share. The poorest 1 have about one-fourth of their equal share. Let’s try to look at some real data.The We don’t have access to individual level income data, but several data sources provide processed income data on income. The following example uses data from the <a href="https://wid.world/data/">World Inequality Database</a>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># load data from the work inequality database</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>df&lt;-<span class="kw">read_csv</span>(<span class="st">&quot;https://www.dropbox.com/s/3lgkhahh37dazzv/wid.csv?dl=1&quot;</span>)</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># create a line chart of  the income shares for the UK</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="kw">ggplot</span>(df<span class="op">%&gt;%</span><span class="kw">filter</span>(Country<span class="op">==</span><span class="st">&quot;United Kingdom&quot;</span>),<span class="kw">aes</span>(<span class="dt">x=</span>Year,<span class="dt">y=</span>incomeshare,<span class="dt">colour=</span>measure))<span class="op">+</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size=</span><span class="fl">1.5</span>)</span></code></pre></div>
-<p><img src="book_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<pre><code>## Warning: Removed 2 rows containing missing values (geom_path).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:inx2"></span>
+<img src="book_files/figure-html/inx2-1.png" alt="\label{fig:figx} Income shares in the UK. Data source: World Inequality database" width="576" />
+<p class="caption">
+Figure 8.4:  Income shares in the UK. Data source: World Inequality database
+</p>
+</div>
 <p>So what does this chart tell us? We can see that the in early 1980ies, the top 1 percent (the p99p100) had about seven percent of the total income in the UK. That is about 7 times more than their equal share. In 2012 that share was about 12 percent. The income share of the top 1 percent has increased and almost doubled over the last three decades.</p>
 <p>Where did that increase in income to the top 1 percent come from? The red line in the chart shows the income share of the bottom 50 percent. This group had about 24 of the total income in the early 1980ies. That is about half of their equal share. Over the three decades their income share dropped by about 2.5 percentage points. Part of the increase in the top income share is therefore from the bottom 50 percent, but not everything.</p>
 <p>We have now introduced already used our first measures of inequality:</p>
@@ -3371,33 +3301,33 @@ The frequency density is the frequency divided by the bin width, and the probabi
 </tr>
 </tbody>
 </table>
-<p>In situation 1, where every individual has the same share of the total income the Lorenz curve will be a straight line, the 45 degree line, as shown by the black line in Figure <a href="#fig:poverty0">8.2</a>. While this situation is never seen in practice, this situation is important because it serves as a reference point for a completely equal income distribution.</p>
+<p>In situation 1, where every individual has the same share of the total income the Lorenz curve will be a straight line, the 45 degree line, as shown by the black line in Figure <a href="#fig:poverty0">8.5</a>. While this situation is never seen in practice, this situation is important because it serves as a reference point for a completely equal income distribution.</p>
 <div class="figure" style="text-align: center"><span id="fig:poverty0"></span>
 <img src="_resources/chapter_inequality/ex6_1.png" alt="Lorenz curves for 3 different income distributions." width="75%" />
 <p class="caption">
-Figure 8.2: Lorenz curves for 3 different income distributions.
+Figure 8.5: Lorenz curves for 3 different income distributions.
 </p>
 </div>
-<p>Situation 2 is the other extreme, where one household has 100 percent of the income, as shown by the in Figure . Finally, the green line in <a href="#fig:poverty0">8.2</a> shows situation 3, where every household has some income, but the income share is slowly increasing. Note from Table <a href="#tab:povt1">8.2</a> that in Situation 3, the sixth household has the same income as in the perfectly equal situation. All households below (1-5) have a lower share than in the equal situation and all households above have a higher share.</p>
+<p>Situation 2 is the other extreme, where one household has 100 percent of the income, as shown by the in Figure . Finally, the green line in <a href="#fig:poverty0">8.5</a> shows situation 3, where every household has some income, but the income share is slowly increasing. Note from Table <a href="#tab:povt1">8.2</a> that in Situation 3, the sixth household has the same income as in the perfectly equal situation. All households below (1-5) have a lower share than in the equal situation and all households above have a higher share.</p>
 <p>Based on the Lorenz curve we can make statements on the income distribution, such as “the bottom 30 percent has 14 percent of the total income” or “the bottom 50 percent has 31 percent of the income” (Situation 3).</p>
 <p>While the Lorenz curve provides a graphical representation of the income distribution, we are often interested in quantifying the income distribution in one number. This can be done by means of the Gini coefficient. We use the Lorenz-curve and situation 1 above as a point of departure to calculate the Gini coefficient.</p>
 <div id="the-gini-coefficient" class="section level3">
 <h3><span class="header-section-number">8.4.1</span> The Gini coefficient</h3>
-<p>Note from the discussion above, that the 45 degree line represents a perfectly equal distribution. To quantify the degree of inequality we are interested in quantifying how far we are from that situation. One way to quantify this is by means of the area between the actual income distribution and the 45 degree line, corresponding to area A in Figure <a href="#fig:poverty1">8.3</a>. The smaller this area is, the closer we are to the perfect equal distribution. We can then scale this area to the total area below the 45 degree line, which is area A and area B in Figure <a href="#fig:poverty1">8.3</a>, and that is the Gini coefficient. The Gini coefficient will always be between 0 (perfectly equal) and 1 (perfectly unequal).</p>
+<p>Note from the discussion above, that the 45 degree line represents a perfectly equal distribution. To quantify the degree of inequality we are interested in quantifying how far we are from that situation. One way to quantify this is by means of the area between the actual income distribution and the 45 degree line, corresponding to area A in Figure <a href="#fig:poverty1">8.6</a>. The smaller this area is, the closer we are to the perfect equal distribution. We can then scale this area to the total area below the 45 degree line, which is area A and area B in Figure <a href="#fig:poverty1">8.6</a>, and that is the Gini coefficient. The Gini coefficient will always be between 0 (perfectly equal) and 1 (perfectly unequal).</p>
 <div class="figure" style="text-align: center"><span id="fig:poverty1"></span>
 <img src="_resources/chapter_inequality/tikz.png" alt="The Lorenz curve and the Gini coefficient. The Gini coefficient is $A/(A+B)$." width="65%" />
 <p class="caption">
-Figure 8.3: The Lorenz curve and the Gini coefficient. The Gini coefficient is <span class="math inline">\(A/(A+B)\)</span>.
+Figure 8.6: The Lorenz curve and the Gini coefficient. The Gini coefficient is <span class="math inline">\(A/(A+B)\)</span>.
 </p>
 </div>
-<p>Returning to the example above, how can we calculate the Gini coefficient? First note, that the curves in Figure <a href="#fig:poverty1">8.3</a> are not smooth as in Figure <a href="#fig:povertY1"><strong>??</strong></a>. In practice, is discrete and not continuous. We can therefore obtain approximate the areas by considering the difference between the 45 degree line and the actual income share for each household, as shown by the grey bars in Figure <a href="#fig:poverty2">8.4</a>. We can then relate the sum of the area of these bars to the sum of the area of these bars and the orange bars in Figure <a href="#fig:poverty2">8.4</a> (corresponding to area B).</p>
+<p>Returning to the example above, how can we calculate the Gini coefficient? First note, that the curves in Figure <a href="#fig:poverty1">8.6</a> are not smooth as in Figure <a href="#fig:povertY1"><strong>??</strong></a>. In practice, is discrete and not continuous. We can therefore obtain approximate the areas by considering the difference between the 45 degree line and the actual income share for each household, as shown by the grey bars in Figure <a href="#fig:poverty2">8.7</a>. We can then relate the sum of the area of these bars to the sum of the area of these bars and the orange bars in Figure <a href="#fig:poverty2">8.7</a> (corresponding to area B).</p>
 <div class="figure" style="text-align: center"><span id="fig:poverty2"></span>
 <img src="_resources/chapter_inequality/ex6_4.png" alt="Approximating the Gini coefficient using the Lorenz curve Left: approximation of area A. Right: approximation of are B." width="48%" /><img src="_resources/chapter_inequality/ex6_5.png" alt="Approximating the Gini coefficient using the Lorenz curve Left: approximation of area A. Right: approximation of are B." width="48%" />
 <p class="caption">
-Figure 8.4: Approximating the Gini coefficient using the Lorenz curve Left: approximation of area A. Right: approximation of are B.
+Figure 8.7: Approximating the Gini coefficient using the Lorenz curve Left: approximation of area A. Right: approximation of are B.
 </p>
 </div>
-<p>Table <a href="#tab:povt2">8.3</a> shows how we can approximate the areas A and B in the simple examples above to calculate the Gini coefficient. We simply use the approach illustrated in Figure <a href="#fig:poverty3">8.5</a>. Each bar has a width of 0.1 which we multiply by the height of the bar.</p>
+<p>Table <a href="#tab:povt2">8.3</a> shows how we can approximate the areas A and B in the simple examples above to calculate the Gini coefficient. We simply use the approach illustrated in Figure <a href="#fig:poverty3">8.8</a>. Each bar has a width of 0.1 which we multiply by the height of the bar.</p>
 <table>
 <caption><span id="tab:povt2">Table 8.3: </span> Calculation of the Gini coefficients for scenario 2 and 3.</caption>
 <thead>
@@ -3507,7 +3437,7 @@ Figure 8.4: Approximating the Gini coefficient using the Lorenz curve Left: appr
 <div class="figure" style="text-align: center"><span id="fig:poverty3"></span>
 <img src="_resources/chapter_inequality/ex7.png" alt="Gini coefficients in 2016 for European countries. Source: Eurostat." width="90%" />
 <p class="caption">
-Figure 8.5: Gini coefficients in 2016 for European countries. Source: Eurostat.
+Figure 8.8: Gini coefficients in 2016 for European countries. Source: Eurostat.
 </p>
 </div>
 <p>Can we generalize our “Gini” approximation above to obtain a formula? First, note that both the x and y axis go from 0 to 1, the area of A+B will therefore always be 0.5 (<span class="math inline">\(1\times 1\times 0.5=0.5\)</span>), we can therefore write:</p>
