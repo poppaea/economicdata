@@ -17,10 +17,11 @@ This chapter is about showing data on people. For example the  the number of peo
   * Population age compositions.
 * Explain the difference between a flow and stock variable.
 * Quantify changes in stocks and levels.
+  - This is  covered in more detail in chapter X.
 * Create an index with one variable.
-  * See chapter 11 for more details on this.
+  - This is  covered in more detail in chapter X.
 * Create charts and tables and Excel.
-  * See chapter 13 for more details on this.
+  - This is  covered in more detail in chapter X.
 
 ### Population data visualization examples
 So let us look at some data on people. Figure   \@ref(fig:fig1) shows the population of the United Kingdom from 1960 to 2018 using a line chart. This chart is a bit dull. There are no bells and whistles such as 3D effects or colors. That is actually a good thing. Charts that should focus on the data and not distract the reader. We will discuss chart design in much more detail in later chapters. But for now, let us just focus on this boring chart. What can we use this chart for? We can clearly see that the population of the UK has been increasing over the last 50 years from less than 50 million in the 1960ies to more than 60 million around 2018. Can we say what the precise number of people in the UK is in 2018? Not really. A chart is rarely useful for looking up precise values. But a  chart is really good at showing patterns in the data. For example the pattern that the population is increasing. 
