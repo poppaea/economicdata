@@ -2,7 +2,7 @@
 
 
 
-## What this chapter  is about
+## About this chapter
 Now that we have shown the data, we also need to be able to be able to describe data. In this lecture we will discuss a number of tools and concepts that useful when describing changes.  We will first go through concepts to describe changes. We will then go through a method for decomposing changes, and finally we will address the issue of removing noise from time series.
  
 ### Intended learning outcomes 

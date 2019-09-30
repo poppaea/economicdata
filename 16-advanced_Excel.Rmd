@@ -1,6 +1,6 @@
 # Advanced Excel 
 
-## What this chapter is about
+## About htis chapter
 
 Excel and most other spreadsheet software packages have a wide range of advanced tools to make the data work faster and more efficient. In this lecture we will cover a few of these tools that are of great use as economists working with data in excel. After this lecture you should be able to 
 

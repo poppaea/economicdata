@@ -1,6 +1,6 @@
 # Basics of good data visualization
 
-## What this chapter is about
+## About this chapter
 
 This chapter provides a brief introduction to good data visualization. We first go through an example to illustrate that "How we show data matters". We then describe  principles for producing good data visualizations. The chapter is inspired by the following resources on data visualization.
 

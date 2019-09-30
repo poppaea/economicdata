@@ -1,6 +1,6 @@
 # Measuring Well-Being
 
-## What this chapter is about
+## About this chapter
 
 We will now follow up on some of the issues on measuring well-being raised in the last chapter. In the last chapter we learned how GDP is a measure of economic activity and how it is (mis)used as a measure of well-being. In this chapter we discuss the problems with using GDP as a well-being measure, what well-being is, and how we can measure it.
 

@@ -1,6 +1,6 @@
 # Excel basics
 
-## What this chapter is about
+## About this chapter
 
 This chapter is about working with spreadsheet software tools such as MS. Excel or OpenOfficeCalc. After this chapter you should be able to
 
