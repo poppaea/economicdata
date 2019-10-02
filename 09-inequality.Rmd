@@ -1,0 +1,400 @@
+# Measuring inequality
+
+
+## About this chapter
+
+One of the criticisms of GDP as a well-being measure is that  "GDP ignores the distribution" (see chapter x). GDP is simply an average across the entire economy. It doesn't tell us who experiences the "economic activity", beyond the decomposition into sectors or workers and firms. If we look behind these total numbers and consider the *distribution* of the income, we would probably see something like the chart shown in Figure \@ref(fig:in0). The chart is a histogram of income for a simulated income. Most individuals earn an income well below 100 thousand pounds per year, but some earn way more than that. This chapter is about how we can describe such patterns and compare them across countries and across time. 
+
+
+```{r in0, echo=FALSE, out.width = '85%',fig.show='hold',fig.align='center',fig.cap="The distribution of income. Data is simulated."}
+knitr::include_graphics(c("_resources/chapter_inequality/hist2.png"))
+```
+
+
+
+### Intended learning outcomes
+
+After reading this chapter you should be able to
+
+* Explain the difference between macro and micro level data.
+* Explain the data requirements for studying income or wealth inequality.
+* Create histograms and compute income shares
+* Create a Lorenz curve
+* Calculate and interpret the Gini coefficient
+
+
+## Data requirements
+
+### Macro and micro level data
+
+#### Macro level data{-}
+
+So far we've mostly been using macro level data. Macro level data is data about countries, regions or other entities comprising many individuals, households, firms and institutions. An observation in macro data represents the average, the sum or another statistic of these individuals, firms and institutions. We can typically download most macro data from a public source. 
+
+#### Micro level data{-}
+
+In micro level data each observation represents the value for an individual, a household, a firm or an institution. Micro data is often the basis for macro data. It is often based on surveys or administrative records. Micro data is rarely directly accessible from public sources. One reason for this is that micro data often contains a lot of detailed information that shouldn't be shared freely with everyone. Getting access to micro data therefore often requires us to submit an application and sign a confidentiality agreement. Moreover, when working with micro level data we should be careful with how we share and store the data. 
+
+Because I cannot share of the micro level data I have publicly, the data in \@ref(fig:in0) is simulated. I created the data in R, using the following comands:^[I also made some minor adjustments to improve the data to ink ratio and make the chart self-explanatory. You should try that yourself.]
+
+
+```{r results='asis', echo=FALSE, include=FALSE,}
+library(tidyverse)
+df<-tibble(income=exp(rnorm(100000,log(40),0.5)))
+a<-ggplot(data=df,aes(x=income)) + 
+  geom_histogram( bins=100,fill="black", col="white")
+```
+
+```{r inx, echo=FALSE, fig.width=6,fig.align = 'center', fig.height=3,fig.cap="\\label{fig:figx} A simulated income distribution"}
+# Show the graph here
+a
+
+```
+
+
+### Net and gross values
+When assessing the distribution of income within the population it is important first to decide whether we are interested in the net or gross income distribution.  We've already used the term "net" and "gross" on several occasions. When discussing net-migration or Gross Domestic Product. But what do these terms mean? In general we can think of the terms net and gross as follows:
+
+
+* Gross: The value without deductions, contributions etc.
+* Net: The value after deductions, contributions etc.
+  
+We use the terms net and gross in many situations. If you buy packaged food the label might display the gross and net weight. The gross weight will then be the total weight before deductions, the net weight will be the weight of the product after we deducted the weight of the packaging etc. 
+
+The most common use of the terms net and gross is probably in income, where gross refers to the income before taxes, and net to the income after taxes. Statistical offices and economists in general agree on excluding taxes from gross terms and including taxes in net terms, but there is less agreement on whether transfers such as housing benefits and unemployment benefits in net terms should be included.
+
+When working with income data, the concept of disposable income is therefore also often used instead. The idea is that we want to consider the income that the household can spend, which will be the income after all taxes, transfers, and deductions.
+
+### Equivalenced income
+
+In working with income data we are often interested in comparing households instead of individuals. However, households are not all of the same size, and we will therefore have to adjust monetary measures to the size of the households, we call income that is adjusted to household equivalenced income. We will here briefly discuss the three most common approaches to equivalise income. 
+    
+* The Oxford scale or OECD equivalence scale.
+    
+    * The first person in the household: Weight 1
+    * Each additional adult household member: Weight 0.7  (person aged 14 and over)
+    * Each child household member: Weight 0.5
+    
+* The OECD modified scale.
+  
+  * The first person in the household: Weight 1
+  * Each additional adult household member: Weight 0.5 (person aged 14 and over)
+  * Each child household member: Weight 0.3 
+    
+* The Square root scale.
+  
+  * Total weight: square root of the number of household members.
+    
+While the square root method is probably the most popular approach, the choice of approach is non-trivial as Table   \@ref(tab:povt0) shows. The table shows four different households that all have the same income, but the composition of households vary. The Oxford scale does for example but quite high weight on children compared to the modified OECD scale. The square root scale on the other hand puts the same weight on adults and children, but each additional member gets a lower weight. 
+
+
+```{r , echo=FALSE, results='asis'}
+cat('Table: (\\#tab:povt0) Equivalencing income
+
+|Adults | 1  | 2 | 1 | 2 |
+|:--|:--:|:--:|:--:|:--:|
+|Children | 0  | 0 |1|2|
+|Household income| 100|100|100|100|
+Equivalised income | | | | |
+Oxford scale| 100| 58.824|66.667| 37.037|
+OECD modified|100|66.667|76.923|47.619|
+Square root|100|70.711|70.711|50.000
+')
+```
+
+When working with household income data you should adjust income measures and be aware of the differences between the approaches.
+
+### Income or wealth
+
+When talking about inequality it is important to be precise about what dimension of inequality we are interested in. The two most commonly assessed dimensions are income and wealth. Wealth inequality is typically higher than income inequality. We could also assess inequality with respect to other dimensions, such as mortality, social activites, etc.
+
+
+ 
+<center>
+```{block, type='myblock'}
+<center>
+**A histogram**
+</center>
+
+While most data representation tools are concerned with the relationship between two or more variables, histograms focus on only one variable; they are used to show the *distribution* of a single variable}. Histograms look very much like bar charts, and one interpretation of a histogram is, that it is a special case of a bar chart, where the x-axis is always showing intervals of the variable. Another peculiarity of a histogram is that y-axis typically shows the *density*. 
+
+To create a histogram we conduct the following steps:
+
+1. Decide on the categories used on the x-axis.
+2. Count the number frequencies of each category selected in step 1.
+3. Convert the counts to relative frequencies (optional).
+
+The first step seems very trivial. However, often the data is not discrete and  the categories on the x-axis will be intervals. When values are continuous we will have to group a range of values in a *bin*. For example a bin containing all values between 1 and 2 (i.e. 1, 1.00001, 1.0004,1.431 etc.). The choice of bins is actually quite important. There is a trade-off between getting a more smooth picture of the distribution (i.e. with coarse bins) and getting a detailed but more noisy  picture of the distribution (i.e. with fine bins).
+
+#### Selecting the bin width?{-}
+So how do we select bin widths?  Notice that we can *either* make a choice of the number of bins *or* make a choice of the bin widths. As these two are related we cannot select them independently. In practice, the choice of the  number of bins (or bin width) is rather ad hoc. However, most statistical software has built in "rule-of-thumb" decision rules. Let us  briefly discuss some of the basic rules. Let *k* be the number of bins, we can select *k* based on:
+
+* The square root rule
+
+    \begin{align}
+        k=\sqrt(N)
+    \end{align}
+
+where *N* is the number of observations. 
+
+* Stata's default
+    \begin{align}
+        k=\min\left\{\sqrt(N), \frac{10\ln(N)}{\ln(10)}\right\}
+    \end{align}
+
+such that *k* is the lowest value of the square root rule and ten times the natural logarithm of the number of observations divided by the natural logarithm of ten. 
+
+* Sturges' rule
+    \begin{align}
+        k=log_2(N)+1
+    \end{align}
+
+this formula is used as the default in R (Base). With 2000 observations Sturges's rule suggest 12 bins. 
+
+Note how the three different formulas provided very different suggestions. The same data will lead to bar chart with 12 bins in R and 33 bins in Stata. It is therefore always a good idea to assess the histogram using various bin specifications, manually. 
+
+#### What are densities?{-}
+In the histograms we've plotted so far, the y-axis has always shown relative frequencies. However, often the y-axis of histogram shows something called densities. In practice there are three options for the y-axis:
+
+* Counts: i.e. the frequency.
+* Relative frequency (the frequency divided by the number of data points)
+* Frequency density (the frequency relative to the bin width) or the Probability density.
+
+The frequency density is the frequency divided by the bin width, and the probability density is the relative share divided with the bin width.
+
+
+```
+</center>
+
+
+## Income shares
+
+How can we summarise distribution shown in Figure \@ref(fig:in0) in a measure of inequality? If we share a cake among four friends, we would evaluate whether the distribution of cake by assessing whether everyone had an equal share of the cake. Everyone should have 25 percent of the cake. We can conduct a similar exercise  with income. Let's first try this on the simulated example from above:
+
+
+```{r results='asis', echo=FALSE, include=FALSE,}
+library(tidyverse)
+# simulate data
+df<-tibble(income=exp(rnorm(100000,log(40),0.5)))
+# calculate income shares
+percentiles<-df%>%
+  mutate(income_percentile = ntile(income,100))%>%
+  group_by(income_percentile)%>%
+  summarise(income=sum(income))%>%
+  mutate(income_share=income/sum(income))
+# plot income shares
+b<-ggplot(percentiles,aes(x=income_percentile,y=income_share))+geom_line(size=1.5)
+
+```
+
+
+```{r inx1, echo=FALSE, fig.width=6,fig.align = 'center', fig.height=3,fig.cap="\\label{fig:figx} Income shares based on simulated data."}
+# Show the graph here
+b
+
+```
+
+
+What does this chart show us? On the horizontal axis we have the income percentile. On the vertical axis we have the the income share. The percentile is based on the income rank. Percentile 1 contains the 1 percent of the observations with the lowest income. Percentile 100 contains the 1 percent of the population with the highest income. 
+
+From this chart we see that the 1 percent with the lowest income has a total income well of around 0.25 percent of the total income. The 1 percent with the highest income has more than 3 percent of total income. In the cake example we split the cake in four and an equal distribution is then that everyone has one-fourth of the total cake. In the sample above we do the same, but we split income in 100 percentiles instead of four. An equal distribution would be a situation where every percentile has 1-100 of the total income. In other words everyone should have 1 percent. But this is not the case. The richest 1 percent have more than 3 times their equal share. The poorest 1 have about one-fourth of their equal share. Let's try to look at some real data.The We don't have access to individual level income data, but several data sources provide processed income data on income. The following example uses data from the  [World Inequality Database](https://wid.world/data/).
+
+
+```{r results='asis', echo=FALSE, include=FALSE,}
+library(tidyverse)
+# load data from the work inequality database
+df<-read_csv("https://www.dropbox.com/s/3lgkhahh37dazzv/wid.csv?dl=1")
+# create a line chart of  the income shares for the UK
+c<-ggplot(df%>%filter(Country=="United Kingdom"),aes(x=Year,y=incomeshare,colour=measure))+
+  geom_line(size=1.5)
+
+```
+
+
+
+```{r inx2, echo=FALSE, fig.width=6,fig.align = 'center', fig.height=3,fig.cap="\\label{fig:figx} Income shares in the UK. Data source: World Inequality database"}
+# Show the graph here
+c
+
+```
+
+
+
+So what does this chart tell us? We can see that the in early 1980ies, the top 1 percent (the p99p100) had about seven percent of the total income in the UK. That is about 7 times more than their equal share. In 2012 that share was about 12 percent. The income share of the top 1 percent has increased and almost doubled over the last three decades. 
+
+Where did that increase in income to the top 1 percent come from? The red line in the chart shows the income share of the bottom 50 percent. This group had about 24 of the total income in the early 1980ies. That is about half of their equal share. Over the three decades their income share dropped by about 2.5 percentage points. Part of the increase in the top income share is therefore from the bottom 50 percent, but not everything.
+
+We have now introduced already used our first measures of inequality:
+
+* the income share of the top 1 percent.
+* the income share of the bottom 50 percent.
+
+## The Lorenz curve and the Gini coefficient
+So far, we have looked at specific parts of the income distribution.  What about the other parts of the income distribution and their income shares? And can we combine all these income shares in one measure? Yes, that is what the Lorenz curve does
+
+One of the most common approaches to show income distributions is the Lorenz-curve, developed by the American economist, Max Lorenz. The curve plots the share of total income relative to the position in the income distribution. So on the x-axis we rank the population by their income and on the y-axis we show the cumulative income share. Here is cookbook for creating a Lorenz curve:
+
+1. Sort all households (individuals) by their income, from lowest to highest and give them a relative income rank. 
+2. Compute the total income in the population.
+3. For each individual in the household calculate their share of total income. 
+4. Calculate the cumulative income share by adding the individual shares. So for the household with the lowest income, the cumulative share is just their income share. For the second lowest income household, the cumulative income share is their share plus the share of the lowest income household.
+    
+5. Create a line chart of the cumulative income shares against the household (individual) income rank.
+
+Now what do we expect? How does this chart look? Let's consider a very simple example of an economy with 10 households as shown in Table   \@ref(tab:price1). In scenario 1 all households have the same income.  In  scenario 2, one household has all income of the economy. In scenario 3 the income   is gradually increasing. 
+
+
+```{r , echo=FALSE, results='asis'}
+cat('Table: (\\#tab:povt1) 3 examples of distributions
+
+|Household | Scenario 1 |Scenario 2 |Scenario 3|
+|:--:|:--:|:--:|:--:|
+|1   |10 | 0  | 3|
+|2   |10 | 0  | 5|
+|3   |10 | 0  | 6|
+|4   |10 | 0  | 8|
+|5   |10 | 0  | 9|
+|6   |10 | 0  | 10|
+|7   |10 | 0  | 12|
+|8   |10 | 0  | 13|
+|9   |10 | 0  | 14|
+|10  |10 | 100| 30|
+')
+```
+
+
+
+In situation 1, where every individual has the same share of the total income the Lorenz curve will be a straight line, the 45 degree line, as shown by the black line in Figure   \@ref(fig:poverty0). While this  situation is never seen in practice, this situation is important because it serves as a reference point for a completely equal income distribution. 
+
+
+```{r poverty0, echo=FALSE, out.width = '75%',fig.show='hold',fig.align='center',fig.cap="Lorenz curves for 3 different income distributions."}
+knitr::include_graphics(c("_resources/chapter_inequality/ex6_1.png"))
+```
+
+
+Situation 2 is the other extreme, where one household has 100 percent of the income, as shown by the in Figure \ref{fig:11}. Finally, the green line in   \@ref(fig:poverty0) shows situation 3, where every household has some income, but the income share is slowly increasing. Note from Table   \@ref(tab:povt1) that in Situation 3, the sixth household has the same income as in the perfectly equal situation. All households below (1-5) have a lower share than in the equal situation and all households above have a higher share. 
+
+Based on the Lorenz curve we can make statements on the income distribution, such as "the bottom 30 percent has 14 percent of the total income"  or   "the bottom 50 percent has 31 percent of the income" (Situation 3).
+
+While the Lorenz curve provides a graphical representation of the income distribution, we are often interested in quantifying the income distribution in one number. This can be done by means of the Gini coefficient. We use the Lorenz-curve and situation 1 above as a point of departure to calculate the Gini coefficient. 
+
+### The Gini coefficient
+
+Note from the discussion above, that the 45 degree line represents a perfectly equal distribution. To quantify the degree of inequality we are interested in quantifying how far we are from that situation. One way to quantify this is by means of the area between the actual income distribution and the 45 degree line, corresponding to area A in Figure   \@ref(fig:poverty1). The smaller this area is, the closer we are to the perfect equal distribution. We can then scale this area to the total area below the 45 degree line, which is area A and area B in Figure  \@ref(fig:poverty1), and that is the Gini coefficient.  The Gini coefficient will always be between 0 (perfectly equal) and 1 (perfectly unequal).
+
+
+```{r poverty1, echo=FALSE, out.width = '65%',fig.show='hold',fig.align='center',fig.cap="The Lorenz curve and the Gini coefficient. The Gini coefficient is $A/(A+B)$."}
+knitr::include_graphics(c("_resources/chapter_inequality/tikz.png"))
+```
+
+Returning  to the example above, how can we calculate the Gini coefficient? First note, that the curves in Figure  \@ref(fig:poverty1) are not smooth as in Figure   \@ref(fig:povertY1). In practice, is discrete and not continuous.  We can therefore obtain approximate the areas by considering the difference between the 45 degree line and the actual income share for each household, as shown by the grey bars in Figure \@ref(fig:poverty2). We can then relate the sum of the area of these bars to the sum of the area of these bars and the orange bars in Figure \@ref(fig:poverty2) (corresponding to area B).
+
+
+```{r poverty2, echo=FALSE, out.width = '48%',fig.show='hold',fig.align='center',fig.cap="Approximating the Gini coefficient using the Lorenz curve Left: approximation of area A. Right: approximation of are B."}
+knitr::include_graphics(c("_resources/chapter_inequality/ex6_4.png","_resources/chapter_inequality/ex6_5.png"))
+```
+
+
+
+Table \@ref(tab:povt2) shows how we can approximate the areas A and B in the simple examples above to calculate the Gini coefficient. We simply use the approach illustrated in Figure \@ref(fig:poverty3). Each bar has a width of 0.1 which we multiply by the height of the bar.
+
+
+```{r , echo=FALSE, results='asis'}
+cat('Table: (\\#tab:povt2) Calculation of the Gini coefficients for scenario 2 and 3. 
+
+|Rel. rank|Scenario 2|Scenario 3 |Scenario 2 |Scenario 3|
+|:--:|:--:|:--:|:--:|:---:|
+|0.1|0.010|    0.007 |   0.000  |  0.003|
+|0.2|0.020|    0.012 |   0.000  |  0.008|
+|0.3|0.030|    0.016 |   0.000  |  0.014|
+|0.4|0.040|    0.018 |   0.000  |  0.022|
+|0.5|0.050|    0.019 |   0.000  |  0.031|
+|0.6|0.060|    0.019 |   0.000  |  0.041|
+|0.7|0.070|    0.017 |   0.000  |  0.053|
+|0.8|0.080|    0.014 |   0.000  |  0.066|
+|0.9|0.090|    0.010 |   0.000  |  0.080|
+|1|0.00|    0.00 |   1.00  |  1.00|
+|Total area|0.450|    0.132 |   0.100  |  0.418|
+||Situation 2||Situation 3|
+|Gini coefficient|$\\frac{0.450}{0.450+0.100}=0.818|| $\\frac{0.132}{0.132+0.418}=0.240$|
+')
+```
+
+In the case of the very unequal distribution of resources, we get a Gini coefficient of 0.82 (situation 2) and in the (more realistic) situation 3, we get a Gini coefficient of 0.24. So how do these Gini coefficients correspond to real world Gini coefficients?  Figure \@ref(fig:povertY3) shows a bar chart of Gini coefficients for European countries in 2016. According to Eurostat, the UK had  a Gini coefficient of 0.315 in 2016. Serbia had a Gini coefficient of 0.386 and Slovakia a coefficient of 0.243. The simple "realistic" example (situation 3) is therefore not far from what we observe in the real world. 
+
+
+```{r poverty3, echo=FALSE, out.width = '90%',fig.show='hold',fig.align='center',fig.cap="Gini coefficients in 2016 for European countries. Source: Eurostat."}
+knitr::include_graphics(c("_resources/chapter_inequality/ex7.png"))
+```
+
+
+
+Can we generalize our "Gini" approximation above to obtain a formula? First, note that both the x and y axis go from 0 to 1, the area of A+B will therefore always be 0.5 ($1\times 1\times 0.5=0.5$), we can therefore write:
+
+\begin{align}
+    Gini&=A/(A+B)\nonumber\\
+    &=A/0.5\nonumber\\
+    &=1-2B
+\end{align}
+
+where we simply used that since $A+B=0.5$ we have that $A=0.5-B$. Now we just need to find the area $B$. First, let us define household $i's$ income (or wealth) be $y_i$, where we have sorted all households according to their income (or wealth) rank. The first household (the one with the lowest income or wealth) will have the following contribution to the area B:
+
+\begin{align}
+  b_1=\frac{y_1}{\sum_i^ny_i}
+\end{align}
+
+the second household will contribute with the following value:
+
+\begin{align}
+  b_2=\frac{y_1+y_2}{\sum_i^ny_i}
+\end{align}
+
+finally, we sum over all these households to get:
+
+\begin{align}
+  B=&\frac{1}{n}\frac{y_1}{\sum_i^ny_i}+\frac{1}{n}\frac{y_1+y_2}{\sum_i^ny_i}+\dots+\frac{1}{n}\frac{y_1+y_2+\dots+y_n}{\sum_i^ny_i}\nonumber\\
+  B=&\frac{1}{n}\frac{y_1+y_1+y_2+\dots y_1+y_2+\dots+y_n}{\sum_i^ny_i}\nonumber\\
+  B=&\frac{1}{n}\frac{ny_1+(n-1)y_2+\dots+y_n}{\sum_i^ny_i}\nonumber\\
+  B=&\frac{1}{n}\frac{\sum_i^n(n-i+1)y_i}{\sum_i^ny_i}\nonumber\\
+\end{align}
+
+which we can insert in the expression for $Gini$ above to get an expression for the approximate Gini coefficient:
+
+\begin{align}
+    Gini&=1-\frac{2}{n}\frac{\sum_i^n(n-i+1)y_i}{\sum_i^ny_i}\nonumber
+\end{align}
+
+ It is important to remember that the formula is an approximation based on the bar chart approach. It will work well as long as the number of bars is sufficiently large. There are many formulas for the Gini coefficient. The above is simple and straightforward, but there are other formulas that give more precise estimates. The formula  tend to overestimate area B, because we are approximating the area using the height at right end of the bars (a small improvement is simply to use the average of the height of the bar and the height of the lagged bar).
+
+What is good about the Gini coefficient? First of all, the Gini coefficient is just one number, and it is thus easy to compare across countries and time. Secondly, it satisfies a number of key principles: (A) it is independent of a countries size and the currency used, (B) if a rich a household transfers money to a poor household the Gini will be reduced and (C) it is anonymous (it does not say anything about who the poorest and richest households are). 
+
+Is the Gini coefficient a perfect measure of inequality? No! Institutional settings differ considerably. How health care in a country is financed will affect the inequality. Is all health care is privately funded, it will take out a large share of low income households, and a relatively low share of high income households. On the other hand, if health care is financed by a progressive income tax this will not be the case.
+
+Another issue with the Gini coefficient is that it depends on the quality of the data. If it is only calculated based on deciles (as above) it will be considerably less precise than if it is calculated based on thousands of observations. 
+
+## Other measures of inequality
+
+The Gini coefficient is by far the most popular measure of inequality. The data is available across time and areas for many different country. However, as mentioned above, it is not perfect and there are alternative measures. Let's briefly discuss a few
+
+#### Ratios{-}
+One straightforward measure of inequality is a comparison of ratios in the income distribution, for example:
+
+* What is the ratio of income of the top 20 percent to the bottom 20 percent?
+* What is the ratio of income of the top 10 percent to the bottom 10 percent?
+
+#### The Wage share {-}
+
+We can also return to the National Accounts and compute a measure of inequality based on how measure  the Gross Domestic Product using the income approach. The Wage share is the share of GDP (or GNI) that goes to the compensation of workers.
+
+
+## Summary
+In this chapter we've covered the following topics:
+
+* Goal: describe the distribution of resources (income or wealth).
+* Data requirements: micro data, equivalenced household income, net vs. gross. 
+* Income (Wealth) shares: the share of total income (wealth) that goes to one specific group of the population. 
+* Lorenz curve: Cumulative income shares against income rank
+* Gini coefficient: Actual Lorenz curve compared to a Lorenz curve with perfect equality.
+* Income (wealth) ratios.
+* The wage share
+* Histograms

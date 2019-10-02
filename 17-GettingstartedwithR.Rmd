@@ -1,0 +1,109 @@
+# Getting started with R
+
+
+## About this chapter
+
+This chapter is about downloading, installing and starting R. 
+
+
+## Getting R to work
+
+### Installing R and RStudio {-}
+
+In almost all programming-based approaches the structure of separating the commands from the data and the output means that we can use different tools. This is also the case in R. We can use many programs to write our scripts with commands for R, and then instruct R to execute these commands. 
+
+If we just install R, we will get a basic program that shows the console and a basic script editor. The R console shows us the commands we have entered the resulting output. RStudio  in an integrated development environment (IDE) for R. An IDE is an interface that makes programming more user-friendly. With RSTudio we also get an overview of the workspace, that is we can see the variables and data that we are working with and we can also directly see graphs, help files, and navigate through directories. RStudio is by far the most popular IDE for R, and we will use RStudio throughout this unit. 
+
+1. Install R from the website: [www.r-project.org](https://www.r-project.org/)
+2. Install RStudio from the website: [www.rstudio.com](https://rstudio.com/)
+
+That is it!
+
+### R Studio cloud {-}
+
+If you do not want to install R on your computer you can use a cloud solution. This means that you run R in a webbrowser. You can sign up for R Studio Cloud here: [www.rstudio.cloud](http://rstudio.cloud/)
+
+There are also lots of great R learning resource available on RStudio Cloud.
+
+### A video guide {-}
+Below is a video where I install  and setup R.
+
+```{r rguide, echo=FALSE, out.width = '70%',fig.align='center',fig.cap="Installing R, R Studio and using R Studio Cloud"}
+knitr::include_url("https://www.youtube.com/embed/6KifA4YN768")
+```
+
+
+ 
+## Organization of R and RStudio
+### The Organization of R
+
+The basic R graphical user-interface (GUI) looks like shown in Figure \@ref(fig:rguide1). It basically contains two parts. The console (as marked with the green A) and the script editor (marked with the green B). The console is where we see the outcome of asking R to execute our commands. The script editor is where we write and collect our commands. Note that we can also write commands directly into the console. 
+
+
+```{r rguide1, echo=FALSE, out.width = '90%',fig.show='hold',fig.align='center',fig.cap="The organization of R. A is the console and B is the script editor. We can enter commands directly into the console or create a manuscript of commands using the script editor."}
+knitr::include_graphics(c("_resources/chapter_Rbasic/R.png"))
+```
+
+
+### The Organization of RStudio
+
+RStudio provides a more elaborate user-interface compared to the standard R GUI. Figure \@ref(fig:rguide2) shows the organization of RStudio. While the layout is very customizable, the shown example is the default structure consisting of four frames. Just like the basic R GUI, there is the console (marked with the green A) and the script editor (marked with the green B). In addition frame C gives us an overview of the workspace. This is where we can get an overview of the datasets, variables and other objects we have defined. Lastly, frame D gives us access to the documentation and help files. This is also the frame where we can see the charts we generate with R. 
+
+
+```{r rguide2, echo=FALSE, out.width = '90%',fig.show='hold',fig.align='center',fig.cap="The organization of RStudio.  A is the console, B is the script editor, C gives an overview of the current environment (or workspace) and D shows the documentation, graph output and a directory browser. "}
+knitr::include_graphics(c("_resources/chapter_Rbasic/rstudio.png"))
+```
+
+## R as a calculator
+### Using the console{-}
+We can use the console in R as a calculator, just like we did in the cells in our spreadsheet document. We can enter expressions in front of the greater than (<tt>></tt>) sign in the lower left corner and hit the enter key. R will then evaluate the expression and we observe the output in black below our entered expression. Figure \@ref(fig:rguide3) shows an example, where we are about to ask R to calculate <tt>2-2</tt> in the lower left corner.
+
+```{r rguide3, echo=FALSE, out.width = '90%',fig.show='hold',fig.align='center',fig.cap="Using the RStudio console as a calculator. "}
+knitr::include_graphics(c("_resources/chapter_Rbasic/r1.png"))
+```
+
+The <tt>[1]</tt> in front of the result refers to the position of the next printed elements. This is a bit trivial for these expressions, as they all only result in one single scalar outcome. But if our expression resulted in a long vector, the labeling would guide us to the position in the vector. 
+
+### The console remembers{-}
+In Figure \@ref(fig:rguide4) we also observe that R remembers. The expression <tt>2+3</tt> was the first expression we entered in this session. R returned the <tt>5</tt> below it. After that, we entered the expression <tt>2/3</tt>, which R then correctly evaluated to <tt>0.67</tt> and so on. 
+
+The console does not only give us a history of the commands evaluated, we can also easily access the previous commands by using the uparrow key while the cursor is in the console. 
+
+## Creating a script
+
+### A more permanent memory{-}
+
+The R Console remembers the history of commands within the same "session". But what if we are interested in a more permanent memory? That is a case for the script editor. To remember all the commands we have entered, we could simply copy all our commands into a text document. We could of course use Word document or similar to save the commands, but as we have learned, both the basic R GUI and RStudio comes with a *script editor* where we can create our (manu)script for our analysis. The script is basically just a text-document with all the commands we want R to run. Figure \@ref(fig:rguide5) shows an example, where we created a script with the commands we had entered in the terminal earlier.
+
+
+```{r rguide5, echo=FALSE, out.width = '90%',fig.show='hold',fig.align='center',fig.cap="Creating our first R script. "}
+knitr::include_graphics(c("_resources/chapter_Rbasic/r2.png"))
+```
+
+### Executing commands from the script{-}
+ If we had saved all commands in a Word document we could ask R to evaluate them by copying all commands into the console. With the built-in editor this is not necessary. We can simply ask RStudio to execute the entire script or just a part of it. We can use the button highlighted with the red circle in Figure \@ref(fig:rguide5) to execute the selected lines, or we can use one of the keyboard shortcuts below:
+ 
+* <tt>Ctrl+Enter</tt>: Execute the selected line(s).
+* <tt>Ctrl+Alt+R</tt>: Execute the entire script.
+* <tt>Ctrl+Alt+B</tt>: Execute from the beginning of the script to the current line.
+* <tt>Ctrl+Alt+E</tt>: Execute from the current line to the end of the script.
+
+### Comments in the script{-}
+
+A script file that is full of R commands becomes hard to read. It is therefore a good idea to annotate our script files with plain English descriptions of what our commands do. R is unfortunately not able to understand plain English, and if we ask it to evaluate a selection of the script file that contains plain English text, R will try to evaluate, but return an error because R cannot understand it, as shown in Figure \@ref(fog:rguide6) (left). The solution to this is to use the # symbol. Lines in R code that start with the # symbol areignored when R evaluates the code, and we can therefore safely add comments to or script file, as shown in Figure \@ref(fog:rguide6) (right).
+
+
+```{r rguide6, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Annotating our R script file with comments. R will try to evaluate all lines, but R does not understand plain English as shown in (left), we insert the #-symbol at the beginning of a line to tell R to ignore this line when evaluating as shown in (right). "}
+knitr::include_graphics(c("_resources/chapter_Rbasic/r3.png","_resources/chapter_Rbasic/r4.png"))
+```
+
+
+## Summary
+
+In this lecture we covered the following topics
+
+* Installing R and RStudio
+* Finding our way around in R.
+* Using the R console as a calculator.
+* Using the R script.
+* The R workspace.
