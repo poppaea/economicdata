@@ -223,7 +223,7 @@ Let us say that we want to explore the data on the UK population. The first thin
 Let us first get some data from the website of the UK Office for National Statistics:
 
 ```{r gettingdata, echo=FALSE, out.width = '70%',fig.align='center',fig.cap="Getting data from the ONS website"}
-knitr::include_graphics("https://www.dropbox.com/s/p9vqan2nyyb7djc/gettingpopdata.gif?dl=1")
+knitr::include_graphics("https://www.hhsievertsen.net/economicdata/chapter_people/gettingpopdata.gif")
 ```
 
 
@@ -237,26 +237,26 @@ knitr::include_graphics("_resources/chapter_people/table.png")
 What do we learn from Figure  \@ref(fig:popdata)? First of all, that there are many numbers. Secondly, it looks a bit like the population is increasing in all regions. But overall it is really hard to tell. This is because a table is good for showing exact values, but with a lot of exact values we lose the overview. 
 
 ```{r firstchart, echo=FALSE, out.width = '60%',fig.align='center',fig.cap="Creating our first chart in MS Excel"}
-knitr::include_graphics("https://www.dropbox.com/s/2smkgdlga2h27a1/visualisingdata1.gif?dl=1")
+knitr::include_graphics("https://www.hhsievertsen.net/economicdata/chapter_people/visualisingdata1.gif")
 ```
 What can we learn from the chart created in \@ref(fig:firstchart)? Not much. First of all, the chart indicates a decreasing trend. We typically read charts from left to right and almost all lines were decreasing. Secondly, it was very difficult to say anything about the population data for Wales, Scotland and Northern Ireland based on that chart, because the level is so low compared to England and the UK. 
 
-Let us solve the first problem first. Looking at the data again (see Figure  \@ref(fig:popdata) ), we observe that theONS puts the most recent value at the top. "Mid-2018" (i.e. the point in time the stock variable is measured) is the first value, followed by "Mid-2017" and so on. That is not how Excel works. When we create charts in Excel, Excel will assume that the first value is the oldest value and the last value the most recent value. This is even more important when the values don't reflect dates that Excel might recognize. Excel will treat "Mid-2018" as any other name (just like "Hans", "Julia" and "Jim"). And because we haven't told Excel anything else, it will just assume that we want to show the first value first (furthest to the left) and the last value last (furthest to the right). That sounds reasonable, or? So we first need to reorder the data. We can do this using the "sort" function in R as illustrated in Figure  \@ref(fig:sorted).
+Let us solve the first problem first. Looking at the data again (see Figure  \@ref(fig:popdata) ), we observe that theONS puts the most recent value at the top. "Mid-2018" (i.e. the point in time the stock variable is measured) is the first value, followed by "Mid-2017" and so on. That is not how Excel works. When we create charts in Excel, Excel will assume that the first value is the oldest value and the last value the most recent value. This is even more important when the values don't reflect dates that Excel might recognize. Excel will treat "Mid-2018" as any other name (just like "Hans", "Julia" and "Jim"). And because we haven't told Excel anything else, it will just assume that we want to show the first value first (furthest to the left) and the last value last (furthest to the right). That sounds reasonable, or? So we first need to reorder the data. We can do this using the "sort" function in Excel as illustrated in Figure  \@ref(fig:sorted).
 
 ```{r sorted, echo=FALSE, out.width = '70%',fig.align='center',fig.cap="Resorting the data"}
-knitr::include_graphics("https://www.dropbox.com/s/fkbfzz3dtcebwtm/sorted.gif?dl=1")
+knitr::include_graphics("https://www.hhsievertsen.net/economicdata/chapter_people/sorted.gif")
 ```
 
 The new chart created in Figure \@ref(fig:sorted) now shows the data in the right way. However, there is still the issue of the trends for the Northern Ireland, Wales and Scotland. Let us for now just concentrate on the UK and try to create a nice looking chart. In Figure   \@ref(fig:nicelooking) we create a chart that looks like \@ref(fig:fig1). It is a bit dull, but it only shows what it should show. The population level of the UK and how it developed over time. As the animation in  \@ref(fig:nicelooking) shows, creating a nice looking chart requires a lot of small adjustments in Excel. We adjust text color, font size, font type, line color, line width, axis colors, axis labels, titles and many other things. Adjusting all these aspects can be a bit tiresome, but they are important.  Figure  \@ref(fig:fig1)  is created using the software R. When creating charts with R, we can write a "code" that instructs R on how to create the chart. This can save a lot of time. Especially because we can reuse the code. We will hear more about R, but let us first think about how we could include population data for England, Scotland, Northern Ireland and Wales in one chart. 
 
 ```{r nicelooking, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Creating our first nice looking chart using Excel. Data source: ONS."}
-knitr::include_graphics(c("https://www.dropbox.com/s/anfar1ktmoa72fe/nicechart.gif?dl=1","_resources/chapter_people/nicechart.png"))
+knitr::include_graphics(c("https://www.hhsievertsen.net/economicdata/chapter_people/nicechart.gif","_resources/chapter_people/nicechart.png"))
 ```
 
 The key problem is that England's population is a different level and that the y axis scale would be different if we only included Northern Ireland, Wales and Scotland and not England. What we can do is to create a second y axis. Let's have a go in Figure  \@ref(fig:nicelookingc). 
 
 ```{r nicelookingc, echo=FALSE, out.width = '50%',,fig.show='hold',fig.align='center',fig.cap="Creating a chart of the population of the UK  using Excel. Data source: ONS."}
-knitr::include_graphics(c("https://www.dropbox.com/s/b1ixqgwalhy7czb/nicechartcombined.gif?dl=1","_resources/chapter_people/nice1.png"))
+knitr::include_graphics(c("https://www.hhsievertsen.net/economicdata/chapter_people/nicechartcombined.gif","_resources/chapter_people/nice1.png"))
 ```
 In the chart we create in Figure \@ref(fig:nicelookingc) the population level of England is shown on the right axis, while the levels for the other countries are shown on the left axis. When using this strategy, it is very important to clearly state what axis each line belongs to. In the example above this could be improved. How would you improve that chart?
 
@@ -270,7 +270,7 @@ So far we just used the line chart. The line chart is one of the most popular ch
 Could we also use a different chart type to show the population of the UK? Yes, we could exploit that England, Nortern Ireland, Scotland and Wales are a part of a whole. Where the whole is the UK. We can use a stacked chart to show this. A stacked chart "stacks" the values on the vertical axis on top of each other. Stacking population levels for England, Wales, Northern Ireland and Scotland leads to the population of the UK. In Figure \@ref(fig:stacked) we create a stacked area chart of the UK population. Now we do not need two axes. However, it is now much more difficult to identify the trends for the individual countries. This is a valuable lesson in data visualizations. We often have to sacrifice. We cannot show everything. We have to decide what the most important aspect of the data is. 
 
 ```{r stacked, echo=FALSE, out.width = '50%',,fig.show='hold',fig.align='center',fig.cap="Creating a stacked area chart for the UK population  using Excel. Data source: ONS."}
-knitr::include_graphics(c("https://www.dropbox.com/s/47qm7hi15sr86km/stacked.gif?dl=1","_resources/chapter_people/stacked.png"))
+knitr::include_graphics(c("https://www.hhsievertsen.net/economicdata/chapter_people/stacked.gif","_resources/chapter_people/stacked.png"))
 ```
 
 An area chart works very much likes a line chart, with one important difference:
@@ -288,7 +288,7 @@ $$ I_{year}=100\times \frac{Population_{year}}{Population_{1971}}$$
 We use this formula on the data from the examples above in Figure  \@ref(fig:index). From that chart we see that the population has increased the most in Northern Ireland and the least in Scotland, in relative terms. That was hard to see from the previous charts. However, now we cannot say anything about the levels anymore. This is because the level is "canceled out" in the index and only the relative changes remain. 
 
 ```{r index, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Showing the relative population growth of the UK using an index in Excel. Data source: ONS."}
-knitr::include_graphics(c("https://www.dropbox.com/s/aajcywdhujo56qb/index.gif?dl=1","_resources/chapter_people/index.png"))
+knitr::include_graphics(c("https://www.hhsievertsen.net/economicdata/chapter_people/index.gif","_resources/chapter_people/index.png"))
 ```
 
 ### Creating a table on population changes
@@ -303,7 +303,7 @@ In Figure \@ref(fig:tableb) we create a simple Table, but pay attention how we u
 
 
 ```{r tableb, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Showing the population of the UK using a Table. Data source: ONS."}
-knitr::include_graphics(c("https://www.dropbox.com/s/9th51azdvsxmouv/table.gif?dl=1","_resources/chapter_people/tableb.png"))
+knitr::include_graphics(c("https://www.hhsievertsen.net/economicdata/chapter_people//table.gif","_resources/chapter_people/tableb.png"))
 ```
 
 ### Describing the change in levels by the underlying flow variables
@@ -343,7 +343,7 @@ We can  create this chart in Excel by creating a  a bar chart. A bar chart is ve
 
 
 ```{r pyramid, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Showing the population of the UK using a Table. Data source: ONS."}
-knitr::include_graphics(c("https://www.dropbox.com/s/9th51azdvsxmouv/table.gif?dl=1","_resources/chapter_people/pyramid.png"))
+knitr::include_graphics(c("https://www.hhsievertsen.net/economicdata/chapter_people/table.gif","_resources/chapter_people/pyramid.png"))
 ```
 
 
