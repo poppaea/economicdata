@@ -324,7 +324,7 @@ We can investigate the underlying population flows to get a better understanding
 The Eurostat database  provides data on the underlying flows in the population levels. The question is: how to best visualize this change? In Figure \@ref(fig:popflows)  we show the flows by means of stacked bars and the stocks in terms of a line chart. We thereby exploit that the total change is equal to the natural population change plus the net migration. One challenge with the latter approach (stacking bars and areas) is that if a series can contain both negative and positive values, it might be hard to read or even slightly misleading, because the negative or positive value is hidden. However, the overall pattern is clearly visible. In recent years, the population of the UK ihas increased a lot, and this is both due to positive net migration flows and postive reproduction flows. 
 
 
-```{r popflows, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="Annual changes in the  population of the United Kingdom in terms of net migration (immigration minus emigration) and the natural population change (births minus deaths). Data source: Eurostat.  The R script for this Figure is available [here](https://www.hhsievertsen.net/economicdata/notes/lecture12/rmaterial/lecnote_12_script_for_fig3.)."}
+```{r popflows, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="Annual changes in the  population of the United Kingdom in terms of net migration (immigration minus emigration) and the natural population change (births minus deaths). Data source: Eurostat."}
 knitr::include_graphics(c("_resources/chapter_people/fig7.png"))
 ```
 
@@ -343,7 +343,7 @@ We can  create this chart in Excel by creating a  a bar chart. A bar chart is ve
 
 
 ```{r pyramid, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Showing the population of the UK using a Table. Data source: ONS."}
-knitr::include_graphics(c("https://www.hhsievertsen.net/economicdata/chapter_people/table.gif","_resources/chapter_people/pyramid.png"))
+knitr::include_graphics(c("https://www.hhsievertsen.net/economicdata/chapter_people/pyramidgif.gif","_resources/chapter_people/pyramid.png"))
 ```
 
 

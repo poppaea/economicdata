@@ -1,3 +1,7 @@
+### changes {-}
+
+* <tt>version 0.7: Changed the animation for the population pyramid to the right version. Thank you for notifying me of this! </tt>
+
 # Introduction {-}
 
 This online resource is for the unit Economic Data at the University of Bristol. After teaching the unit for two years based on technical manuals, lecture notes and extracts from several text books, I decided to combine all material in one "resource", which is this "online book".  The goal is that this will make it simpler and easier for both students and teachers, as all material is collected at one place. 
@@ -12,6 +16,6 @@ This book builds on a long list of books, articles and external references. Thes
 
 This project is work-in-progress and it will be updated continuously. At the current state it is likely to contain typos, inaccuracies and omisisons. I am grateful for all help in identifying these. Please notify me of any errors you find in the book. You can either send me an email: h.h.sievertsen@bristol.ac.uk or create an issue on the github repository [github.com/hhsievertsen/economicdata](https://github.com/hhsievertsen/economicdata). Thanks.
 
-![Creative Commons License](images/by-nc-sa.png)  
+
 This online book is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/). 
 

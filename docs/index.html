@@ -65,6 +65,7 @@
 <li><a href="./">Economic Data</a></li>
 
 <li class="divider"></li>
+<li class="chapter" data-level="" data-path=""><a href="#changes"><i class="fa fa-check"></i>changes</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#introduction"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#part-i-econ-concepts-and-definitions"><i class="fa fa-check"></i>Part I: Econ Concepts and Definitions</a></li>
 <li class="chapter" data-level="1" data-path=""><a href="#people"><i class="fa fa-check"></i><b>1</b> Data about people</a><ul>
@@ -440,9 +441,15 @@
 <div id="header">
 <h1 class="title">Economic Data</h1>
 <p class="author"><em>Hans Henrik Sievertsen</em></p>
-<p class="date"><em>Version 0.6 - Oct 2, 2019</em></p>
+<p class="date"><em>Version 0.7 - Oct 3, 2019</em></p>
 </div>
 
+<div id="changes" class="section level3 unnumbered">
+<h3>changes</h3>
+<ul>
+<li><tt>version 0.7: Changed the animation for the population pyramid to the right version. Thank you for notifying me of this! </tt></li>
+</ul>
+</div>
 <div id="introduction" class="section level1 unnumbered">
 <h1>Introduction</h1>
 <p>This online resource is for the unit Economic Data at the University of Bristol. After teaching the unit for two years based on technical manuals, lecture notes and extracts from several text books, I decided to combine all material in one “resource”, which is this “online book”. The goal is that this will make it simpler and easier for both students and teachers, as all material is collected at one place.</p>
@@ -454,8 +461,7 @@
 <li>“Fundamentals of Data Visualization” <span class="citation">(Wilke <a href="#ref-wilke2019fundamentals" role="doc-biblioref">2019</a>)</span> and “Data visualization: a practical introduction” <span class="citation">(Healy <a href="#ref-healy2018data" role="doc-biblioref">2018</a>)</span>: for detailed descriptions on how to create charts using R.</li>
 </ul>
 <p>This project is work-in-progress and it will be updated continuously. At the current state it is likely to contain typos, inaccuracies and omisisons. I am grateful for all help in identifying these. Please notify me of any errors you find in the book. You can either send me an email: <a href="mailto:h.h.sievertsen@bristol.ac.uk" class="email">h.h.sievertsen@bristol.ac.uk</a> or create an issue on the github repository <a href="https://github.com/hhsievertsen/economicdata">github.com/hhsievertsen/economicdata</a>. Thanks.</p>
-<p><img src="images/by-nc-sa.png" alt="Creative Commons License" /><br />
-This online book is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+<p>This online book is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
 
 </div>
 <div id="part-i-econ-concepts-and-definitions" class="section level1 unnumbered">
@@ -734,9 +740,9 @@ Figure 1.12: Showing the population of the UK using a Table. Data source: ONS.
 </ul>
 <p>The Eurostat database provides data on the underlying flows in the population levels. The question is: how to best visualize this change? In Figure <a href="#fig:popflows">1.13</a> we show the flows by means of stacked bars and the stocks in terms of a line chart. We thereby exploit that the total change is equal to the natural population change plus the net migration. One challenge with the latter approach (stacking bars and areas) is that if a series can contain both negative and positive values, it might be hard to read or even slightly misleading, because the negative or positive value is hidden. However, the overall pattern is clearly visible. In recent years, the population of the UK ihas increased a lot, and this is both due to positive net migration flows and postive reproduction flows.</p>
 <div class="figure" style="text-align: center"><span id="fig:popflows"></span>
-<img src="_resources/chapter_people/fig7.png" alt="Annual changes in the  population of the United Kingdom in terms of net migration (immigration minus emigration) and the natural population change (births minus deaths). Data source: Eurostat.  The R script for this Figure is available [here](https://www.hhsievertsen.net/economicdata/notes/lecture12/rmaterial/lecnote_12_script_for_fig3.)." width="80%" />
+<img src="_resources/chapter_people/fig7.png" alt="Annual changes in the  population of the United Kingdom in terms of net migration (immigration minus emigration) and the natural population change (births minus deaths). Data source: Eurostat." width="80%" />
 <p class="caption">
-Figure 1.13: Annual changes in the population of the United Kingdom in terms of net migration (immigration minus emigration) and the natural population change (births minus deaths). Data source: Eurostat. The R script for this Figure is available <a href="https://www.hhsievertsen.net/economicdata/notes/lecture12/rmaterial/lecnote_12_script_for_fig3.">here</a>.
+Figure 1.13: Annual changes in the population of the United Kingdom in terms of net migration (immigration minus emigration) and the natural population change (births minus deaths). Data source: Eurostat.
 </p>
 </div>
 </div>
@@ -750,7 +756,7 @@ Figure 1.13: Annual changes in the population of the United Kingdom in terms of 
 </ul>
 <p>We can create this chart in Excel by creating a a bar chart. A bar chart is very similar to an area chart, we show the value in terms of the size of an area. However, in contrast to both the area and line chart, the values are not connected. This is very useful when values are not continuous. This is not the case here, but it it is good to keep this in mind. Figure <a href="#fig:pyramid">1.14</a> shows how we can do it. Pay good attention to how we remove the minus.</p>
 <div class="figure" style="text-align: center"><span id="fig:pyramid"></span>
-<img src="https://www.hhsievertsen.net/economicdata/chapter_people/table.gif" alt="Showing the population of the UK using a Table. Data source: ONS." width="50%" /><img src="_resources/chapter_people/pyramid.png" alt="Showing the population of the UK using a Table. Data source: ONS." width="50%" />
+<img src="https://www.hhsievertsen.net/economicdata/chapter_people/pyramidgif.gif" alt="Showing the population of the UK using a Table. Data source: ONS." width="50%" /><img src="_resources/chapter_people/pyramid.png" alt="Showing the population of the UK using a Table. Data source: ONS." width="50%" />
 <p class="caption">
 Figure 1.14: Showing the population of the UK using a Table. Data source: ONS.
 </p>
