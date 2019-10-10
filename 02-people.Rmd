@@ -342,8 +342,8 @@ We can  create this chart in Excel by creating a  a bar chart. A bar chart is ve
 
 
 
-```{r pyramid, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Showing the population of the UK using a Table. Data source: ONS."}
-knitr::include_graphics(c("https://www.hhsievertsen.net/economicdata/chapter_people/pyramidgif.gif","_resources/chapter_people/pyramid.png"))
+```{r pyramid, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="Showing the age composition of the UK population by gender. Data source: Eurostat. [Here is a video where I show how I created this chart in MS Excel.](https://youtu.be/AW7sdaJRbtc)"}
+knitr::include_graphics(c("_resources/chapter_people/pyramid.png"))
 ```
 
 

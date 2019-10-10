@@ -1,5 +1,23 @@
 # Prices
 
+
+```{r table2 , echo=FALSE, results='asis'}
+  cat(' Table: \\label{tab:table2}Example
+
+  | Sepal.Length| Sepal.Width| Petal.Length|
+  |------------:|-----------:|------------:|
+  |          5.1|         3.5|          1.4|
+  |          4.9|         3.0|          1.4|
+  |          4.7|         3.2|          1.3|
+  |          4.6|         3.1|          1.5|')
+
+```
+
+Table \ref{tab:table2} shows...
+
+Table \@ref(tab:mwe) shows...
+
+
 ## About this chapter
 
 We've we discussed how the Policy Interest Rate is set by the Bank of England. The Bank of England has one objective in mind when deciding on the interest rate, the inflation in the UK should be 2 percent. So if you had spend 100 GBP to buy a basket of goods last year, you should spend 102 GBP to buy the basket of goods this year, that gives you the same utility. If the price of the basket is now  less than 101 or more than 103 the Bank of England is required to explain why. In other words, the Bank of England faces an inflation target of 2 percent, and deviations of more than one percentage point requires a public explanation. Now this all sounds simple and straightforward. However, the question is what baskets of goods should we compare?  Should the basket this year contain exactly the same goods as the basket last year, in the same quantity and quality? What if a new product arrives on the market? We will discuss these issues in this lecture along with the concept of the Purchasing Power Parity, which concerns the comparison of prices across countries. 
