@@ -44,7 +44,7 @@ cat("Table: (\\#tab:viz1) Anscombe's quartet: raw data. What do we learn from th
 
 
 
- There are few things we could do to improve the readability of Table \@ref(tab:viz1), for example sort all series by their x values, but it would still be difficult to identify the patterns in the data. Another strategy is to calculate some simple statistics for these four datasets, and include them in a Table.  Table \@ref(tab:viz2) shows the arithmetic mean for every variable, the Pearson correlation coefficient between each X and Y variable, the slope and the intercept and the R-squared of the fitted regression line. These statistics all look very similar across the four datasets. Note how important the way we show the data is. If we had only seen Table \@ref(tab:viz3) we would be inclined to conclude that these four datasets are very similar. If we had only seen Table \@ref(tab:viz1), we would probably conclude that the datasets are quite different. 
+ There are few things we could do to improve the readability of Table \@ref(tab:viz1), for example sort all series by their x values, but it would still be difficult to identify the patterns in the data. Another strategy is to calculate some simple statistics for these four datasets, and include them in a Table.  Table \@ref(tab:viz2) shows the arithmetic mean for every variable, the Pearson correlation coefficient between each X and Y variable, the slope and the intercept and the R-squared of the fitted regression line. These statistics all look very similar across the four datasets. Note how important the way we show the data is. If we had only seen Table \@ref(tab:viz2) we would be inclined to conclude that these four datasets are very similar. If we had only seen Table \@ref(tab:viz1), we would probably conclude that the datasets are quite different. 
 
 
 ```{r , echo=FALSE, results='asis'}
@@ -213,11 +213,14 @@ Let us now consider the second most popular chart type, the bar chart. Let us ma
 * can show several data series for the same categorical variable.
 
 #### Maps
-Showing data in maps can provide new insights and reveal patterns. For example that cholera deaths are clustered around pumps like in the map created by John Snow, as shown in Figure \@ref(fig:viz). 
+Showing data in maps can provide new insights and reveal patterns. For example that cholera deaths are clustered around pumps like in the map created by John Snow, as shown in Figure \@ref(fig:viz155).^[Source: [Wikipedia](https://en.wikipedia.org/wiki/John_Snow#/media/File:Snow-cholera-map-1.jpg)]
 
-```{r viz11, echo=FALSE, out.width = '80%',fig.show='hold',fig.align='center',fig.cap="John Snow's map of Cholera deaths in central London. Each line represents a death.Each circle represents a water pump. Source: [Wikipedia](https://en.wikipedia.org/wiki/John_Snow#/media/File:Snow-cholera-map-1.jpg). "}
+```{r viz155, echo=FALSE, out.width = '48%',fig.show='hold',fig.align='center',fig.cap="John Snow's map of Cholera deaths in central London. Each line represents a death.Each circle represents a water pump. Source: Wikipedia."}
 knitr::include_graphics(c("_resources/chapter_viz/Snow-cholera-map-1.jpg"))
 ```
+
+
+
 
 **How do we show data on maps?**
 	
@@ -290,7 +293,7 @@ Let's follow the instructions above to improve the chart in Figure \@ref(fig:viz
 knitr::include_graphics(c("_resources/chapter_viz/ex0_2.png"))
 ```
 
-Removing the background already improved the data-ink ration, but there is scope for more. We can also  remove the 3D effect. This is unnecessary ink that has nothing to do with the data, and only makes the chart more difficult to read. We can also remove the glow and filling effects. The resulting chart is shown in Figure \ref@(fig:viz14).
+Removing the background already improved the data-ink ration, but there is scope for more. We can also  remove the 3D effect. This is unnecessary ink that has nothing to do with the data, and only makes the chart more difficult to read. We can also remove the glow and filling effects. The resulting chart is shown in Figure \@ref(fig:viz14).
 
 ```{r viz14, echo=FALSE, out.width = '70%',fig.show='hold',fig.align='center',fig.cap="The bar chart after removing the 3D effects."}
 knitr::include_graphics(c("_resources/chapter_viz/ex0_4.png"))
@@ -359,31 +362,32 @@ We can summarize the principles for good data visualization using a "cook-book" 
 
 
 
-
-<center>
-```{block, type='myblock'}
-<center>
 **A cook book for good data visualization**
-</center>
- 
+
   
 1. Table or chart
+
     * Charts are typically more effective for large datasets.
     * Charts are typically preferred for visualizing patterns and tables are often the best choice for showing exact values.
+    
 2. Table structure/chart types
+
     * How many variables are we showing? 
       * Charts are typically limited to two or three variables.
     * Are the variables continuous or categorical?
       * Avoid "connected"  chart types  if variables are categorical.
+      
 3. Maximize data-ink ratio and avoid lies
+
     * Tables: pay attention to the use of white space, solid lines, text alignment etc.
     * Chart: Remove everything in the chart that is not related to the data and not needed to understand the chart.
+    
 4. Self-explanatory
+
     * Does the visualization contain everything needed to understand and replicate the chart?
     * Are all axes clearly labeled? Is the source clearly stated?
-    
-```
-</center>
+
+
 
 ## Summary
 

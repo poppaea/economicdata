@@ -31,7 +31,7 @@ All of these conclusions are perfectly right, but without any further guidance, 
 
 
 ```{r desc1, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="Unemployment in the UK. Source: The UK Office for National Statistics"}
-knitr::include_graphics("_resources/chapter_describe/ex1.png")
+knitr::include_graphics("_resources/chapter_describe/ex.png")
 ```
 
 ### How to guide the reader
@@ -88,7 +88,7 @@ It is straightforward to compute the absolute change. We are simply subtracting 
   difference_{abs}=Value_2-Value_1
 \end{align}
 
-How would we use absolute changes? Consider Figure \ref{fig:example2}, which uses the same data as Figure \@ref(fig:desc2), but only shows the last 12 years. We might want to focus on the great recession and provide statements such as "the unemployment rate increased by 3.3 percentage points from pre-recession level to the peak level of 8.5 percent." or the unemployment rate in October 2018 was 4.5 percentage point lower than at the peak of the great recession at a level of 4 percent. 
+How would we use absolute changes? Consider Figure \ref{fig:desc2}, which uses the same data as Figure \@ref(fig:desc1), but only shows the last 12 years. We might want to focus on the great recession and provide statements such as "the unemployment rate increased by 3.3 percentage points from pre-recession level to the peak level of 8.5 percent." or the unemployment rate in October 2018 was 4.5 percentage point lower than at the peak of the great recession at a level of 4 percent. 
 
 ```{r desc2, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="Unemployment in the UK 2006 to 2018. Source: The ONS with value labels. Source: The UK Office for National Statistics"}
 knitr::include_graphics("_resources/chapter_describe/ex4.png")
@@ -101,7 +101,7 @@ The contrast to absolute changes is relative changes. With relative changes we a
 The relative change is typically measured in percent and calculated as follows:
 
 \begin{align}
-  difference_{rel}*=100\times \frac{Value_2-Value_1}{Reference \text{ } Value}\nonumber\\
+  difference_{rel}&=100\times \frac{Value_2-Value_1}{Reference \text{ } Value}\nonumber\\
   difference_{rel}&=100\times \frac{Value_2-Value_1}{Value_1}\nonumber
 \end{align}
 
@@ -126,9 +126,9 @@ When unemployment increases from 4.2 to 6.2 percent, the change is 2 percentage 
 
 ## Calculating compound growth rates
 
-Another common mistake is ignoring compound growth rate. Let's illustrate the mistake by an extreme example. The price of a Bitcoin increased from 781 USD to 19,343 USD from December 16 2016 to December 16 2017. This is an increase of about 2,400 percent. What is the daily increase then? Let us take a very wrong approach: we just divide the total relative change by the number of days: 2,400percent/365days$\approx$6.5 percent/day? So the first day the price is 781 USD, the next day the price would then be 781$\times$1.067=831 USD, the following day the price would be 831$\times$1.067=885 and so on. If we continue like that, the price of Bitcoins would be above 20,000 USD by the end of February, and by end of December the price would be 78,38,759,397,922 USD.  This is clearly wrong. Figure \@ref(fig:desc3) illustrates how wrong.
+Another common mistake is ignoring compound growth rate. Let's illustrate the mistake by an extreme example. The price of a Bitcoin increased from 781 USD to 19,343 USD from December 16 2016 to December 16 2017. This is an increase of about 2,400 percent. What is the daily increase then? Let us take a very wrong approach: we just divide the total relative change by the number of days: $2,400percent/365days\approx 6.5$ percent/day? So the first day the price is 781 USD, the next day the price would then be $781\times1.067=831$ USD, the following day the price would be $831\times1.067=885$ and so on. If we continue like that, the price of Bitcoins would be above 20,000 USD by the end of February, and by end of December the price would be 78,38,759,397,922 USD.  This is clearly wrong. Figure \@ref(fig:desc3) illustrates how wrong.
 
-What went wrong is that we've ignored that the third day the growth rate is applied to the initial value plus the increase in value from day one one to day two (the compound growth). If we instead applied the initial increase in absolute terms 365 times we would actually end up with the right value: (831-781)$\times$ 365 $\approx$18,562 which exactly corresponds to the increase (18,562+781=19,434 USD).
+What went wrong is that we've ignored that the third day the growth rate is applied to the initial value plus the increase in value from day one one to day two (the compound growth). If we instead applied the initial increase in absolute terms 365 times we would actually end up with the right value: $(831-781)\times 365 \approx 18,562$ which exactly corresponds to the increase (18,562+781=19,434 USD).
 
 ```{r desc3, echo=FALSE, out.width = '90%',fig.align='center',fig.cap="The development of the Bitcoin price, and imputed price using average daily price increases. Data source: [coindesk.com](https://www.coindesk.com/price/)"}
 knitr::include_graphics("_resources/chapter_describe/bitcoin.png")
@@ -275,7 +275,7 @@ knitr::include_graphics("_resources/chapter_describe/ex2_4.png")
 
 #### Step 3: Apply the moving for each reoccurring period to obtain estimates of the seasonal component of that period.{-}
 
-The residual series shown in Figure \ref{oecd4} includes both the seasonal effect and the error component. How can we remove the seasonal effect? Seasonal effects are effects that occur because of the specific season. So it as effect that happens every December or every July. In other words, we would like to identify the effect that is common across the December's and July's in our series. As each December or July also include the error components, we apply a new average but this time only across the specific months.  The green crosses in Figure \@ref(fig:desc4) show the three period moving average of the residual. The moving averages are our estimates of the seasonal component for December. We can do this for all months to obtain a series of estimates of the monthly seasonal component.
+The residual series shown in Figure \@ref(fig:desc6) includes both the seasonal effect and the error component. How can we remove the seasonal effect? Seasonal effects are effects that occur because of the specific season. So it as effect that happens every December or every July. In other words, we would like to identify the effect that is common across the December's and July's in our series. As each December or July also include the error components, we apply a new average but this time only across the specific months.  The green crosses in Figure \@ref(fig:desc4) show the three period moving average of the residual. The moving averages are our estimates of the seasonal component for December. We can do this for all months to obtain a series of estimates of the monthly seasonal component.
 
 #### Step 4: Subtract the seasonal components from the raw data to obtain a first estimate of seasonally adjusted series.{-}
 

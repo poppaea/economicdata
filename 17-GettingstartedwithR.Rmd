@@ -65,7 +65,7 @@ knitr::include_graphics(c("_resources/chapter_Rbasic/r1.png"))
 The <tt>[1]</tt> in front of the result refers to the position of the next printed elements. This is a bit trivial for these expressions, as they all only result in one single scalar outcome. But if our expression resulted in a long vector, the labeling would guide us to the position in the vector. 
 
 ### The console remembers{-}
-In Figure \@ref(fig:rguide4) we also observe that R remembers. The expression <tt>2+3</tt> was the first expression we entered in this session. R returned the <tt>5</tt> below it. After that, we entered the expression <tt>2/3</tt>, which R then correctly evaluated to <tt>0.67</tt> and so on. 
+In Figure \@ref(fig:rguide3) we also observe that R remembers. The expression <tt>2+3</tt> was the first expression we entered in this session. R returned the <tt>5</tt> below it. After that, we entered the expression <tt>2/3</tt>, which R then correctly evaluated to <tt>0.67</tt> and so on. 
 
 The console does not only give us a history of the commands evaluated, we can also easily access the previous commands by using the uparrow key while the cursor is in the console. 
 
@@ -90,10 +90,10 @@ knitr::include_graphics(c("_resources/chapter_Rbasic/r2.png"))
 
 ### Comments in the script{-}
 
-A script file that is full of R commands becomes hard to read. It is therefore a good idea to annotate our script files with plain English descriptions of what our commands do. R is unfortunately not able to understand plain English, and if we ask it to evaluate a selection of the script file that contains plain English text, R will try to evaluate, but return an error because R cannot understand it, as shown in Figure \@ref(fog:rguide6) (left). The solution to this is to use the # symbol. Lines in R code that start with the # symbol areignored when R evaluates the code, and we can therefore safely add comments to or script file, as shown in Figure \@ref(fog:rguide6) (right).
+A script file that is full of R commands becomes hard to read. It is therefore a good idea to annotate our script files with plain English descriptions of what our commands do. R is unfortunately not able to understand plain English, and if we ask it to evaluate a selection of the script file that contains plain English text, R will try to evaluate, but return an error because R cannot understand it, as shown in Figure \@ref(fig:rguide6) (left). The solution to this is to use the # symbol. Lines in R code that start with the # symbol areignored when R evaluates the code, and we can therefore safely add comments to or script file, as shown in Figure \@ref(fig:rguide6) (right).
 
 
-```{r rguide6, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Annotating our R script file with comments. R will try to evaluate all lines, but R does not understand plain English as shown in (left), we insert the #-symbol at the beginning of a line to tell R to ignore this line when evaluating as shown in (right). "}
+```{r rguide6, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Annotating our R script file with comments. R will try to evaluate all lines, but R does not understand plain English as shown in (left), we insert the hashtag-symbol at the beginning of a line to tell R to ignore this line when evaluating as shown in (right). "}
 knitr::include_graphics(c("_resources/chapter_Rbasic/r3.png","_resources/chapter_Rbasic/r4.png"))
 ```
 

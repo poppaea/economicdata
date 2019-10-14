@@ -73,7 +73,7 @@ knitr::include_graphics("_resources/chapter_excelbasic/excelstructure.png")
 * *F* Add a new worksheet
 
 
-In the provided example the active cell, indicated with the letter C, is the cell with row number 3 and column letter B. We refer to a specific cell by first naming the column and then the row. So the active cell in that case would be cell *B3*.  What does active cell mean? A cell becomes active when we click on it using the mouse, a touchscreen or use the keyboard to navigate to it. When a cell is activated content and formating of it will change if give instructions. Moreover, when a cell is active, we can see the content of the cell in the formula bar indicated with the letter D in Figure \@ref(fig:x1).
+In the provided example the active cell, indicated with the letter C, is the cell with row number 3 and column letter B. We refer to a specific cell by first naming the column and then the row. So the active cell in that case would be cell *B3*.  What does active cell mean? A cell becomes active when we click on it using the mouse, a touchscreen or use the keyboard to navigate to it. When a cell is activated content and formating of it will change if give instructions. Moreover, when a cell is active, we can see the content of the cell in the formula bar indicated with the letter D in Figure \@ref(fig:ex1).
 
 
 As mentioned, the workbook is organized in to worksheets. In the presented example we are working in a worksheet with the name "Sheet1", as indicated with the letter E. We can add new worksheets by clicking on the plus indicated with letter F.  There are many other functions and aspects of spreadsheet software, but these are the most basic ones, that you should know how to find. 
@@ -146,6 +146,7 @@ knitr::include_graphics("_resources/chapter_excelbasic/ex6.png")
 
 
 To summarize:
+
 * Cells can contain characters, numbers and formulas.
 * What we observe from looking at the cell might be different to what is actually entered in the cell.
 * To observe the actual cell content we have to evaluate the contents of the formula bar, when the cell is active. 
@@ -183,7 +184,7 @@ knitr::include_graphics(c("_resources/chapter_excelbasic/c4.png"))
 
 ### Cell referencing
 
-The power of spreadsheet software is not to conduct simple calculator operations within one cell. The formulas are first and foremost useful when combining various cells as  shown in Figure \@ref(fig:ex13). We simply refer to another cell by entering the name of that cell. So if we  enter *A1* in a cell, *A1* is a placeholder for the content of the cell *A1*. Excel will then go and look for the content in cell *A1* and replace *A1* in the formula with that content as illustrated in Figure  \ref@(fig:ex13).
+The power of spreadsheet software is not to conduct simple calculator operations within one cell. The formulas are first and foremost useful when combining various cells as  shown in Figure \@ref(fig:ex13). We simply refer to another cell by entering the name of that cell. So if we  enter *A1* in a cell, *A1* is a placeholder for the content of the cell *A1*. Excel will then go and look for the content in cell *A1* and replace *A1* in the formula with that content as illustrated in Figure  \@ref(fig:ex13).
 
 
 ```{r ex13, echo=FALSE, out.width = '60%',fig.align='center',fig.cap="Referring to individual cell."}
@@ -204,6 +205,7 @@ knitr::include_graphics(c("_resources/chapter_excelbasic/ref3.png"))
 
 
 To summarize:
+
 * *=A1* refers to the content of cell *A1*.
 * *=A1:A4* refers to the content of cells *A1*, *A2* and *A3*.
 * *A1:B3*  refers to the content of cells *A1*, *A2*, *A3*, *B1*, *B2* and *B3*.
@@ -253,7 +255,7 @@ knitr::include_graphics(c("_resources/chapter_excelbasic/excelmess.png"))
 ```
 
 
-What can we do in cases like example \ref{fig:excelmess}? We can enter all formulas manually. Or, which is highly recommended, first tidy the data, before we start working with it. 
+What can we do in cases like example \@ref(fig:ex17)? We can enter all formulas manually. Or, which is highly recommended, first tidy the data, before we start working with it. 
 
 ### Locking references
 
@@ -304,7 +306,7 @@ Finding mistakes and typing errors in Excel can be a nightmare. However, sometim
 knitr::include_graphics(c("_resources/chapter_excelbasic/w1.png"))
 ```
 
-2. We accidentally leave out a cell in a range in Figure \@ref(fig:19). Excel recognizes that the range *B2:B3* included in the formula in  cell *E2*  should probably also have included the cell *B1* and gives us a warning. Again, we can right-click on the cell to read the warning. 
+2. We accidentally leave out a cell in a range in Figure \@ref(fig:ex19). Excel recognizes that the range *B2:B3* included in the formula in  cell *E2*  should probably also have included the cell *B1* and gives us a warning. Again, we can right-click on the cell to read the warning. 
 
 ```{r ex19, echo=FALSE, out.width = '75%',fig.show='hold',fig.align='center',fig.cap="Excel warning: formula omits cells."}
 knitr::include_graphics(c("_resources/chapter_excelbasic/w2.png"))
@@ -334,7 +336,7 @@ knitr::include_graphics(c("_resources/chapter_excelbasic/w3.png"))
 
 There are basically two ways to start a chart in Excel. We can highlight the data we would like to use in the chart and ask Excel to automatically recognize the variable that should be on the horizontal axis and the variables on the vertical axis. Or we can insert an empty chart and manually select the data we would like to use. We will discuss the former approach in the next section and the latter approach in the next section, but let us first find the charts.
 
-We create a chart in Excel by selecting "Insert" in the upper menu as shown in Figure \@ref(fig:e1). 
+We create a chart in Excel by selecting "Insert" in the upper menu as shown in Figure \@ref(fig:ex21). 
 
 
 ```{r ex21, echo=FALSE, out.width = '60%',fig.show='hold',fig.align='center',fig.cap="Inserting a chart in Excel. Step 1:  select 'insert'."}
@@ -406,7 +408,7 @@ knitr::include_graphics(c("_resources/chapter_excelbasic/g5.png"))
 We can use the "select data option" to modify existing charts. For example if we let Excel select the variables to show on the axes, but discover that something went wrong. We can also add new series to an existing chart through the "select data" menu. The data series are ranked, and the series shown on the top in the select data menu will also be on the top in chart. 
 
 #### Combing chart types{-}
-In some situations we would like to combine chart types. Again, there are several ways to to do this. One approach is as shown in Figure \@ref(fig:29), where we right-click on an existing series and select "Change series chart type".
+In some situations we would like to combine chart types. Again, there are several ways to to do this. One approach is as shown in Figure \@ref(fig:ex29), where we right-click on an existing series and select "Change series chart type".
 
 
 ```{r ex29, echo=FALSE, out.width = '60%',fig.show='hold',fig.align='center',fig.cap="Modifying a chart by changing the chart type."}
@@ -415,7 +417,7 @@ knitr::include_graphics(c("_resources/chapter_excelbasic/change1.png"))
 
 
 \paragraph{Adding elements to charts}
-We can add elements such as axes titles, a legend and a chart title. This can be done through the "Add Chart Element" menu, as shown in Figure \ref{fig:change}
+We can add elements such as axes titles, a legend and a chart title. This can be done through the "Add Chart Element" menu, as shown in Figure \ref{fig:ex30}
 
 
 ```{r ex30, echo=FALSE, out.width = '60%',fig.show='hold',fig.align='center',fig.cap="Modifying a chart by adding a chart element."}

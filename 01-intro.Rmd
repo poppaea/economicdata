@@ -1,5 +1,8 @@
 ### changes {-}
 
+
+* <tt>version 0.8: PDF version available. </tt>
+
 * <tt>version 0.7: Changed the animation for the population pyramid to the right version. Thank you for notifying me of this! </tt>
 
 # Introduction {-}

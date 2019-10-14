@@ -76,9 +76,9 @@ If you have a (very small) file that is "1kb"" big it means that it contains  10
 
 We  wrote in "principle", because this is not how the computer would save such a number. Take for example the number 128. Using just 1 byte, the computer could save this number as "01000000". However, if you create a new empty file on your computer, you will discover, that this is not what happens. Instead it is likely to that the file content will contain three bytes and look like the following:
 
-<center>
+
     00110001 00110010 00111000
-</center>
+
 
 Let us try to translate this. 
 
@@ -89,7 +89,7 @@ So somehow 49, 50 and 56 translate into 128. Computers use a set of rules to tra
 
 ### A never ending confusion 1000 or 1024?
 
-If you ever bought a 1GB memory stick and checked the capacity on a computer, you might have discovered that the computers says the capacity is less than 1 GB. Why is that? Basically it is a confusion between decimal and binary counting. $2^{10}=1024$ is very close to the number 1000, which we call "kilo", $2^{20}=1,048,576$ is close to 1,000,000 which we  call "mega" and $2^{30}=1,073,741,824$ is close to 1,000,000,000 which we  call "giga". If you say 1GB (1 gigabyte) you might therefore refer to 1,073,741,824 bytes or   1,000,000,000 bytes. \marginnote{Why 1GB is not always 1GB.} Not all systems use the same aggregation (Linux/Unix systems may for example differ from Windows systems).
+If you ever bought a 1GB memory stick and checked the capacity on a computer, you might have discovered that the computers says the capacity is less than 1 GB. Why is that? Basically it is a confusion between decimal and binary counting. $2^{10}=1024$ is very close to the number 1000, which we call "kilo", $2^{20}=1,048,576$ is close to 1,000,000 which we  call "mega" and $2^{30}=1,073,741,824$ is close to 1,000,000,000 which we  call "giga". If you say 1GB (1 gigabyte) you might therefore refer to 1,073,741,824 bytes or   1,000,000,000 bytes.  Not all systems use the same aggregation (Linux/Unix systems may for example differ from Windows systems).
 
 ### How fast is your Internet connection?
 Another source of confusion when talking about bytes and bits is the "B"" vs "b". The former relates to bytes, the latter to bits. If we are talking about 1GB we mean 1 gigabyte. If we are talking 1Gb we are talking about 1"gigabit". If you have an Internet connection with an advertised speed up to "50 Mbps" it means that it is able to receive up to 50 megabits per second. So remember that 1 byte is 8 bits, and 50Mbps therefore means that you should be able to download $50/8=6.25$ megabytes per second. 
@@ -117,7 +117,7 @@ cat('Table: (\\#tab:storet1) The ASCII code table
 |49 | 1 |
 |50 | 2 | 
 |51 | 3 |
-|$\vdots$ | $\vdots$|
+|...| ...|
 |65 | A |  
 |66 | B |   
 |67 | C |')
@@ -128,7 +128,7 @@ So a file with the binary code "01000001" would show an "A" if the ASCII encodin
 
 * Step 1: The computer receives eight signals, corresponding to byte \texttt{01000001}.
 * Step 2: This translates into the decimal number  $1 \times 1+0\times 2+0\times 4 +0\times 8 +0\times 16 +0\times 32 +1\times 64 +0\times 128=65$.
-* Step 3: The computer looks in the ASCII codebook (Table \ref{tab:ascii}) and realizes that if it sees a number binary number that corresponds to the decimal number 65 it should print the symbol A. 
+* Step 3: The computer looks in the ASCII codebook (Table \ref{tab:store2}) and realizes that if it sees a number binary number that corresponds to the decimal number 65 it should print the symbol A. 
 
 
 When you are writing a text document the reverse happens. You enter an A, the computer looks up the table, notes that this corresponds to the decimal number 65 and converts it into binary number and saves it as a string of signals. 

@@ -66,7 +66,7 @@ The General Fertility Rate  (GFR) on the other hand gives information about the 
  * The ASFRs are the same.
  
 
-```{r death1, echo=FALSE, out.width = '70%',fig.align='center',fig.cap="Fertility rates for the United Kingdom. Data source: Eurostat. Note: Only births of women aged 15-45 are included. The R script for this Figure is available [here](https://www.hhsievertsen.net/economicdata/notes/lecture12/rmaterial/lecnote_12_script_for_fig5.Ra)."}
+```{r death1, echo=FALSE, out.width = '70%',fig.align='center',fig.cap="Fertility rates for the United Kingdom. Data source: Eurostat. Note: Only births of women aged 15-45 are included."}
 knitr::include_graphics("_resources/chapter_death/fig10.png")
 ```
 
@@ -85,7 +85,7 @@ In the year 2000 the number of life births in England and Wales was 604,441. 16 
 
 It could be the case that the number of life births increased because there are more women in childbearing ages. The fertility behaviour of these women was actually unchanged (in other words, the General Fertility Rate was constant). It could also be the case that the number of women in childbearing age stayed constant, but that the General Fertility Rate increased. Or it could be a mixture of both. 
 
-We can use the following formula to decompose the change in life births. Let $\DeltaX$ be the change in life births. We can then write this change as:
+We can use the following formula to decompose the change in life births. Let $\Delta X$ be the change in life births. We can then write this change as:
 
 \begin{align}
 	\Delta X&=Y_1\frac{X_1}{Y_1}-Y_0\frac{X_0}{Y_0}\nonumber\\
@@ -97,7 +97,7 @@ Where General Fertility Rate (GFR) the ratio $X/Y$ and the number of women in ch
 
 
 ```{r decomposefertility, echo=FALSE, results='asis'}
-cat('Table: (\\#tab:deatht) Life births, women in childbearing age and GFR. For England and Wales. Data source: UK Office for National Statistics Birth Summary Tables, England and Wales.
+cat('Table: (\\#tab:deathtx) Life births, women in childbearing age and GFR. For England and Wales. Data source: UK Office for National Statistics Birth Summary Tables, England and Wales.
 
 | Year | Life births ($X$) |	Women aged 15-44 ($Y$) | General Fertility Rate ($X/Y$) |
 | - |-----------| ---------------|-----|
@@ -124,10 +124,11 @@ Having discussed one element of natural population change, births, we now turn t
 knitr::include_graphics(c("_resources/chapter_death/economist.jpg"))
 ```
 
+
+
 Life tables provide a list of period live expectancies for given age groups.  Given you are in a specific age group today and given the mortality rates of each age group, what is your expected life expectancy. The alternative measure, the cohort life expectancy, takes variation in mortality rates across cohorts into account. We will here only cover the period life expectancy and how to construct a life table.  It is also one of the most common measures of life expectancy. 
 
 The intuition behind the period life expectancy is very similar to the intuition behind the total fertility rate. We simply consider the mortality rate of each age group today, and ask how long we would life. However, because we only can die once, it is slightly more complicated (we can have more children). We therefore first create a life table. Table \@ref(tab:deatht) shows the data requirements for creating life tables.
-
 
 
 
@@ -147,7 +148,11 @@ cat('Table: (\\#tab:deatht) Data requirements for life tables
 |(8) | $e_x$   | Average  years of life remaining at age $x$ | $T_x/I_x$|')
 ```
 
+
+
  For each age group we require data on the  number of people in that group and the number of people who died in that group. Once we have these two variables we can construct the other variables. The first variable we construct is the age specific death rate, following by the probability of dying within the age group interval. We then construct a synthetic population that has a size of 100,000 individuals at the beginning of the first period. In each period we calculate the number of people who survive to this period and who die within this period. We can then use these estimates to calculate the number of life years lived in this period, and sum over these live years. At the end, we divide the number of life years left in any given period by the number of people getting to this period to obtain the estimated life expectancy.
+
+
 
 ```{r deatht, echo=FALSE, results='asis'}
 cat('Table: (\\#tab:deatht2) Life table for the United Kingdom. Data source: Eurostat.
@@ -158,10 +163,9 @@ cat('Table: (\\#tab:deatht2) Life table for the United Kingdom. Data source: Eur
 |1  | 0.000 | 0.000 | 25.376  | 99,615  | 99,602 | 7,981,765 | 80.126|
 |2  | 0.000 | 0.000 | 14.013  | 99,589  | 99,582 | 7,882,163 | 79.147|
 |3  | 0.000 | 0.000 | 11.453  | 99,574  | 99,568 | 7,782,581 | 78.159|
-|$\vdots$||
+|...  | ...| ...| ... | ...| ...| ...| ...|
 |98 | 0.346 | 0.295 | 980.052 | 3326   | 2836  | 3128    | 0.941|
-|99 | 0.386 | 0.324 | 758.769 | 2345 | 293 | 293 | 0.125|
-')
+|99 | 0.386 | 0.324 | 758.769 | 2345 | 293 | 293 | 0.125|')
 ```
 
 
@@ -169,7 +173,7 @@ cat('Table: (\\#tab:deatht2) Life table for the United Kingdom. Data source: Eur
  Table \@ref(tab:deatht) shows a subset of a life table for the United Kingdom using data from Eurostat and the recipe outlined in Table \@ref(tab:deatht2). Figure \@ref(fig:death2) shows a graph of the live expectancy (the last column of Table \@ref(tab:deatht2))  and survival rate for the United Kingdom based on data from Eurostat. 
  
  
-```{r death2, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Life expectancy by age (left) and survival probabilities (right). Data source: Eurostat. The R script for this Figure is available [here](https://www.hhsievertsen.net/economicdata/notes/lecture12/rmaterial/lecnote_12_script_for_fig6.R)"}
+```{r death2, echo=FALSE, out.width = '50%',fig.show='hold',fig.align='center',fig.cap="Life expectancy by age (left) and survival probabilities (right). Data source: Eurostat. "}
 knitr::include_graphics(c("_resources/chapter_death/fig11.png","_resources/chapter_death/fig12.png"))
 ```
 

@@ -330,7 +330,7 @@ Now what do we need these measures for? The GDP is an important aspect in many p
 As it was the case of the great depression, we are in general typically more interested in changes than in levels of GDP. It is maybe the most popular statistic of policy makers: the growth rates. To get from the level of GDP to the growth rates is straightforward, given that the levels are measured in *real* terms, that is at a constant price level (we will return to the issue of real and nominal terms in later chapters). We can use the following formula to calculate the growth rate in percent:
 
 \begin{align}
-growth\text{}rate=100\times \left(\frac{GDP_t}{GDP_{t-1}}-1\right)
+\text{growth rate in percent}=100\times \left(\frac{GDP_t}{GDP_{t-1}}-1\right)
 \end{align}
 
 In this formula the letter $t$ refers to the time period. This could be a year, a quarter or a month. Figure  \@ref(fig:gdp13) shows the GDP of the UK using a fixed price level and the annual growth rates. The yearly growth rates roughly correspond to the first derivative of the level, as they show the changes. Therefore, we are actually able to identify the large dip in 2009 even in the levels  shown in the graphs above. However, identifying whether growth rates are 2 or 3 percent is difficult based on the levels, and bar charts of growth rates are therefore a very common way to visualize the economic conditions.
@@ -380,14 +380,14 @@ How exactly expansions and recessions are identified  varies from country to cou
 ### GDP per capita
 While GDP growth rates are  used across time, we are sometimes also interested in comparing across regions or countries. First, we could be interested in identifying regional recessions and expansions. Second, we could be interested in comparing the level of economic activity per capita. To achieve the latter, we divide data on total GDP for each region or country and divide by the number of residents in the region or country. Figure \@ref(fig:gdp14) shows the economic activity per person in 2015. We have adjusted the price levels to be comparable across time and space. In this chart the values correspond to the price level of 2017 and we have adjusted all national values to the US price level and show the values in US dollars. To be clear, we do not simply use the exchange rate to translate the national currencies, but we also take differences in price levels across countries into account.  Luxembourg has, by far, the highest level of economic activity per person, followed by Ireland and Switzerland. Of the OECD data with available data, Chile has the lowest GDP per person. 
 
-```{r gdp14, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="GDP per capita for selected countries in 2015, measured in 2017 USD - PPP adjusted. Source: OECD.  The R script for the GDP per capita Figures is available [here](https://www.dropbox.com/s/p2u4epol8hqn6ab/GDP_per_capita.R?dl=0}{Link to script)."}
+```{r gdp14, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="GDP per capita for selected countries in 2015, measured in 2017 USD - PPP adjusted. Source: OECD. "}
 knitr::include_graphics("_resources/chapter_gdp/fig11.png")
 ```
 
 Figure \@ref(fig:gdp15) shows the relative change in real economic activity per person from 2000 to 2015. Most countries increased the output per person, but not all. 
 
 
-```{r gdp15, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="Real change in GDP per capita for selected countries 2000-2015, real values measured  in 2017 USD - PPP adjusted. Source: OECD.  The R script for the GDP per capita Figures is available [here](https://www.dropbox.com/s/p2u4epol8hqn6ab/GDP_per_capita.R?dl=0}{Link to script)."}
+```{r gdp15, echo=FALSE, out.width = '80%',fig.align='center',fig.cap="Real change in GDP per capita for selected countries 2000-2015, real values measured  in 2017 USD - PPP adjusted. Source: OECD.  "}
 knitr::include_graphics("_resources/chapter_gdp/fig12.png")
 ```
 

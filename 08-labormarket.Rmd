@@ -49,6 +49,7 @@ The full population can be divided into
 
 ```
 </center>
+</center>
 
 Using the data from the last section we can investigate the development of the age groups, as shown in Figure \@ref(fig:labour1)). The area chart is visually appealing , but it is difficult to identify small trends in variables that are not shown at the lowest level. 
 

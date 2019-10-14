@@ -38,8 +38,11 @@ Simulated data are unfortunately also sometimes used in practice for dishonest p
 
 How do simulations work? We could ask a friend to give us some numbers. But that would not be a very good strategy. Maybe the friend really likes 6 and subconsciously gives us more 6s than all other numbers. That would not be useful. But the idea that each number is equally likely is also just an assumption. Maybe that is not want we want. When we simulate data, we typically first specify what *distribution* each individual observation is drawn from. If each value is equally likely, the underlying assumption is *uniform*. It is difficult for our friend to be loyal to the uniform distribution because she favours 6. We therefore ask the computer instead. Figure  \@ref(fig:source0) shows how we can ask Excel to simulate data from a uniform distribution. In that case Excel draws an integer between 0 and 10. Each number 1, 2, 3 ... 10 is as likely to appear. In practice I would never ask Excel to simulate data. This data is of course not useful to tell anything about unemployment rates.
 ```{r source0, echo=FALSE, out.width = '60%',fig.align='center',fig.cap="Simulating data in Excel."}
-
-knitr::include_graphics("https://www.dropbox.com/s/wmn3wlccbi3rrd5/simulate.gif?dl=1")
+if (knitr:::is_latex_output()) {
+   knitr::include_graphics("_resources/chapter_sources/simulate.png")
+} else {
+  knitr::include_graphics("_resources/chapter_sources/simulate.gif")
+}
 ```
 
 ### Sample surveys
@@ -144,7 +147,12 @@ As all statistical agencies organise their websites differently it is not possib
 
 The animiation in Figure \@ref(fig:source3) shows an example of downloading data from the ONS website. The ONS website does not provide access to a "public database". 
 ```{r source3, echo=FALSE, out.width = '60%',fig.align='center',fig.cap="Downloading data from the website of the UK Office for National Statistics"}
-knitr::include_graphics("https://www.dropbox.com/s/hvjgt4foijy8752/ons.gif?dl=1")
+if (knitr:::is_latex_output()) {
+   knitr::include_graphics("_resources/chapter_sources/gettingpopdata.png")
+} else {
+  knitr::include_graphics("_resources/chapter_sources/gettingpopdata.gif")
+}
+
 ```
 
 
@@ -157,7 +165,11 @@ The Bank of England is the Central Bank of the United Kingdom. It was establishe
 Figure \@ref(fig:source4) shows an example of downloading data from the Bank of England website. This website includes a nice database that allows us to select exctacly the series we want.
 
 ```{r source4, echo=FALSE, out.width = '60%',fig.align='center',fig.cap="Downloading data from the website of the Bank of Enland"}
-knitr::include_graphics("https://www.dropbox.com/s/cn390qbw6sdcepk/bankofengland.gif?dl=1")
+if (knitr:::is_latex_output()) {
+   knitr::include_graphics("_resources/chapter_sources/bankofengland.png")
+} else {
+  knitr::include_graphics("_resources/chapter_sources/bankofengland.gif")
+}
 ```
 
 #### The US FED
@@ -174,7 +186,11 @@ The Organisation for Economic Co-operation and Development (OECD) is an internat
   The OECD data is accessible on the website  [stats.oecd.org](https://stats.oecd.org). Figure \@ref(fig:source5) shows an example of downloading data from the OECD. This website includes a nice database that allows us to select exctacly the series we want.
 
 ```{r source5, echo=FALSE, out.width = '60%',fig.align='center',fig.cap="Downloading data from the website of the Bank of Enland"}
-knitr::include_graphics("https://www.dropbox.com/s/in3whqys2yvlr48/oecd.gif?dl=1")
+if (knitr:::is_latex_output()) {
+   knitr::include_graphics("_resources/chapter_sources/oecd.png")
+} else {
+  knitr::include_graphics("_resources/chapter_sources/oecd.gif")
+}
 ```
 
 
@@ -184,7 +200,11 @@ knitr::include_graphics("https://www.dropbox.com/s/in3whqys2yvlr48/oecd.gif?dl=1
 The statistical office of the European Union provides a rich database of statistics on economic, environmental and social topics. Just like data from the OECD, most of these measures are standardized and we almost don't have to worry about consistent measures across countries. Their data is available here: [ec.europa.eu/eurostat](https://ec.europa.eu/eurostat/web/main/home).  Figure \@ref(fig:source6) shows an animation of downloading data from Eurostat. This website includes a nice database that allows us to select exctacly the series we want.
 
 ```{r source6, echo=FALSE, out.width = '60%',fig.align='center',fig.cap="Downloading data from the website of the Bank of Enland"}
-knitr::include_graphics("https://www.dropbox.com/s/ajp6exh2vuxk18u/eurostat.gif?dl=1")
+if (knitr:::is_latex_output()) {
+   knitr::include_graphics("_resources/chapter_sources/eurostat.png")
+} else {
+  knitr::include_graphics("_resources/chapter_sources/eurostat.gif")
+}
 ```
 
 #### The UN
@@ -196,7 +216,11 @@ The United Nations collects and hosts a wide range of data. Many of their datase
 The World Bank is  a partner organisation of the United Nations, but their database deserves an explicit presentation. The World Bank actually hosts several databases. They host more than 18 thousand time series covering a wide range of topics. Many of their time series cover the period back to the 1960ies for a lot of countries around the world. You can access their databank here:  [worldbank.org](http://worldbank.org).  Figure \@ref(fig:source7) shows an example of downloading data from the World Bank Website This website includes a nice database that allows us to select exctacly the series we want.
 
 ```{r source7, echo=FALSE, out.width = '60%',fig.align='center',fig.cap="Downloading data from the website of the Bank of Enland"}
-knitr::include_graphics("https://www.dropbox.com/s/tjvpuxfx0j6to5p/wb.gif?dl=1")
+if (knitr:::is_latex_output()) {
+   knitr::include_graphics("_resources/chapter_sources/wb.png")
+} else {
+  knitr::include_graphics("_resources/chapter_sources/wb.gif")
+}
 ```
 
 

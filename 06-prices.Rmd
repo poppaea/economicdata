@@ -1,22 +1,6 @@
 # Prices
 
 
-```{r table2 , echo=FALSE, results='asis'}
-  cat(' Table: \\label{tab:table2}Example
-
-  | Sepal.Length| Sepal.Width| Petal.Length|
-  |------------:|-----------:|------------:|
-  |          5.1|         3.5|          1.4|
-  |          4.9|         3.0|          1.4|
-  |          4.7|         3.2|          1.3|
-  |          4.6|         3.1|          1.5|')
-
-```
-
-Table \ref{tab:table2} shows...
-
-Table \@ref(tab:mwe) shows...
-
 
 ## About this chapter
 
@@ -260,7 +244,7 @@ We call this methodology for chained, because we link each year using a chain of
 
 
 ```{r , echo=FALSE, results='asis'}
-cat('Table: (\\#tab:price5) Laspeyre and Paasche index, unchained and chain-linked. Notes: $I^L$ refers to the Laspeyre price index,  $I^P$ refers to the Paasche price index, $I^{CL}$ refers to the chain-linked Laspeyre index and $I^{CP}$ to the chain-linked Paasche index.
+cat('Table: (\\#tab:price6) Laspeyre and Paasche index, unchained and chain-linked. Notes: $I^L$ refers to the Laspeyre price index,  $I^P$ refers to the Paasche price index, $I^{CL}$ refers to the chain-linked Laspeyre index and $I^{CP}$ to the chain-linked Paasche index.
 
 |Year|P1|P2|Q1|Q2|$I^L$|$I^P$|$I^{CL}$|$I^{CP}$|
 |:--:|:--:|:--:|:-:|:--:|
@@ -336,7 +320,7 @@ A couple of additional indexes also deserve mentioning. First, the GDP deflator.
 
 ### Inflation
 
-As there are many price indexes,  there are also many inflation measures. The Bank of England's inflation target relates to the Consumer Price Index inflation. The ONS publishes both annual and monthly rates, where annual rates relate to the change in prices over a 12 month period, and monthly to a month to month change. As inflation shows the change in price levels, the inflation can be seen as the first derivative of the price index. In Figure \@ref(fig:pricefig2) we show the year-to-year change in price levels based on the price indexes shown in Figure \@ref(fig:deatht1).
+As there are many price indexes,  there are also many inflation measures. The Bank of England's inflation target relates to the Consumer Price Index inflation. The ONS publishes both annual and monthly rates, where annual rates relate to the change in prices over a 12 month period, and monthly to a month to month change. As inflation shows the change in price levels, the inflation can be seen as the first derivative of the price index. In Figure \@ref(fig:pricefig2) we show the year-to-year change in price levels based on the price indexes shown in Figure \@ref(fig:pricefig1).
 
 
 
