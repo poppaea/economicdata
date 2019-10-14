@@ -11,8 +11,6 @@ knitr::include_graphics(c("_resources/chapter_inequality/hist2.png"))
 ```
 
 
-
-
 ### Intended learning outcomes
 
 After reading this chapter you should be able to
@@ -22,6 +20,7 @@ After reading this chapter you should be able to
 * Create histograms and compute income shares
 * Create a Lorenz curve
 * Calculate and interpret the Gini coefficient
+
 
 
 ## Data requirements
@@ -36,16 +35,7 @@ So far we've mostly been using macro level data. Macro level data is data about 
 
 In micro level data each observation represents the value for an individual, a household, a firm or an institution. Micro data is often the basis for macro data. It is often based on surveys or administrative records. Micro data is rarely directly accessible from public sources. One reason for this is that micro data often contains a lot of detailed information that shouldn't be shared freely with everyone. Getting access to micro data therefore often requires us to submit an application and sign a confidentiality agreement. Moreover, when working with micro level data we should be careful with how we share and store the data. 
 
-Because I cannot share of the micro level data I have publicly, the data in \@ref(fig:in0) is simulated. I created the data in R, using the following comands:^[I also made some minor adjustments to improve the data to ink ratio and make the chart self-explanatory. You should try that yourself.]
-
-
-```{r , results="hide", ,warnings=FALSE,message=FALSE }
-library(tidyverse)
-df<-tibble(income=exp(rnorm(100000,log(40),0.5)))
-ggplot(data=df,aes(x=income)) + 
-  geom_histogram( bins=100,fill="black", col="white")
-```
-
+Because I cannot share of the micro level data I have publicly, the data in \@ref(fig:in0) is simulated. 
 
 
 ### Net and gross values

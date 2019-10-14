@@ -48,71 +48,6 @@
 
 
 
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -3066,12 +3001,7 @@ Figure 8.1: The distribution of income. Data is simulated.
 <div id="micro-level-data" class="section level4 unnumbered">
 <h4>Micro level data</h4>
 <p>In micro level data each observation represents the value for an individual, a household, a firm or an institution. Micro data is often the basis for macro data. It is often based on surveys or administrative records. Micro data is rarely directly accessible from public sources. One reason for this is that micro data often contains a lot of detailed information that shouldn’t be shared freely with everyone. Getting access to micro data therefore often requires us to submit an application and sign a confidentiality agreement. Moreover, when working with micro level data we should be careful with how we share and store the data.</p>
-<p>Because I cannot share of the micro level data I have publicly, the data in <a href="#fig:in0">8.1</a> is simulated. I created the data in R, using the following comands:<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>df&lt;-<span class="kw">tibble</span>(<span class="dt">income=</span><span class="kw">exp</span>(<span class="kw">rnorm</span>(<span class="dv">100000</span>,<span class="kw">log</span>(<span class="dv">40</span>),<span class="fl">0.5</span>)))</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>df,<span class="kw">aes</span>(<span class="dt">x=</span>income)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="st">  </span><span class="kw">geom_histogram</span>( <span class="dt">bins=</span><span class="dv">100</span>,<span class="dt">fill=</span><span class="st">&quot;black&quot;</span>, <span class="dt">col=</span><span class="st">&quot;white&quot;</span>)</span></code></pre></div>
-<p><img src="book_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>Because I cannot share of the micro level data I have publicly, the data in <a href="#fig:in0">8.1</a> is simulated.</p>
 </div>
 </div>
 <div id="net-and-gross-values" class="section level3">
@@ -3569,7 +3499,7 @@ Figure 9.1: The world as 100 people. Source: Our World in Data.
 <h3><span class="header-section-number">9.2.1</span> Measuring poverty</h3>
 <p>Eradicating poverty was the first goal both in the MDG and SDG list. Global development on poverty is also the first statistic shown in Figure <a href="#fig:poverty4">9.1</a>. This is no surprise: Poverty is a core measure of global development. And even though numbers have improved substantially, we still observe that 1 out of 10 people live in extreme poverty. This is much better than when I was born, where 4 out of 10 people lived in extreme poverty, or in the 1960ies where more than 6 out of 10 people lived in extreme poverty. But how do we define poverty?</p>
 <p>The <em>poverty line</em> is the core in defining poverty. People below this line are defined as being poor, people above this line are defined as non-poor. The line thereby represents a threshold, below which an “acceptable” life is not possible. One way to define this level is to quantify the food intake required for an adequate diet (say 2000-2500 calories per day for an adult), and calculate the costs of this intake. To this we would add the costs of shelter and clothing. People with a consumption below this level or an income below this level are then defined as being poor. The level will differ substantially from country to country. Moreover country differences in institutional setting also affect which other factors we would consider important. For example, is health care publicly provided or should that be included in minimum cost calculation?</p>
-<p>Basing poverty levels on the minimum costs for an adequate food intake is actually not uncommon. The official poverty measure in the US is for example based on estimates from the 1960ies, based on the cost of a minimum food diet.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+<p>Basing poverty levels on the minimum costs for an adequate food intake is actually not uncommon. The official poverty measure in the US is for example based on estimates from the 1960ies, based on the cost of a minimum food diet.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
 <p>An alternative to minimum costs of diet based measures is a relative poverty line, where we specify the poverty line relative to the income distribution in the country, for example by defining households with an income less than 60 percent of the median income as in poverty. Below we’ll discuss some of the key issues in measuring poverty.</p>
 <div id="income-or-consumption" class="section level4">
 <h4><span class="header-section-number">9.2.1.1</span> Income or consumption?</h4>
@@ -4182,7 +4112,7 @@ Let us now try to estimate the size of a dataset. Our dataset contains 10 variab
 </div>
 <div id="the-tidy-data-principles" class="section level2">
 <h2><span class="header-section-number">11.5</span> The tidy data principles</h2>
-<p>Ideally we would like all raw datasets to be alike. As the R scientist Hadley Wickham puts it: <em>“Like families, tidy datasets are all alike but every messy dataset is messy in its own way”</em><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> <span class="citation">(Wickham <a href="#ref-wickham2014tidy" role="doc-biblioref">2014</a>)</span>.</p>
+<p>Ideally we would like all raw datasets to be alike. As the R scientist Hadley Wickham puts it: <em>“Like families, tidy datasets are all alike but every messy dataset is messy in its own way”</em><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> <span class="citation">(Wickham <a href="#ref-wickham2014tidy" role="doc-biblioref">2014</a>)</span>.</p>
 <p>Why would we like all datasets to be alike? Having a standardized way of tidying data allows us to apply methods on various datasets, without bothering about the data structure. Imagine that you first created a very nice graph using one dataset. You would now like to create the same graph using a different dataset. Ideally, you would not have to change anything but the data source. This requires that the two datasets are organized in the same way.</p>
 <p>To achieve a standardized way of storing datasets, a set of principles for “tidy data” have been set up:</p>
 <ul>
@@ -4463,7 +4393,7 @@ Figure 12.5: Monthly unemployment in the United Kingdom. Source: OECD, Short-Ter
 <li>The trend component <span class="math inline">\(T\)</span></li>
 <li>The error component <span class="math inline">\(E\)</span></li>
 </ul>
-<p>where <span class="math inline">\(Y_t\)</span> is the aggregate raw series, <span class="math inline">\(S_t\)</span> is the seasonal component, <span class="math inline">\(T_t\)</span> is the trend component and <span class="math inline">\(E_t\)</span> is the irregular (or error) component.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> We want to remove <span class="math inline">\(S_t\)</span> from the series. Before we move on, we should note that we assumed that an <em>additive</em> decomposition was reasonable. It could also be the case that the terms should be included <em>multiplicatively</em>. If for example the size of the seasonal component depends on the trend level, a multiplicative specification would be more appropriate.</p>
+<p>where <span class="math inline">\(Y_t\)</span> is the aggregate raw series, <span class="math inline">\(S_t\)</span> is the seasonal component, <span class="math inline">\(T_t\)</span> is the trend component and <span class="math inline">\(E_t\)</span> is the irregular (or error) component.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> We want to remove <span class="math inline">\(S_t\)</span> from the series. Before we move on, we should note that we assumed that an <em>additive</em> decomposition was reasonable. It could also be the case that the terms should be included <em>multiplicatively</em>. If for example the size of the seasonal component depends on the trend level, a multiplicative specification would be more appropriate.</p>
 <p>Our goal is now to identify the seasonal effect and remove the seasonal effect from the original series. Most statistical offices apply advanced algorithms called X11ARIMA or X12ARIMA to identify the seasonal term. For this unit there is no need to understand the details behind these algorithms, but you should understand the intuition behind the X11 algorithm, which is the backbone of many advanced algorithms. The point of departure for the X11-algorithm is the moving average. Let us now go through a simplified explanation of the X11-algorithm.</p>
 </div>
 <div id="step-1-identify-the-trend-level" class="section level4 unnumbered">
@@ -4935,7 +4865,7 @@ Figure 13.8: Data representations in ‘The Economist’ using a line chart. Dat
 </div>
 <div id="maps" class="section level4">
 <h4><span class="header-section-number">13.5.3.3</span> Maps</h4>
-<p>Showing data in maps can provide new insights and reveal patterns. For example that cholera deaths are clustered around pumps like in the map created by John Snow, as shown in Figure <a href="#fig:viz155">13.9</a>.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
+<p>Showing data in maps can provide new insights and reveal patterns. For example that cholera deaths are clustered around pumps like in the map created by John Snow, as shown in Figure <a href="#fig:viz155">13.9</a>.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
 <div class="figure" style="text-align: center"><span id="fig:viz155"></span>
 <img src="_resources/chapter_viz/Snow-cholera-map-1.jpg" alt="John Snow's map of Cholera deaths in central London. Each line represents a death.Each circle represents a water pump. Source: Wikipedia." width="48%" />
 <p class="caption">
@@ -5231,7 +5161,7 @@ Figure 14.4: Looking at the content of cell A1.
 Figure 14.5: Looking at the content of cell B1.
 </p>
 </div>
-<p>Let us now move to cell <em>C1</em> in Figure <a href="#fig:ex6">14.6</a>. The content of cell <em>C1</em> looks like a string of text characters. But actually it is also a formula. It is a slightly more complicated formula using a control statement.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> The formula says that if the content of cell <em>B1</em> is 2, then cell <em>C1</em> should show “Some text”. As this condition is true, the content shown in cell <em>C1</em> is actually “Some text”.</p>
+<p>Let us now move to cell <em>C1</em> in Figure <a href="#fig:ex6">14.6</a>. The content of cell <em>C1</em> looks like a string of text characters. But actually it is also a formula. It is a slightly more complicated formula using a control statement.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> The formula says that if the content of cell <em>B1</em> is 2, then cell <em>C1</em> should show “Some text”. As this condition is true, the content shown in cell <em>C1</em> is actually “Some text”.</p>
 <div class="figure" style="text-align: center"><span id="fig:ex6"></span>
 <img src="_resources/chapter_excelbasic/ex4.png" alt="Looking at the content of cell C1." width="75%" />
 <p class="caption">
@@ -6032,12 +5962,11 @@ Figure 16.6: Annotating our R script file with comments. R will try to evaluate 
 <li id="fn1"><p>For details on the SNA, please visit the following <a href="https://unstats.un.org/unsd/nationalaccount/sna.asp">website</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
 <li id="fn2"><p>Note that while the notation for the expenditure approach is fairly standard, the notation for the production and income approaches are less standardized.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 <li id="fn3"><p>Note that this would not be the case if subsidies were larger than taxes.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>I also made some minor adjustments to improve the data to ink ratio and make the chart self-explanatory. You should try that yourself.<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>See also <a href="https://poverty.ucdavis.edu/faq/what-current-poverty-rate-united-states" class="uri">https://poverty.ucdavis.edu/faq/what-current-poverty-rate-united-states</a> .<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
-<li id="fn6"><p>This is a reference to a famous Leo Tolstoy quote. Try to find it!<a href="#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>Note that it is common to also include <span class="math inline">\(C_t\)</span>, a cyclical component.<a href="#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p>Source: <a href="https://en.wikipedia.org/wiki/John_Snow#/media/File:Snow-cholera-map-1.jpg">Wikipedia</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
-<li id="fn9"><p>Control statements are used extensively in programming. We will return to this later.<a href="#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>See also <a href="https://poverty.ucdavis.edu/faq/what-current-poverty-rate-united-states" class="uri">https://poverty.ucdavis.edu/faq/what-current-poverty-rate-united-states</a> .<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>This is a reference to a famous Leo Tolstoy quote. Try to find it!<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Note that it is common to also include <span class="math inline">\(C_t\)</span>, a cyclical component.<a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Source: <a href="https://en.wikipedia.org/wiki/John_Snow#/media/File:Snow-cholera-map-1.jpg">Wikipedia</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>Control statements are used extensively in programming. We will return to this later.<a href="#fnref8" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
